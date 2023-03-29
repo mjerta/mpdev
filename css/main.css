@@ -42,19 +42,26 @@ nav ul li a {
     font-size: 1.1rem;
 }
 
+/* hero section  */
+
 .hero {
     display: flex;
     height: 22.5em;
     /* border: 4px solid; */
 }
 
+.hero svg {
+    stroke: black;
+    stroke-width: 4;
+}
+
 .left-col {
     /* width: 22.8125em; */
     width: 30%;
     /* border: 4px solid red; */
-    background-image: url(/images/hero.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    /* background-image: url(/images/hero.png); */
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
 }
 .right-col {
     flex: 1;
@@ -66,6 +73,9 @@ nav ul li a {
 
 .right-col h1 {
     font-size: 2.375rem;
+}
+.right-col h1 span {
+    color: #2af056;
 }
 
 .right-col h1,
@@ -81,6 +91,23 @@ nav ul li a {
     /* width: 523px; */
 }
 
+.focus-highlight {
+    position: relative;
+}
+
+.focus-highlight:before {
+    position: absolute;
+    content: "";
+    background-image: url(/images/focus-highlight.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 150%;
+    margin-left: -10px;
+    margin-top: 1rem;
+    height: 100%;
+    z-index: -1;
+}
+
 .projects {
     display: flex;
     justify-content: center;
@@ -89,4 +116,10 @@ nav ul li a {
 
 .cta-above {
     font-size: 1.6rem;
+    display: grid;
+    place-items: center;
+}
+
+.arrow-down {
+    margin-top: 1.1em;
 }

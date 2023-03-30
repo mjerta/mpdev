@@ -110,16 +110,31 @@ nav ul li a {
 
 .projects {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-top: 3.375em;
 }
 
 .cta-above {
+    margin-top: 9em;
     font-size: 1.6rem;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
 }
 
-.arrow-down {
-    margin-top: 1.1em;
+.cta-above button {
+    padding: 1.18em 3.125em;
+    border: solid 1px black;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(42, 240, 86, 0.5);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cta-above p {
+    margin-left: 0.8em;
+    font-size: 1.125rem;
+    width: 22ch;
+    font-weight: bold;
 }

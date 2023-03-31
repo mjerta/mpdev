@@ -57,11 +57,39 @@ nav ul li a {
 
 .left-col {
     /* width: 22.8125em; */
-    width: 30%;
+    min-width: 30.4%;
     /* border: 4px solid red; */
     /* background-image: url(/images/hero.png); */
     /* background-size: contain; */
     /* background-repeat: no-repeat; */
+}
+
+.hero-image {
+    position: relative;
+    background-image: url(/images/hero-no-border.png);
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.hero-image::before {
+    position: absolute;
+    content: "";
+    background-image: url(/images/sun.svg);
+    background-size: cover;
+    z-index: -1;
+    margin-left: -4rem;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 1200ms ease-in-out;
+}
+
+.hero-image:hover::before {
+    transform: scale(1.5);
+    transition: transform 1200ms ease-in-out;
 }
 .right-col {
     flex: 1;
@@ -130,6 +158,7 @@ nav ul li a {
     font-size: 1.5rem;
     text-transform: uppercase;
     font-weight: bold;
+    border: none;
 }
 
 .cta-above p {

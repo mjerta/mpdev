@@ -6,17 +6,28 @@
     margin: 0;
 }
 
+body,
+html {
+    height: 100vh;
+}
 body {
     font-family: "Montserrat", sans-serif;
 }
 
 .wrapper {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    /* border: solid 1px black; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
 }
 
+/* header section */
+
 header {
+    width: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +39,19 @@ header {
     text-decoration: none;
     color: black;
     font-size: 1.6rem;
+}
+
+.active {
+    position: relative;
+}
+
+.active::before {
+    position: absolute;
+    content: "";
+    width: 55%;
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
 }
 
 nav ul {
@@ -62,34 +86,38 @@ nav ul li a {
     /* background-image: url(/images/hero.png); */
     /* background-size: contain; */
     /* background-repeat: no-repeat; */
+    position: relative;
 }
 
 .hero-image {
-    position: relative;
+    position: absolute;
     background-image: url(/images/hero-no-border.png);
     width: 100%;
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 2;
+    pointer-events: none;
 }
 
-.hero-image::before {
+.hero-image-behind {
     position: absolute;
     content: "";
     background-image: url(/images/sun.svg);
     background-size: cover;
-    z-index: -1;
-    margin-left: -4rem;
+    z-index: 1;
+    top: -1em;
+    left: -3em;
     width: 50%;
     height: 50%;
     cursor: pointer;
     transform: scale(1);
-    transition: transform 1200ms ease-in-out;
+    transition: transform 800ms ease-in-out;
 }
 
-.hero-image:hover::before {
+.hero-image-behind:hover {
     transform: scale(1.5);
-    transition: transform 1200ms ease-in-out;
+    transition: transform 800ms ease-in-out;
 }
 .right-col {
     flex: 1;
@@ -146,7 +174,7 @@ nav ul li a {
     margin-top: 9em;
     font-size: 1.6rem;
     display: flex;
-    align-items: center;
+    align-self: center;
 }
 
 .cta-above button {
@@ -166,4 +194,26 @@ nav ul li a {
     font-size: 1.125rem;
     width: 22ch;
     font-weight: bold;
+}
+
+.btn-projects {
+    /* justify-self: flex-start; */
+    align-self: center;
+    position: absolute;
+    /* position: fixed; */
+    bottom: 0;
+    padding-top: 0.625em;
+    padding-bottom: 0.5em;
+    padding-left: 3.25em;
+    padding-right: 3.25em;
+    background-color: #c92a2a;
+    border-top-left-radius: 1.125em;
+    border-top-right-radius: 1.125em;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }

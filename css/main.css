@@ -8,7 +8,7 @@
 
 body,
 html {
-    height: 100vh;
+    height: auto;
 }
 body {
     font-family: "Montserrat", sans-serif;
@@ -18,7 +18,7 @@ body {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    height: 100%;
+    max-height: 100vh;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
@@ -164,11 +164,15 @@ nav ul li a {
     z-index: -1;
 }
 
-.projects {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 3.375em;
+
+.cta {
+    flex-grow: 1;
+    min-height: 10em;
+    max-height: 30em;
 }
+
+
+
 
 .cta-above {
     margin-top: 9em;
@@ -197,11 +201,8 @@ nav ul li a {
 }
 
 .btn-projects {
-    /* justify-self: flex-start; */
     align-self: center;
-    position: absolute;
-    /* position: fixed; */
-    bottom: 0;
+    /* bottom: 0; */
     padding-top: 0.625em;
     padding-bottom: 0.5em;
     padding-left: 3.25em;
@@ -216,4 +217,14 @@ nav ul li a {
     font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.projects {
+    margin: 0 auto;
+    display: flex;
+    height: 50em;
+    max-width: 1200px;
+    border-top: 3px solid black;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }

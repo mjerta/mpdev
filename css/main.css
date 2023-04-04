@@ -18,10 +18,9 @@ body {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    max-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    border: 3px solid black;
 }
 
 /* header section */
@@ -70,7 +69,7 @@ nav ul li a {
 
 .hero {
     display: flex;
-    height: 22.5em;
+    min-height: 22.5em;
     /* border: 4px solid; */
 }
 
@@ -81,10 +80,35 @@ nav ul li a {
 
 .left-col {
     min-width: 22.5em;
-    min-height: 22.5em;
+    min-height: 200%;
     position: relative;
 }
 
+.right-col {
+    flex: 1;
+    padding-left: 9.56em;
+    padding-top: 6em;
+    font-family: "Open Sans", sans-serif;
+}
+.right-col h1 {
+    font-size: 2.375rem;
+}
+.right-col h1 span {
+    color: #2af056;
+}
+
+.right-col h1,
+.right-col h2 {
+    width: 24ch;
+}
+
+.right-col h2 {
+    font-weight: lighter;
+    font-size: 1.75rem;
+    width: 32ch;
+    line-height: 2.25rem;
+    /* width: 523px; */
+}
 .hero-image {
     position: absolute;
     background-image: url(/images/hero-no-border.png);
@@ -115,33 +139,7 @@ nav ul li a {
     transform: scale(1.5);
     transition: transform 800ms ease-in-out;
 }
-.right-col {
-    flex: 1;
-    /* border: 4px solid red; */
-    padding-left: 9.56em;
-    padding-top: 6em;
-    font-family: "Open Sans", sans-serif;
-}
 
-.right-col h1 {
-    font-size: 2.375rem;
-}
-.right-col h1 span {
-    color: #2af056;
-}
-
-.right-col h1,
-.right-col h2 {
-    width: 24ch;
-}
-
-.right-col h2 {
-    font-weight: lighter;
-    font-size: 1.75rem;
-    width: 32ch;
-    line-height: 2.25rem;
-    /* width: 523px; */
-}
 
 .focus-highlight {
     position: relative;
@@ -162,31 +160,28 @@ nav ul li a {
 
 
 .cta {
-    flex-grow: 1;
     min-height: 22.5em;
-    max-height: 30em;
-    font-size: 1.6rem;
     display: flex;
-    align-self: center;
-    min-width: 1200px;
 }
 
+.cta-left-col {
+    min-width: 22.5em;
+}
 
-
-.cta-above {
-    margin-top: 9em;
-    font-size: 1.6rem;
-    display: flex;
-    align-self: center;
+.cta-right-col {
+    flex: 1;
+    padding-left: 9.56em;
+    padding-top: 6em;
 }
 
 .cta button {
-    padding: 1.18em 3.125em;
+    padding: 0.75em 2.2em;
     border: solid 1px black;
     border-radius: 10px;
     cursor: pointer;
     background-color: rgba(42, 240, 86, 0.5);
     font-size: 1.5rem;
+    font-family: inherit;
     text-transform: uppercase;
     font-weight: bold;
     border: none;
@@ -197,6 +192,7 @@ nav ul li a {
     font-size: 1.125rem;
     width: 22ch;
     font-weight: bold;
+    display: inline-block;
 }
 
 .btn-projects {

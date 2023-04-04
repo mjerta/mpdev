@@ -1,0 +1,2 @@
+fix position cta btn and make it inline-block
+position the project btn to the button of the screen at min-width 1200px max-height 1024px

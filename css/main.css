@@ -58,11 +58,57 @@ nav ul {
     display: flex;
     gap: 1.375rem;
 }
-nav ul li a {
+.nav-item {
+    position: relative;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
     font-size: 1.1rem;
+}
+
+.animate::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+    animation: shrink 800ms forwards;
+
+}
+
+.animate:hover::before {
+
+    position: absolute;
+    content: "";
+    height: 1px;
+    border-bottom: 2px solid black;
+    bottom: -6px;
+    animation: grow 800ms forwards;
+}
+
+@keyframes grow {
+    0% {
+      width: 0%;
+    }
+    50% {
+      width: 50%;
+
+    }
+    100% {
+      width: 30%;
+    }
+}
+
+@keyframes shrink {
+    0% {
+      width: 30%;
+    }
+    50% {
+      width: 50%;
+    }
+    100% {
+      width: 0%;
+    }
 }
 
 /* hero section  */

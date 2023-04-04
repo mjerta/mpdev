@@ -167,10 +167,13 @@ nav ul li a {
 
 .cta {
     flex-grow: 1;
-    min-height: 10em;
+    min-height: 22.5em;
     max-height: 30em;
+    font-size: 1.6rem;
+    display: flex;
+    align-self: center;
+    min-width: 1200px;
 }
-
 
 
 
@@ -181,7 +184,7 @@ nav ul li a {
     align-self: center;
 }
 
-.cta-above button {
+.cta button {
     padding: 1.18em 3.125em;
     border: solid 1px black;
     border-radius: 10px;
@@ -193,7 +196,7 @@ nav ul li a {
     border: none;
 }
 
-.cta-above p {
+.cta p {
     margin-left: 0.8em;
     font-size: 1.125rem;
     width: 22ch;

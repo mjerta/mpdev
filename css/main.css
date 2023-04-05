@@ -241,6 +241,7 @@ nav ul {
     width: 10px;
     background-color: red;
     right: -15px;
+    bottom: 0;
 
 }
 .cta p {

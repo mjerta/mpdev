@@ -246,7 +246,13 @@ nav ul {
     right: -100%;
     /* bottom: 0; */
     transform: scaleX(-1);
+    transform: translateX(0);
 
+}
+
+.cta button:hover::before {
+    transform: translateX(500px);
+    transition: transform ease-in 800ms;
 }
 .cta p {
     margin-left: 0.8em;

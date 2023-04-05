@@ -241,7 +241,8 @@ nav ul {
     width:100%;
     /* background-color: red; */
     background-image: url("/images/tiger.gif");
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     right: -100%;
     /* bottom: 0; */
     top: 0;

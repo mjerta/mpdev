@@ -237,7 +237,7 @@ nav ul {
 .cta button::before {
     position: absolute;
     content: "";
-    height: 20px;
+    height: 100%;
     width:100%;
     /* background-color: red; */
     background-image: url("/images/tiger.gif");

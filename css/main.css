@@ -236,6 +236,7 @@ nav ul {
 
 .cta button::before {
     position: absolute;
+    content: "";
     height: 100px;
     width: 100px;
     background-color: red;

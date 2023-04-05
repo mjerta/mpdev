@@ -257,7 +257,7 @@ nav ul {
 }
 
 .cta button:hover::before {
-    animation: run-tiger 2400ms ease-out infinite ;
+    animation: run-tiger 600ms ease-out forwards ;
     /* animation: run-tiger 2500ms steps(2, end) */
     opacity: 1;
 }
@@ -269,7 +269,7 @@ nav ul {
         
     }
     
-    25% {
+    /* 25% {
         transform: translateX(60px);
     }
     50% {
@@ -277,9 +277,9 @@ nav ul {
     }
     75% {
         transform: translateX(180px);
-    }
+    } */
     100% {
-        transform: translateX(240px);
+        transform: translateX(60px);
     }
 
 

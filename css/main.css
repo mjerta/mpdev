@@ -251,7 +251,7 @@ nav ul {
 
 .cta button:hover::before {
     transform: translateX(300px);
-    transition: transform ease 300ms;
+    transition: transform ease 1200ms;
 }
 .cta p {
     margin-left: 0.8em;

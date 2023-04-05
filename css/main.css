@@ -243,7 +243,7 @@ nav ul {
     background-image: url("/images/tiger.gif");
     background-size: cover;
     right: -100%;
-    bottom: 0;
+    /* bottom: 0; */
 
 }
 .cta p {

@@ -251,6 +251,7 @@ nav ul {
 }
 
 .cta button:hover::before {
+    transform: scaleX(-1);
     transform: translateX(500px);
     transition: transform ease-in 800ms;
 }

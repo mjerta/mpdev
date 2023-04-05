@@ -244,6 +244,7 @@ nav ul {
     background-size: cover;
     right: -100%;
     /* bottom: 0; */
+    top: 0;
 
 }
 .cta p {

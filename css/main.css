@@ -245,7 +245,7 @@ nav ul {
     background-repeat: no-repeat;
     right: -100%;
     /* bottom: 0; */
-    top: 0;
+    transform: scaleX(-1);
 
 }
 .cta p {

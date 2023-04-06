@@ -295,6 +295,7 @@ nav ul {
 
 .animate-text-cta {
     animation: bounce 650ms infinite;
+    animation-iteration-count: 1;
 }
 
 @keyframes bounce {

@@ -17,5 +17,5 @@ btnCta.addEventListener("mouseover", function() {
 
 btnCta.addEventListener("mouseout", function() {
 
-    textCta.classList.remove("animate-text-cta")
+    // textCta.classList.remove("animate-text-cta")
 });

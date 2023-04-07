@@ -10,22 +10,19 @@ elementsArray.forEach(function (elem) {
 
 // cta section
 const textCta = document.querySelector(".cta-text");
-let btnCta = document.getElementsByClassName("cta-btn-tiger");
-let tigerCta = window.getComputedStyle(btnCta, '::before');
+let btnCta = document.querySelector(".cta-btn-tiger");
+const hideElement = document.getElementById("hide-element");
+// let tigerCta = window.getComputedStyle(btnCta, "::before");
 let count = 0;
-console.log(tigerCta);
 
 btnCta.addEventListener("mouseover", function () {
-  count++;
-  if (count > 0) {
-    btnCta.style.setProperty('--beforeBack', "green")
-  }
+  console.log(count);
+  // if (count >= 1) {
+  //   btnCta.style.setProperty("--tiger", "hidden");
+  // }
+  // if (count == 0) {
+  //   count += 1;
+  // }
+  hideElement.classList.add("hide-element-animation");
   textCta.classList.add("animate-text-cta");
 });
-
-btnCta.addEventListener("mouseout", function () {
-  // textCta.classList.remove("animate-text-cta")
-  //   tigerCta.visibility = "hidden";
-});
-
-//

@@ -2,4 +2,3 @@
 position the project btn to the button of the screen at min-width 1200px max-height 1024px
 #make a nice animation for the nav items in and out
 add the tiger animation next to the button
-add movement to tiger animation on hover button

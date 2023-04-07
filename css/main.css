@@ -215,7 +215,7 @@ nav ul {
   padding-top: 6em;
 }
 
-.cta button {
+.cta-btn-tiger {
   position: relative;
   padding: 0.75em 2.2em;
   border: solid 1px black;
@@ -230,12 +230,12 @@ nav ul {
   transition: 400ms transform ease;
 }
 
-.cta button:hover {
+.cta-btn-tiger:hover {
   transition: 400ms transform ease;
   transform: scale(1.1);
 }
 
-.cta button::before {
+.cta-btn-tiger::before {
   position: absolute;
   content: "";
   height: 100%;
@@ -251,7 +251,7 @@ nav ul {
   background-color: var(--beforeBack, none);
 }
 
-.cta button:hover::before {
+.cta-btn-tiger:hover::before {
   animation: run-tiger 1200ms ease-out forwards;
   animation-iteration-count: 1;
   /* opacity: 1; */

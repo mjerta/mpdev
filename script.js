@@ -18,7 +18,7 @@ console.log(tigerCta);
 btnCta.addEventListener("mouseover", function () {
   count++;
   if (count > 0) {
-    btnCta.style.setProperty(--beforeBack, "red");
+    btnCta.style.setProperty('--beforeBack', "green")
   }
   textCta.classList.add("animate-text-cta");
 });

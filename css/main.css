@@ -248,7 +248,7 @@ nav ul {
   /* bottom: 0; */
   opacity: 0;
   z-index: 999;
-  background-color: var(--beforeBack, none);
+  background-color: var(--beforeBack, blue);
 }
 
 .cta-btn-tiger:hover::before {

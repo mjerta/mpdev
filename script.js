@@ -10,7 +10,7 @@ elementsArray.forEach(function (elem) {
 
 // cta section
 const textCta = document.querySelector(".cta-text");
-const btnCta = document.getElementsByClassName("cta-btn-tiger");
+let btnCta = document.getElementsByClassName("cta-btn-tiger");
 let tigerCta = window.getComputedStyle(btnCta, '::before');
 let count = 0;
 console.log(tigerCta);

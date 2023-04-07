@@ -12,16 +12,20 @@ elementsArray.forEach(function (elem) {
 const textCta = document.querySelector(".cta-text");
 const btnCta = document.querySelector(".cta button");
 const tigerCta = window.getComputedStyle(btnCta, "::before");
+let count = 0;
 console.log(tigerCta);
 
 btnCta.addEventListener("mouseover", function () {
+  count++;
+  if (count > 0) {
+    btnCta.style.setProperty(--beforeBack, "red");
+  }
   textCta.classList.add("animate-text-cta");
 });
 
 btnCta.addEventListener("mouseout", function () {
   // textCta.classList.remove("animate-text-cta")
   //   tigerCta.visibility = "hidden";
-  btnCta.style.setProperty("--afterBack", "hidden");
 });
 
 //

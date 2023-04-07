@@ -248,17 +248,18 @@ nav ul {
   /* bottom: 0; */
   opacity: 0;
   z-index: 999;
-  visibility: var(--afterback, inherit);
+  background-color: var(--beforeBack, none);
 }
 
 .cta button:hover::before {
   animation: run-tiger 1200ms ease-out forwards;
   animation-iteration-count: 1;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 @keyframes run-tiger {
   0% {
+    opacity: 1;
     transform: translateX(0);
   }
 

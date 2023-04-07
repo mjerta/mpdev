@@ -6,3 +6,4 @@ position the projects section based on design
 position the project btn to the button of the screen at min-width 1200px max-height 1024px
 position mobile layout
 position laptop layout
+test

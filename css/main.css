@@ -228,12 +228,13 @@ nav ul {
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-  transition: 400ms transform ease;
+  transition: transform 400ms ease, font-size 400ms ease;
 }
 
 .cta-btn-tiger:hover {
-  transition: 400ms transform ease;
-  transform: scale(1.1);
+  font-size: 1.8rem;
+  transform: scale(1.2);
+  transform-origin: center;
 }
 
 #hide-element {

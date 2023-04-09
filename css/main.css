@@ -228,12 +228,13 @@ nav ul {
   text-transform: uppercase;
   font-weight: bold;
   border: none;
-  transition: transform 400ms ease, font-size 400ms ease;
+  /* transition: transform 400ms ease, font-size 400ms ease; */
 }
 
 .cta-btn-tiger:hover {
-  font-size: 1.8rem;
-  transform: scale(1.2);
+  /* font-size: 1.8rem; */
+  transition: transform 200ms ease;
+  transform: translateY(-10px);
   transform-origin: center;
 }
 
@@ -250,6 +251,8 @@ nav ul {
   /* bottom: 0; */
   opacity: 0;
   z-index: 2;
+  cursor: none;
+  pointer-events: none;
   /* visibility: var(--tiger, visible); */
 }
 

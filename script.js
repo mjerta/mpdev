@@ -22,9 +22,18 @@ btnCta.addEventListener("mouseover", function () {
   //   btnCta.style.setProperty("--tiger", "hidden");
   // }
   // if (count == 0) {
-  //   count += 1;
+  count += 1;
   // }
   hideElement.classList.add("hide-element-animation");
   leavesElement.classList.add("leaves-animation");
   textCta.classList.add("animate-text-cta");
+});
+
+btnCta.addEventListener("mouseout", function () {
+  if (count === 4) {
+    hideElement.classList.remove("hide-element-animation");
+    leavesElement.classList.remove("leaves-animation");
+    textCta.classList.remove("animate-text-cta");
+    count = 0;
+  }
 });

@@ -228,7 +228,9 @@ nav ul {
   text-transform: uppercase;
   font-weight: bold;
   border: none;
+  z-index: 10;
   /* transition: transform 400ms ease, font-size 400ms ease; */
+  /* filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)); */
 }
 
 .cta-btn-tiger:hover {
@@ -236,6 +238,28 @@ nav ul {
   transition: transform 200ms ease;
   transform: translateY(-10px);
   transform-origin: center;
+  z-index: 999;
+}
+
+.cta-btn-tiger::before {
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 5%;
+  width: 90%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0;
+  /* transition: transform ease 200ms, opacity ease 200ms; */
+}
+
+.cta-btn-tiger:hover::before {
+  transform: translateY(10px);
+  transition: opacity ease 400ms;
+  opacity: 1;
 }
 
 #hide-element {
@@ -256,10 +280,36 @@ nav ul {
   /* visibility: var(--tiger, visible); */
 }
 
+#leaves {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/leaves.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: -150px;
+  opacity: 0;
+}
+
+.leaves-animation {
+  animation: move-leaves 400ms ease-out forwards;
+}
+@keyframes move-leaves {
+  0% {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
 .hide-element-animation {
   animation: run-tiger 1200ms ease-out forwards;
   /* animation-iteration-count: 1; */
-  animation-fill-mode: forwards;
   /* opacity: 1; */
 }
 

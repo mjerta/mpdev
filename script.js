@@ -12,6 +12,7 @@ elementsArray.forEach(function (elem) {
 const textCta = document.querySelector(".cta-text");
 let btnCta = document.querySelector(".cta-btn-tiger");
 const hideElement = document.getElementById("hide-element");
+const leavesElement = document.getElementById("leaves");
 // let tigerCta = window.getComputedStyle(btnCta, "::before");
 let count = 0;
 
@@ -24,5 +25,6 @@ btnCta.addEventListener("mouseover", function () {
   //   count += 1;
   // }
   hideElement.classList.add("hide-element-animation");
+  leavesElement.classList.add("leaves-animation");
   textCta.classList.add("animate-text-cta");
 });

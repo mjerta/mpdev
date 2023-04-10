@@ -2,7 +2,8 @@
 #make a nice animation for the nav items in and out
 #add the tiger animation next to the button
 #make the tiger show up every 3 times you hover on it
-make a text transition onstart up for hero section right-col
+#make a text transition onstart up for hero section right-col
+make a reveal in the focus-highlight
 position the project btn to the button screen at min-width 1200px max-height 1024px
 position mobile layout
 position laptop layout

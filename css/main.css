@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  border: 3px solid black;
+  /* border: 3px solid black; */
 }
 
 /* header section */
@@ -132,6 +132,18 @@ nav ul {
   padding-left: 9.56em;
   padding-top: 6em;
   font-family: "Open Sans", sans-serif;
+  animation: animate-hero-text ease 1200ms;
+}
+
+@keyframes animate-hero-text {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 .right-col h1 {
   font-size: 2.375rem;
@@ -253,6 +265,9 @@ nav ul {
   border-radius: 50%;
   filter: blur(10px);
   opacity: 0;
+  cursor: none;
+  pointer-events: none;
+
   /* transition: transform ease 200ms, opacity ease 200ms; */
 }
 

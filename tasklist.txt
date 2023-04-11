@@ -6,6 +6,6 @@
 #make a reveal in the focus-highlight
 #make the timing right of the focus-highlight
 #make a reveal on hero  section left col
-position the project btn to the button screen at min-width 1200px max-height 1024px
+#position the project btn to the button screen at min-width 1440px max-height 1024px
 position mobile layout
 position laptop layout

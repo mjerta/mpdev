@@ -250,7 +250,7 @@ nav ul {
 
 /* cta section */
 .cta {
-  min-height: 22.5em;
+  min-height: 28.5em;
   display: flex;
 }
 
@@ -428,6 +428,4 @@ nav ul {
   height: 50em;
   max-width: 1200px;
   border-top: 3px solid black;
-  border-top-left-radius: 18px;
-  border-top-right-radius: 18px;
 }

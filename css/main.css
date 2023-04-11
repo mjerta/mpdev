@@ -125,6 +125,18 @@ nav ul {
   min-width: 22.5em;
   min-height: 200%;
   position: relative;
+  animation: animate-leftcol ease 1200ms forwards;
+}
+
+@keyframes animate-leftcol {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .right-col {

@@ -211,7 +211,7 @@ nav ul {
   margin-top: 1rem;
   height: 100%;
   z-index: -1;
-  animation: showHide ease 2400ms forwards;
+  animation: showHide ease-in-out 400ms forwards 1200ms;
 }
 
 @keyframes showHide {

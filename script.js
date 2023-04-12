@@ -1,3 +1,5 @@
+//test
+
 // nav section
 const elementsArray = document.querySelectorAll(".not-active");
 

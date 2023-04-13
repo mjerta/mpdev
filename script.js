@@ -15,6 +15,7 @@ const textCta = document.querySelector(".cta-text");
 let btnCta = document.querySelector(".cta-btn-tiger");
 const hideElement = document.getElementById("hide-element");
 const leavesElement = document.getElementById("leaves");
+const heroImageBehind = document.querySelector(".hero-image-behind");
 // let tigerCta = window.getComputedStyle(btnCta, "::before");
 let count = 0;
 

@@ -187,7 +187,7 @@ nav ul {
   pointer-events: none;
 }
 
-.hero-image-behind {
+.hero-image-sun {
   position: absolute;
   content: "";
   background-image: url(/images/sun.svg);
@@ -202,7 +202,7 @@ nav ul {
   transition: transform 800ms ease-in-out;
 }
 
-.hero-image-behind:hover {
+.hero-image-sun:hover {
   transform: scale(1.5);
   transition: transform 800ms ease-in-out;
 }

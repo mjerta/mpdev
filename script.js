@@ -15,7 +15,6 @@ const textCta = document.querySelector(".cta-text");
 let btnCta = document.querySelector(".cta-btn-tiger");
 const hideElement = document.getElementById("hide-element");
 const leavesElement = document.getElementById("leaves");
-const heroImageSun = document.querySelector(".hero-image-sun");
 // let tigerCta = window.getComputedStyle(btnCta, "::before");
 let count = 0;
 
@@ -40,3 +39,8 @@ btnCta.addEventListener("mouseout", function () {
     count = 0;
   }
 });
+
+const heroImageSun = document.querySelector(".hero-image-sun");
+const body = document.querySelector("body");
+const btnProjects = document.querySelector(".btn-projects");
+const projects = document.querySelector(".projects");

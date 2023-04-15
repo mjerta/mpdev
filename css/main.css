@@ -10,10 +10,18 @@ body,
 html {
   height: auto;
 }
+
 body {
   font-family: "Montserrat", sans-serif;
 }
 
+.blackmode-bg {
+  background-color: black;
+}
+
+.blackmode-fc {
+  color: white;
+}
 .wrapper {
   position: relative;
   max-width: 1200px;

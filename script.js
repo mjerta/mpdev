@@ -44,3 +44,8 @@ const heroImageSun = document.querySelector(".hero-image-sun");
 const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
 const projects = document.querySelector(".projects");
+
+heroImageSun.addEventListener("click", function () {
+  body.classList.add("blackmode-bg", "blackmode-fc");
+  btnCta.classList.add("blackmode-fc");
+});

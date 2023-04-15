@@ -234,7 +234,7 @@ nav ul {
   animation: showHide ease-in-out 400ms forwards 1200ms;
 }
 
-.focus-highlight.blackmode-bg::before {
+.focus-highlight.blackmode::after {
   background-color: black;
 }
 

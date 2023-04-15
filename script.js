@@ -50,4 +50,5 @@ const focusHighlight = document.querySelector(".focus-highlight");
 heroImageSun.addEventListener("click", function () {
   body.classList.add("blackmode-bg", "blackmode-fc");
   btnCta.classList.add("blackmode-fc");
+  focusHighlight.classList.add("blackmode");
 });

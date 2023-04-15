@@ -234,6 +234,10 @@ nav ul {
   animation: showHide ease-in-out 400ms forwards 1200ms;
 }
 
+.focus-highlight.blackmode::before {
+  background-color: black;
+}
+
 @keyframes showHide {
   0% {
     transform: translateX(0%);

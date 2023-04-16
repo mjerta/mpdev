@@ -54,6 +54,7 @@ heroImageSun.addEventListener("click", function () {
   btnProjects.classList.add("blackmode-bg");
   projects.classList.add("blackmode-border");
   focusHighlight.classList.add("blackmode");
+  activeNavItem.classList.add("blackmode");
 
   for (let i = 0; i < navItem.length; i++) {
     navItem[i].classList.add("blackmode-fc", "blackmode");

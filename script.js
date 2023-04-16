@@ -51,7 +51,8 @@ const activeNavItem = document.querySelector(".active");
 heroImageSun.addEventListener("click", function () {
   body.classList.add("blackmode-bg", "blackmode-fc");
   btnCta.classList.add("blackmode-fc");
-  btnProjects.classList.add("blackmode-bg");
+  btnProjects.classList.add("blackmode-bg-opposite", "blackmode-fc-opposite");
+  projects.classList.add("blackmode-border-opposite");
   projects.classList.add("blackmode-border");
   focusHighlight.classList.add("blackmode");
   activeNavItem.classList.add("blackmode");

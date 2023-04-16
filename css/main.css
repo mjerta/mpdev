@@ -88,7 +88,6 @@ nav ul {
   position: absolute;
   content: "";
   height: 1px;
-  border-bottom: 2px solid black;
   bottom: -6px;
   animation: grow 800ms forwards;
 }

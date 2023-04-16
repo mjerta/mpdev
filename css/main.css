@@ -19,10 +19,6 @@ body {
   background-color: black;
 }
 
-.blackmode-fc-opposite {
-  color: black;
-}
-
 .wrapper {
   position: relative;
   max-width: 1200px;
@@ -452,4 +448,14 @@ nav ul {
   height: 50em;
   max-width: 1200px;
   border-top: 3px solid black;
+}
+
+.blackmode-bg-opposite {
+  background: white;
+}
+.blackmode-fc-opposite {
+  color: black;
+}
+.blackmode-border-opposite {
+  border-color: white;
 }

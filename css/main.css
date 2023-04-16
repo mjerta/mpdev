@@ -19,9 +19,6 @@ body {
   background-color: black;
 }
 
-.blackmode-fc {
-  color: white;
-}
 .wrapper {
   position: relative;
   max-width: 1200px;
@@ -72,6 +69,10 @@ nav ul {
   color: black;
   text-transform: uppercase;
   font-size: 1.1rem;
+}
+
+.blackmode-fc {
+  color: white;
 }
 
 .animate::before {

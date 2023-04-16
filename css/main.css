@@ -84,6 +84,10 @@ nav ul {
   animation: shrink 800ms forwards;
 }
 
+.animate.blackmode::before {
+  border-color: white;
+}
+
 .animate:hover::before {
   position: absolute;
   content: "";

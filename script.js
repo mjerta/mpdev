@@ -46,6 +46,7 @@ const btnProjects = document.querySelector(".btn-projects");
 const projects = document.querySelector(".projects");
 const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
+const activeNavItem = document.querySelector(".active");
 
 heroImageSun.addEventListener("click", function () {
   body.classList.add("blackmode-bg", "blackmode-fc");

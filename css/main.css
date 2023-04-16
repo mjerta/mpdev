@@ -58,6 +58,10 @@ header {
   bottom: -6px;
 }
 
+.active.blackmode::before {
+  border-color: white;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;

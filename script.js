@@ -44,11 +44,17 @@ const heroImageSun = document.querySelector(".hero-image-sun");
 const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
 const projects = document.querySelector(".projects");
-const navItem = document.querySelector(".nav-item");
+const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 
 heroImageSun.addEventListener("click", function () {
   body.classList.add("blackmode-bg", "blackmode-fc");
   btnCta.classList.add("blackmode-fc");
+  btnProjects.classList.add("blackmode-bg");
+  projects.classList.add("blackmode-border");
   focusHighlight.classList.add("blackmode");
+
+  for (let i = 0; i < navItem.length; i++) {
+    navItem[i].classList.add("blackmode-fc");
+  }
 });

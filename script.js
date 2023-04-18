@@ -47,6 +47,7 @@ const projects = document.querySelector(".projects");
 const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
+const heroImageMoon = document.querySelector(".hero-image-moon");
 
 heroImageSun.addEventListener("click", function () {
   body.classList.add("blackmode-bg", "blackmode-fc");

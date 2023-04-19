@@ -143,6 +143,9 @@ nav ul {
   min-width: 22.5em;
   min-height: 200%;
   position: relative;
+}
+
+.animate-left-col {
   animation: animate-leftcol ease 1200ms forwards;
 }
 
@@ -162,6 +165,9 @@ nav ul {
   padding-left: 9.56em;
   padding-top: 6em;
   font-family: "Open Sans", sans-serif;
+}
+
+.animate-right-col {
   animation: animate-hero-text ease 1200ms;
 }
 

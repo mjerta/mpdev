@@ -53,7 +53,7 @@ const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
 
-heroImageSun.addEventListener("click", function () {
+heroImageSun.addEventListener("click", function (e) {
   body.classList.add("blackmode-bg", "blackmode-fc");
   btnCta.classList.add("blackmode-fc");
   btnProjects.classList.add("blackmode-bg-opposite", "blackmode-fc-opposite");
@@ -65,4 +65,10 @@ heroImageSun.addEventListener("click", function () {
   for (let i = 0; i < navItem.length; i++) {
     navItem[i].classList.add("blackmode-fc", "blackmode");
   }
+  leftCol.classList.remove("animate-left-col");
+  rightCol.classList.remove("animate-right-col");
+  void leftCol.offsetHeight;
+  void rightCol.offsetHeight;
+  leftCol.classList.add("animate-left-col");
+  rightCol.classList.add("animate-right-col");
 });

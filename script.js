@@ -1,6 +1,11 @@
-//test
+const leftCol = document.querySelector(".left-col");
+const rightCol = document.querySelector(".right-col");
 
-// nav section
+document.addEventListener("DOMContentLoaded", function () {
+  leftCol.classList.add("animate-left-col");
+  rightCol.classList.add("animate-right-col");
+});
+
 const elementsArray = document.querySelectorAll(".not-active");
 
 elementsArray.forEach(function (elem) {

@@ -17,6 +17,7 @@ body {
 
 .blackmode-bg {
   background-color: black;
+  transition: background-color 0.5s ease;
 }
 
 .wrapper {
@@ -77,6 +78,7 @@ nav ul {
 
 .blackmode-fc {
   color: white;
+  transition: color 0.5s ease;
 }
 
 .animate::before {
@@ -451,10 +453,12 @@ nav ul {
 }
 
 .blackmode-bg-opposite {
-  background: white;
+  background-color: white;
+  transition: background-color 0.5s ease;
 }
 .blackmode-fc-opposite {
   color: black;
+  transition: color 0.5s ease;
 }
 .blackmode-border-opposite {
   border-color: white;

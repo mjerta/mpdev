@@ -53,10 +53,12 @@ const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
 const heroImageMoon = document.querySelector(".hero-image-moon");
+const logo = document.querySelector(".logo");
 
 heroImageSun.addEventListener("click", function (e) {
   body.classList.add("blackmode-bg", "blackmode-fc");
   btnCta.classList.add("blackmode-fc");
+  logo.classList.add("blackmode-fc");
   btnProjects.classList.add("blackmode-bg-opposite", "blackmode-fc-opposite");
   projects.classList.add("blackmode-border-opposite");
   projects.classList.add("blackmode-border");

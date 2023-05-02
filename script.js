@@ -1,5 +1,8 @@
 const leftCol = document.querySelector(".left-col");
 const rightCol = document.querySelector(".right-col");
+const focusHighlight = document.querySelector(".focus-highlight");
+const animateRestartElement = document.querySelector("#focus-highlight");
+console.log(animateRestartElement);
 
 document.addEventListener("DOMContentLoaded", function () {
   leftCol.classList.add("animate-left-col");
@@ -50,7 +53,6 @@ const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
 const projects = document.querySelector(".projects");
 const navItem = document.querySelectorAll(".nav-item");
-const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
 const heroImageMoon = document.querySelector(".hero-image-moon");
 const logo = document.querySelector(".logo");
@@ -70,8 +72,10 @@ heroImageSun.addEventListener("click", function (e) {
   }
   leftCol.classList.remove("animate-left-col");
   rightCol.classList.remove("animate-right-col");
+  animateRestartElement.classList.remove("focus-highlight");
   void leftCol.offsetHeight;
   void rightCol.offsetHeight;
   leftCol.classList.add("animate-left-col");
   rightCol.classList.add("animate-right-col");
+  animateRestartElement.classList.add("focus-highlight");
 });

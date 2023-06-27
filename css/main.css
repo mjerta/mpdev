@@ -469,3 +469,17 @@ nav ul {
 .blackmode-border-opposite {
   border-color: white;
 }
+
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: right;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+}
+
+footer ul {
+  list-style: none;
+}

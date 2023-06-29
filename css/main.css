@@ -450,12 +450,53 @@ nav ul {
   text-transform: uppercase;
 }
 
-.projects {
+.projects-grid {
   margin: 0 auto;
-  display: flex;
+  display: grid;
   height: 50em;
   max-width: 1200px;
   border-top: 3px solid black;
+  padding: 3.81rem 0;
+  grid-template-columns: 33.26731rem 33.26731rem;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  border: 3px solid;
+}
+
+.card {
+  position: relative;
+  border: 3px solid;
+  border-radius: 0.9345rem;
+  background: #dcdde3;
+}
+
+.card article {
+  margin-top: 2.74rem;
+  margin-left: 12.52rem;
+}
+
+.card h1 {
+  /* font-size: 1.55744rem; */
+}
+
+.card p {
+  width: 15.38769rem;
+}
+
+.card ul {
+  list-style: none;
+  display: flex;
+  gap: 0.61rem;
+}
+
+.card img {
+  position: absolute;
+  width: 8.16106rem;
+  height: 6.97744rem;
+  object-fit: cover;
+  border-radius: 0.9345rem;
+  margin-top: 1.37rem;
+  margin-left: 1.62rem;
 }
 
 .blackmode-bg-opposite {

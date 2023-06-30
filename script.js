@@ -48,7 +48,7 @@ btnCta.addEventListener("mouseout", function () {
 const heroImageSun = document.querySelector(".hero-image-sun");
 const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
-const projects = document.querySelector(".projects");
+const projects = document.querySelector(".projects-grid");
 const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");

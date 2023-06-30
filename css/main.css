@@ -460,12 +460,12 @@ nav ul {
   grid-template-columns: 33.26731rem 33.26731rem;
   grid-template-rows: 1fr 1fr;
   justify-content: space-between;
-  border: 3px solid;
+  /* border: 3px solid; */
 }
 
 .card {
   position: relative;
-  border: 3px solid;
+  /* border: 3px solid; */
   border-radius: 0.9345rem;
   background: #dcdde3;
 }
@@ -475,18 +475,43 @@ nav ul {
   margin-left: 12.52rem;
 }
 
-.card h1 {
-  font-size: 1.55744rem;
+.card h2 {
+  position: relative;
+  font-family: Open Sans;
+  color: #1e531d;
+  line-height: 2.01488em;
 }
 
+.card h2::after {
+  position: absolute;
+  right: 20px;
+  /* width: 33.375rem; */
+  /* height: 19.375rem; */
+  background: url(/images/arrow.svg);
+  /* background: contain; */
+}
 .card p {
   width: 15.38769rem;
+  font-size: 0.99675rem;
+  font-family: Open Sans;
+  line-height: 2.01488rem;
 }
 
 .card ul {
   list-style: none;
   display: flex;
   gap: 0.61rem;
+}
+
+.card li {
+  padding: 0.07269rem 1.30856rem;
+  background: rgba(42, 240, 86, 0.5);
+  border-radius: 0.71181rem;
+  line-height: 1.50069rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.65244rem;
+  margin-top: 1.79rem;
 }
 
 .card img {

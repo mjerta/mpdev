@@ -453,21 +453,26 @@ nav ul {
 .projects-grid {
   margin: 0 auto;
   display: grid;
-  height: 50em;
   max-width: 1200px;
   border-top: 3px solid black;
   padding: 3.81rem 0;
-  grid-template-columns: 33.26731rem 33.26731rem;
-  grid-template-rows: 1fr 1fr;
-  justify-content: space-between;
-  /* border: 3px solid; */
+  grid-template-columns: repeat(auto-fit, minmax(33.26731rem, 33.26731rem));
+  grid-template-rows: repeat(auto-fill, 19.375rem);
+  row-gap: 3rem;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1100px) {
+  .projects-grid {
+    justify-content: space-between;
+  }
 }
 
 .card {
   position: relative;
-  /* border: 3px solid; */
   border-radius: 0.9345rem;
   background: #dcdde3;
+  padding-bottom: 3rem;
 }
 
 .card article {
@@ -481,22 +486,18 @@ nav ul {
   font-family: Open Sans;
   color: #1e531d;
   line-height: 2.01488em;
-  border: 2px solid;
 }
 
-
 .card h2::after {
-  content: '';
+  content: "";
   position: absolute;
   right: -20px;
   bottom: 35%;
   width: 0.99488rem;
-  height: .75rem;
+  height: 0.75rem;
   background: url(/images/arrow.svg);
   background: contain;
   background-repeat: no-repeat;
-  /* border: 2px solid;C */
-  /* padding: 25%; */
 }
 .card p {
   width: 15.38769rem;

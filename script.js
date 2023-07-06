@@ -69,12 +69,11 @@ heroImageSun.addEventListener("click", function () {
 });
 
 const cardElement = document.querySelectorAll(".card");
+const cardTitleElement = document.querySelectorAll(".card h2");
+const cardListElement = document.querySelectorAll(".card li");
 
 const addHoverStateCards = () => {
   cardElement.forEach((card) => {
-    const cardTitleElement = card.querySelectorAll(".card h2 svg");
-    const cardListElement = card.querySelectorAll(".card li");
-    console.log(cardTitleElement, cardListElement);
     card.addEventListener("mouseover", () => {
       card.classList.add("card-hover");
     });

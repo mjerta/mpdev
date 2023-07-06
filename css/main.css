@@ -492,18 +492,16 @@ nav ul {
   line-height: 2.01488em;
 }
 
-.card h2 svg {
+.card h2::after {
   content: "";
   position: absolute;
-  right: -12px;
-  bottom: 25%;
+  right: -20px;
+  bottom: 35%;
   width: 0.99488rem;
   height: 0.75rem;
-  fill: #1e531d;
-}
-
-.svg-hover {
-  fill: #193219;
+  background: url(/images/arrow.svg);
+  background: contain;
+  background-repeat: no-repeat;
 }
 .card p {
   width: 15.38769rem;
@@ -527,10 +525,6 @@ nav ul {
   text-transform: uppercase;
   font-size: 0.65244rem;
   margin-top: 1.79rem;
-}
-
-.card li {
-  color: #193219;
 }
 
 .card img {

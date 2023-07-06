@@ -48,7 +48,7 @@ btnCta.addEventListener("mouseout", function () {
 const heroImageSun = document.querySelector(".hero-image-sun");
 const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
-const projects = document.querySelector(".projects");
+const projects = document.querySelector(".projects-grid");
 const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
@@ -67,3 +67,21 @@ heroImageSun.addEventListener("click", function () {
     navItem[i].classList.add("blackmode-fc", "blackmode");
   }
 });
+
+const cardElement = document.querySelectorAll(".card");
+
+const addHoverStateCards = () => {
+  cardElement.forEach((card) => {
+    const cardTitleElement = card.querySelectorAll(".card h2 svg");
+    const cardListElement = card.querySelectorAll(".card li");
+    console.log(cardTitleElement, cardListElement);
+    card.addEventListener("mouseover", () => {
+      card.classList.add("card-hover");
+    });
+    card.addEventListener("mouseout", () => {
+      card.classList.remove("card-hover");
+    });
+  });
+};
+
+addHoverStateCards();

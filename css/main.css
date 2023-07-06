@@ -485,7 +485,6 @@ nav ul {
 }
 
 .card h2 {
-  display: inline;
   position: relative;
   font-family: Open Sans;
   color: #1e531d;
@@ -495,8 +494,8 @@ nav ul {
 .card h2::after {
   content: "";
   position: absolute;
-  right: -20px;
-  bottom: 35%;
+  /* right: 20px; */
+  bottom: 50%;
   width: 0.99488rem;
   height: 0.75rem;
   background: url(/images/arrow.svg);

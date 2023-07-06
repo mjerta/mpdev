@@ -67,3 +67,20 @@ heroImageSun.addEventListener("click", function () {
     navItem[i].classList.add("blackmode-fc", "blackmode");
   }
 });
+
+const cardElement = document.querySelectorAll(".card");
+const cardTitleElement = document.querySelectorAll(".card h2");
+const cardListElement = document.querySelectorAll(".card li");
+
+const addHoverStateCards = () => {
+  cardElement.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+      card.classList.add("card-hover");
+    });
+    card.addEventListener("mouseout", () => {
+      card.classList.remove("card-hover");
+    });
+  });
+};
+
+addHoverStateCards();

@@ -475,6 +475,10 @@ nav ul {
   padding-bottom: 3rem;
 }
 
+.card-hover {
+  background: #a4a7b6;
+}
+
 .card article {
   margin-top: 2.74rem;
   margin-left: 12.52rem;

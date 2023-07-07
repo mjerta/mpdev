@@ -1,5 +1,3 @@
-correcting classname h2-hover
-changing everything to queryselector instead of queryselectorall
-adding colors element h2
-selecting the right specificity for svg element
-
+Selecting the right specifity for .h2-hover
+Correcting queryselector to all
+Removing a console log

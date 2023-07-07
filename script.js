@@ -74,8 +74,7 @@ const addHoverStateCards = () => {
   cardElement.forEach((card) => {
     const cardTitleElement = card.querySelector(".card h2");
     const cardSvgElement = card.querySelector(".card h2 svg");
-    const cardListElement = card.querySelector(".card li");
-    console.log(cardTitleElement, cardTitleElement, cardListElement);
+    const cardListElement = card.querySelectorAll(".card li");
     card.addEventListener("mouseover", () => {
       cardTitleElement.classList.add("h2-hover");
       cardSvgElement.classList.add("svg-hover");

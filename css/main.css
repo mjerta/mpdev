@@ -489,12 +489,13 @@ nav ul {
   display: inline;
   position: relative;
   font-family: Open Sans;
-  color: #1e531d;
+  /* color: #1e531d; */
   line-height: 2.01488em;
 }
 
 .h2-hover {
-  color: #193219;
+  /* color: #193219; */
+  color: red;
 }
 .card h2 svg {
   content: "";

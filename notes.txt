@@ -1,0 +1,5 @@
+correcting classname h2-hover
+changing everything to queryselector instead of queryselectorall
+adding colors element h2
+selecting the right specificity for svg element
+

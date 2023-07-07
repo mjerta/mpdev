@@ -473,6 +473,7 @@ nav ul {
   border-radius: 0.9345rem;
   background: #dcdde3;
   padding-bottom: 3rem;
+  transition: background-color .5s ease;
 }
 
 .card-hover {
@@ -492,6 +493,9 @@ nav ul {
   line-height: 2.01488em;
 }
 
+.h2-hover {
+  color: #193219;
+}
 .card h2 svg {
   content: "";
   position: absolute;
@@ -501,6 +505,7 @@ nav ul {
   height: 0.75rem;
   fill: #1e531d;
 }
+
 
 .svg-hover {
   fill: #193219;

@@ -87,6 +87,9 @@ const addHoverStateCards = () => {
       cardTitleElement.classList.remove("h2-hover");
       cardSvgElement.classList.remove("svg-hover");
       card.classList.remove("card-hover");
+      for (const cardListElement of cardListElements) {
+        cardListElement.classList.remove("li-hover");
+      }
     });
   });
 };

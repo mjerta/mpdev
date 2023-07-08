@@ -1,3 +1,3 @@
-Changes name to plural
-Ading for loop to iterate over all li elements
-Inside the loop added the line to add li-hover class for each of the li that are selected
+Added for of loop for mouseout to remoce class li-hover
+Change a class to the right name it already has the correct specifity
+Added transition for all necessary element

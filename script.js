@@ -68,30 +68,36 @@ heroImageSun.addEventListener("click", function () {
   }
 });
 
-const cardElement = document.querySelectorAll(".card");
-
 const addHoverStateCards = () => {
-  cardElement.forEach((card) => {
-    const cardTitleElement = card.querySelector(".card h2");
-    const cardSvgElement = card.querySelector(".card h2 svg");
-    const cardListElements = card.querySelectorAll(".card li");
-    card.addEventListener("mouseover", () => {
-      card.classList.add("card-hover");
+  const cardElements = document.querySelectorAll(".card");
+  cardElements.forEach((cardElement) => {
+    const cardTitleElement = cardElement.querySelector(".card h2");
+    const cardSvgElement = cardElement.querySelector(".card h2 svg");
+    const cardListElements = cardElement.querySelectorAll(".card li");
+    cardElement.addEventListener("mouseover", () => {
+      cardElement.classList.add("card-hover");
+      // for loop to check which card is not been hovered over
+      for (const checkCardElement of cardElements) {
+        const check = checkCardElement.classList.contains("card-hover");
+        if (!check) {
+          checkCardElement.classList.add("card-opacity");
+        }
+      }
       cardTitleElement.classList.add("h2-hover");
       cardSvgElement.classList.add("svg-hover");
       for (const cardListElement of cardListElements) {
         cardListElement.classList.add("li-hover");
       }
     });
-    card.addEventListener("mouseout", () => {
+    cardElement.addEventListener("mouseout", () => {
       cardTitleElement.classList.remove("h2-hover");
       cardSvgElement.classList.remove("svg-hover");
-      card.classList.remove("card-hover");
+      cardElement.classList.remove("card-hover");
       for (const cardListElement of cardListElements) {
         cardListElement.classList.remove("li-hover");
       }
     });
-  });
+  }); //end of foreach
 };
 
 addHoverStateCards();

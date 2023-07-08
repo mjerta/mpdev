@@ -1,4 +1,5 @@
-Added the transform property for the svg arrow to move up and to the 
-right.
-Added the 's' behid the duration; forgotten.
-Change the speed for the transition a bit faster
+Adding a for of loop inside mouseover event to be able to check which card(s)
+does not contain the card-hover class
+Fixing some naming of variables inside the function
+Added a if statement to check wether the element that does not contain the
+card hover class.

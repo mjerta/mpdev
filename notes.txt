@@ -1,3 +1,4 @@
-Added for of loop for mouseout to remoce class li-hover
-Change a class to the right name it already has the correct specifity
-Added transition for all necessary element
+Added the transform property for the svg arrow to move up and to the 
+right.
+Added the 's' behid the duration; forgotten.
+Change the speed for the transition a bit faster

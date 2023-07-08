@@ -491,7 +491,7 @@ nav ul {
   font-family: Open Sans;
   color: #1e531d;
   line-height: 2.01488em;
-  transition: color 0.5 ease;
+  transition: color 0.5s ease;
 }
 
 .card .h2-hover {
@@ -505,10 +505,11 @@ nav ul {
   width: 0.99488rem;
   height: 0.75rem;
   fill: #1e531d;
-  transition: all 0.5 ease;
+  transition: all 0.3s ease;
 }
 
 .card h2 .svg-hover {
+  transform: translateY(-0.625rem) translateX(0.625rem);
   fill: #193219;
 }
 .card p {
@@ -533,7 +534,7 @@ nav ul {
   text-transform: uppercase;
   font-size: 0.65244rem;
   margin-top: 1.79rem;
-  transition: color 0.5 ease;
+  transition: color 0.5s ease;
 }
 
 .card .li-hover {

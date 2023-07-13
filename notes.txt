@@ -1,5 +1,3 @@
-Adding a for of loop inside mouseover event to be able to check which card(s)
-does not contain the card-hover class
-Fixing some naming of variables inside the function
-Added a if statement to check wether the element that does not contain the
-card hover class.
+Added some comments to describe the inside for loops
+Added the second for loop to remove the card-opacity for the ones that are hovered over.
+Added the opacity class and added a style for the transition to the card class for it

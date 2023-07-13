@@ -473,11 +473,14 @@ nav ul {
   border-radius: 0.9345rem;
   background: #dcdde3;
   padding-bottom: 3rem;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, opacity 0.7s ease;
 }
 
 .card-hover {
   background: #a4a7b6;
+}
+.card-opacity {
+  opacity: 50%;
 }
 
 .card article {

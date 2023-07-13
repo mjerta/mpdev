@@ -516,10 +516,20 @@ nav ul {
   fill: #193219;
 }
 .card p {
+  height: 8.0625rem;
   width: 15.38769rem;
   font-size: 0.99675rem;
   font-family: Open Sans;
   line-height: 2.01488rem;
+  /* white-space:normal; */
+  /* text-overflow: ellipsis; */
+  /* max-height: 15ch; */
+  border: 1px solid;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  
 }
 
 .card ul {

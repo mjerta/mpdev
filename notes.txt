@@ -1,3 +1,2 @@
-Added some comments to describe the inside for loops
-Added the second for loop to remove the card-opacity for the ones that are hovered over.
-Added the opacity class and added a style for the transition to the card class for it
+Added a min-height for the P element so it will always look the same
+

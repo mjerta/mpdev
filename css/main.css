@@ -489,7 +489,6 @@ nav ul {
 }
 
 .card h2 {
-  display: inline;
   position: relative;
   font-family: Open Sans;
   color: #1e531d;
@@ -497,14 +496,16 @@ nav ul {
   transition: color 0.5s ease;
 }
 
+
 .card .h2-hover {
   color: #193219;
 }
 .card h2 svg {
+
   content: "";
   position: absolute;
-  right: -12px;
-  bottom: 25%;
+  /* right: 20px; */
+  bottom: 50%;
   width: 0.99488rem;
   height: 0.75rem;
   fill: #1e531d;
@@ -514,6 +515,7 @@ nav ul {
 .card h2 .svg-hover {
   transform: translateY(-0.625rem) translateX(0.625rem);
   fill: #193219;
+
 }
 .card p {
   height: 8.0625rem;
@@ -570,4 +572,18 @@ nav ul {
 }
 .blackmode-border-opposite {
   border-color: white;
+}
+
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: right;
+  bottom: 0;
+  width: 100%;
+  padding: 1em;
+}
+
+footer ul {
+  list-style: none;
 }

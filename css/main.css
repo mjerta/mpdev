@@ -521,15 +521,11 @@ nav ul {
   font-size: 0.99675rem;
   font-family: Open Sans;
   line-height: 2.01488rem;
-  /* white-space:normal; */
-  /* text-overflow: ellipsis; */
-  /* max-height: 15ch; */
-  border: 1px solid;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  text-overflow: ellipsis; /* I dont know if this one really makes a different it seems like it is taking this ellipses by default */
   overflow: hidden;
-  
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .card ul {

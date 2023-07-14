@@ -1,2 +1,3 @@
 Added a min-height for the P element so it will always look the same
+Swapped closing HTML elements h2 and div in the right place
 

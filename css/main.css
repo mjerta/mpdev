@@ -473,10 +473,14 @@ nav ul {
   border-radius: 0.9345rem;
   background: #dcdde3;
   padding-bottom: 3rem;
+  transition: background-color 0.5s ease, opacity 0.7s ease;
 }
 
 .card-hover {
   background: #a4a7b6;
+}
+.card-opacity {
+  opacity: 50%;
 }
 
 .card article {
@@ -489,24 +493,38 @@ nav ul {
   font-family: Open Sans;
   color: #1e531d;
   line-height: 2.01488em;
+  transition: color 0.5s ease;
 }
 
-.card h2::after {
+.card .h2-hover {
+  color: #193219;
+}
+.card h2 svg {
   content: "";
   position: absolute;
   /* right: 20px; */
   bottom: 50%;
   width: 0.99488rem;
   height: 0.75rem;
-  background: url(/images/arrow.svg);
-  background: contain;
-  background-repeat: no-repeat;
+  fill: #1e531d;
+  transition: all 0.3s ease;
+}
+
+.card h2 .svg-hover {
+  transform: translateY(-0.625rem) translateX(0.625rem);
+  fill: #193219;
 }
 .card p {
+  height: 8.0625rem;
   width: 15.38769rem;
   font-size: 0.99675rem;
   font-family: Open Sans;
   line-height: 2.01488rem;
+  text-overflow: ellipsis; /* I dont know if this one really makes a different it seems like it is taking this ellipses by default */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .card ul {
@@ -524,6 +542,11 @@ nav ul {
   text-transform: uppercase;
   font-size: 0.65244rem;
   margin-top: 1.79rem;
+  transition: color 0.5s ease;
+}
+
+.card .li-hover {
+  color: #193219;
 }
 
 .card img {

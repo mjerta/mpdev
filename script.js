@@ -68,19 +68,51 @@ heroImageSun.addEventListener("click", function () {
   }
 });
 
-const cardElement = document.querySelectorAll(".card");
-const cardTitleElement = document.querySelectorAll(".card h2");
-const cardListElement = document.querySelectorAll(".card li");
-
 const addHoverStateCards = () => {
-  cardElement.forEach((card) => {
-    card.addEventListener("mouseover", () => {
-      card.classList.add("card-hover");
+  const cardElements = document.querySelectorAll(".card");
+
+  // The loop below will add an eventlistener for each
+  // of the card available in the projects
+  cardElements.forEach((cardElement) => {
+    const cardTitleElement = cardElement.querySelector(".card h2");
+    const cardSvgElement = cardElement.querySelector(".card h2 svg");
+    const cardListElements = cardElement.querySelectorAll(".card li");
+    cardElement.addEventListener("mouseover", () => {
+      const check = cardElement.classList.contains("card-hover");
+      cardElement.classList.add("card-hover");
+      // for loop to check which card is not been hovered over
+      // this for loop is need to be able to show which one is not selected
+      // while the one that is hovered over
+      for (const checkCardElement of cardElements) {
+        const check = checkCardElement.classList.contains("card-hover");
+        if (!check) {
+          checkCardElement.classList.add("card-opacity");
+        }
+      }
+      cardTitleElement.classList.add("h2-hover");
+      cardSvgElement.classList.add("svg-hover");
+      for (const cardListElement of cardListElements) {
+        cardListElement.classList.add("li-hover");
+      }
     });
-    card.addEventListener("mouseout", () => {
-      card.classList.remove("card-hover");
+    cardElement.addEventListener("mouseout", () => {
+      //this for loop will remove the card-opacity class
+      // for the ones that was not hovered over
+      // this time it has been executed before the card-hover classlist remove
+      for (const checkCardElement of cardElements) {
+        const check = checkCardElement.classList.contains("card-hover");
+        if (!check) {
+          checkCardElement.classList.remove("card-opacity");
+        }
+      }
+      cardElement.classList.remove("card-hover");
+      cardTitleElement.classList.remove("h2-hover");
+      cardSvgElement.classList.remove("svg-hover");
+      for (const cardListElement of cardListElements) {
+        cardListElement.classList.remove("li-hover");
+      }
     });
-  });
+  }); //end of foreach
 };
 
 addHoverStateCards();

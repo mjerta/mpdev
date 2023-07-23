@@ -284,18 +284,17 @@ nav ul {
 
 /* cta section */
 .cta {
-  min-height: 28.5em;
+  min-height: 28.5rem;
   display: flex;
 }
 
 .cta-left-col {
-  min-width: 22.5em;
+  min-width: 22.5rem;
 }
 
 .cta-right-col {
-  flex: 1;
-  padding-left: 9.56em;
-  padding-top: 6em;
+  padding-left: 9.56rem;
+  padding-top: 6rem;
 }
 
 .cta-btn-tiger {

@@ -9,6 +9,7 @@
 body,
 html {
   height: auto;
+  font-size: 8px;
 }
 
 body {
@@ -36,7 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 9.375em;
+  height: 9.375rem;
   /* border: 4px solid red; */
 }
 
@@ -130,8 +131,15 @@ nav ul {
 
 .hero {
   display: flex;
-  min-height: 22.5em;
-  /* border: 4px solid; */
+  /* min-height: 22.5rem; */
+  border: 4px solid blue;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.col {
+  min-height: 22.5rem;
 }
 
 .hero svg {
@@ -140,8 +148,8 @@ nav ul {
 }
 
 .left-col {
-  min-width: 22.5em;
-  min-height: 200%;
+  min-width: 22.5rem;
+  /* min-height: 200%; */
   position: relative;
 }
 
@@ -161,9 +169,7 @@ nav ul {
 }
 
 .right-col {
-  flex: 1;
-  padding-left: 9.56em;
-  padding-top: 6em;
+  /* flex: 1; */
   font-family: "Open Sans", sans-serif;
 }
 
@@ -278,18 +284,15 @@ nav ul {
 
 /* cta section */
 .cta {
-  min-height: 28.5em;
+  min-height: 28.5rem;
   display: flex;
+  justify-content: center;
+  border: solid 3px red;
 }
 
 .cta-left-col {
-  min-width: 22.5em;
-}
-
-.cta-right-col {
-  flex: 1;
-  padding-left: 9.56em;
-  padding-top: 6em;
+  /* min-width: 22.5rem; */
+  display: none;
 }
 
 .cta-btn-tiger {
@@ -583,4 +586,49 @@ footer {
 
 footer ul {
   list-style: none;
+}
+
+/* Media queries  */
+
+@media (min-width: 300px) {
+  html {
+    font-size: clamp(8px, 2.66vw, 11px);
+  }
+}
+
+@media (min-width: 580px) {
+  html {
+    font-size: 8px;
+  }
+  .hero {
+    flex-direction: row;
+    align-items: unset;
+    justify-content: center;
+  }
+  .right-col {
+    padding-left: 9.56rem;
+    padding-top: 6rem;
+  }
+
+  .cta-left-col {
+    display: block;
+    min-width: 22.5rem;
+  }
+
+  .cta-right-col {
+    padding-left: 9.56rem;
+    padding-top: 6rem;
+  }
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: clamp(8px, 1.25vw, 11px);
+  }
+
+  @media (min-width: 1000px) {
+    html {
+      font-size: clamp(11px, 1.1vw, 16px);
+    }
+  }
 }

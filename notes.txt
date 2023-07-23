@@ -1,3 +1,1 @@
-Added the cta back in by uncommenting the section
-Removed the flex one fot the right col
-Chaning the ems to rem to make everyting relative to the root font-size
+Change some css for showing the cta-left col to appear from 580px

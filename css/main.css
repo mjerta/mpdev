@@ -132,7 +132,7 @@ nav ul {
 .hero {
   display: flex;
   /* min-height: 22.5rem; */
-  border: 4px solid;
+  border: 4px solid blue;
   /* flex-wrap: wrap; */
   align-items: center;
   flex-direction: column;
@@ -286,15 +286,13 @@ nav ul {
 .cta {
   min-height: 28.5rem;
   display: flex;
+  justify-content: center;
+  border: solid 3px red;
 }
 
 .cta-left-col {
-  min-width: 22.5rem;
-}
-
-.cta-right-col {
-  padding-left: 9.56rem;
-  padding-top: 6rem;
+  /* min-width: 22.5rem; */
+  display: none;
 }
 
 .cta-btn-tiger {
@@ -608,6 +606,16 @@ footer ul {
     justify-content: center;
   }
   .right-col {
+    padding-left: 9.56rem;
+    padding-top: 6rem;
+  }
+
+  .cta-left-col {
+    display: block;
+    min-width: 22.5rem;
+  }
+
+  .cta-right-col {
     padding-left: 9.56rem;
     padding-top: 6rem;
   }

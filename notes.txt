@@ -1,5 +1,6 @@
-Removed, fixed and added in CSS+HTML
+Edit nav, disabling elems for mobile, making css readable
 
-Uncommment the navbar
-Fixed a curly brace arround media query
-Added a class nav-list item to be able to style and position the css of this element
+Editing the nav ul for mobile
+Disabling the before elements on the active and animate class
+Making the css more readable by putting some better comments and 
+legenda - still in progress

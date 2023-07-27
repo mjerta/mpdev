@@ -1,1 +1,5 @@
-Change some css for showing the cta-left col to appear from 580px
+Removed, fixed and added in CSS+HTML
+
+Uncommment the navbar
+Fixed a curly brace arround media query
+Added a class nav-list item to be able to style and position the css of this element

@@ -64,10 +64,19 @@ header {
   border-color: white;
 }
 
+nav {
+  display: none;
+  width: 100%;
+}
+
 nav ul {
+  position: absolute;
   list-style-type: none;
   display: flex;
   gap: 1.375rem;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 .nav-item {
   position: relative;
@@ -626,9 +635,22 @@ footer ul {
     font-size: clamp(8px, 1.25vw, 11px);
   }
 
-  @media (min-width: 1000px) {
-    html {
-      font-size: clamp(11px, 1.1vw, 16px);
-    }
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.375rem;
+  }
+  .nav-item {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1000px) {
+  html {
+    font-size: clamp(11px, 1.1vw, 16px);
   }
 }

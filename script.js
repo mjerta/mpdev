@@ -24,7 +24,6 @@ const leavesElement = document.getElementById("leaves");
 let count = 0;
 
 btnCta.addEventListener("mouseover", function () {
-  console.log(count);
   // if (count >= 1) {
   //   btnCta.style.setProperty("--tiger", "hidden");
   // }
@@ -122,8 +121,13 @@ function getDataAttribute(attribute) {
   return el;
 }
 
-function getAlldata() {
-  console.log(getDataAttribute("data-nav"));
+function toggleHamburgerMenu() {
+  const navBarDataSet = "data-nav";
+  data = getDataAttribute(navBarDataSet);
+  data.forEach((element) => {
+    const dataValue = element.getAttribute(navBarDataSet);
+    console.log(dataValue);
+  });
 }
 
-getAlldata();
+toggleHamburgerMenu();

@@ -116,3 +116,14 @@ const addHoverStateCards = () => {
 };
 
 addHoverStateCards();
+
+function getDataAttribute(attribute) {
+  const el = document.querySelectorAll(`[${attribute}]`);
+  return el;
+}
+
+function getAlldata() {
+  console.log(getDataAttribute("data-nav"));
+}
+
+getAlldata();

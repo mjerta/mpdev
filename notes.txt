@@ -1,6 +1,5 @@
-Edit nav, disabling elems for mobile, making css readable
+Added and remove in js, html & css 
 
-Editing the nav ul for mobile
-Disabling the before elements on the active and animate class
-Making the css more readable by putting some better comments and 
-legenda - still in progress
+Added a data attributed to nav element in html
+Added somme function to work with the nav element
+Remove the nav menu for now

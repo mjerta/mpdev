@@ -114,24 +114,23 @@ header {
   font-size: 1.6rem;
 }
 
-
 /* 
 ======================================================================
 1.2.1 - header - nav menu
 ======================================================================
 */
 nav ul {
-  position: absolute;
+  /* position: absolute;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
   gap: 1.375rem;
   width: 100vw;
-  height: 100vh;
+  height: 100vh; */
   list-style-type: none;
   z-index: 999;
-  background: rgb(186, 196, 186);
+  /* background: rgb(186, 196, 186); */
 }
 .nav-item {
   position: relative;
@@ -193,7 +192,6 @@ nav ul {
   }
 }
 
-
 .active {
   position: relative;
 }
@@ -252,7 +250,6 @@ nav ul {
   animation: animate-leftcol ease 1200ms forwards;
 }
 
-
 .right-col {
   /* flex: 1; */
   font-family: "Open Sans", sans-serif;
@@ -272,7 +269,6 @@ nav ul {
     transform: translateY(0);
   }
 }
-
 
 @keyframes animate-hero-text {
   0% {
@@ -534,7 +530,6 @@ nav ul {
     transform: translateY(-7px);
   }
 }
-
 
 /*
 ======================================================================

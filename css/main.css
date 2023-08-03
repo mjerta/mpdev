@@ -197,7 +197,7 @@ nav ul {
 }
 
 .active::before {
-  display: none;
+  /* display: none; */
   position: absolute;
   content: "";
   width: 55%;

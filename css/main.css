@@ -107,6 +107,7 @@ header {
   align-items: center;
   height: 9.375rem;
   /* border: 4px solid red; */
+  font-size: 16px;
 }
 
 .logo {
@@ -123,10 +124,11 @@ header {
 
 .hamburger-menu {
   position: absolute;
-  width: 50px;
-  height: 40px;
+  top: 4.5em;
+  right: 3.94em;
+  width: 2.9375em;
+  height: 1.65138em;
   background-color: red;
-  right: 20px;
 }
 
 nav ul {

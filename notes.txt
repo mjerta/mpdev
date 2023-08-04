@@ -1,5 +1,3 @@
-Added hamburger, change position & added styles
+Still in progress - add correct dimensions
 
-Added the hamburger button inside the header - not the nav
-Change the header menu to position relative
-Add styles and make hamburger-menu button absolute
+Add correct sizes to the width and height of the hamburger menu

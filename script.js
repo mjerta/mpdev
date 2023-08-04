@@ -122,11 +122,10 @@ function getDataAttribute(attribute) {
 }
 
 function toggleHamburgerMenu() {
-  const navBarDataSet = "data-nav";
-  data = getDataAttribute(navBarDataSet);
-  data.forEach((element) => {
-    const dataValue = element.getAttribute(navBarDataSet);
-    console.log(dataValue);
+  const placeHolder = "data-nav";
+  getData = getDataAttribute(placeHolder);
+  getData.forEach((element) => {
+    const dataValue = element.getAttribute(placeHolder);
   });
 }
 

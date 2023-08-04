@@ -1,5 +1,5 @@
-Added and remove in js, html & css 
+Turn hover state back on, fix function, remove navbar
 
-Added a data attributed to nav element in html
-Added somme function to work with the nav element
-Remove the nav menu for now
+For now turn back on the hover state of the nav
+Fixing up the function I need for the transition of mobile nav menu
+For now I remove the normal dekstop version of the nav bar

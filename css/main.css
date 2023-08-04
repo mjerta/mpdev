@@ -120,6 +120,7 @@ header {
 ======================================================================
 */
 nav ul {
+  display: none;
   /* position: absolute;
   top: 0;
   left: 0;
@@ -147,7 +148,7 @@ nav ul {
 */
 
 .animate::before {
-  display: none;
+  /* display: none; */
   position: absolute;
   content: "";
   height: 1px;
@@ -743,6 +744,8 @@ footer ul {
   html {
     font-size: clamp(8px, 1.25vw, 11px);
   }
+
+  /* Starting from here the normal nav menu comes in. */
 
   nav ul {
     list-style-type: none;

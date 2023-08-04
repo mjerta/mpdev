@@ -100,6 +100,7 @@ body {
 */
 
 header {
+  position: relative;
   width: 100;
   display: flex;
   justify-content: space-between;
@@ -119,6 +120,15 @@ header {
 1.2.1 - header - nav menu
 ======================================================================
 */
+
+.hamburger-menu {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  background-color: red;
+  right: 20px;
+}
+
 nav ul {
   display: none;
   /* position: absolute;

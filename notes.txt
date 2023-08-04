@@ -1,5 +1,5 @@
-Turn hover state back on, fix function, remove navbar
+Added hamburger, change position & added styles
 
-For now turn back on the hover state of the nav
-Fixing up the function I need for the transition of mobile nav menu
-For now I remove the normal dekstop version of the nav bar
+Added the hamburger button inside the header - not the nav
+Change the header menu to position relative
+Add styles and make hamburger-menu button absolute

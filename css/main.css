@@ -107,7 +107,7 @@ header {
   align-items: center;
   height: 9.375rem;
   /* border: 4px solid red; */
-  font-size: 16px;
+  /* font-size: 16px; */
 }
 
 .logo {
@@ -122,13 +122,28 @@ header {
 ======================================================================
 */
 
+/* because of the font-size has been reduced to 8 px up to 300 the
+font size is devided by to 2 and multiply by 2: 16-8px. This way the sizing will be the same as in figma */
 .hamburger-menu {
+  display: flex;
   position: absolute;
-  top: 4.5em;
-  right: 3.94em;
-  width: 2.9375em;
-  height: 1.65138em;
-  background-color: red;
+  top: calc(4.5rem / 2);
+  right: calc(3.94rem / 2);
+  width: calc(2.9375rem * 2);
+  height: calc(1.65138rem * 2);
+  justify-content: space-between;
+  flex-direction: column;
+}
+.line {
+  height: 3.81082px;
+  border-radius: 50px;
+  width: 100%;
+  background: black;
+}
+
+.line2 {
+  width: 33.31px;
+  align-self: flex-end;
 }
 
 nav ul {
@@ -758,6 +773,10 @@ footer ul {
   }
 
   /* Starting from here the normal nav menu comes in. */
+
+  .hamburger-menu {
+    display: none;
+  }
 
   nav ul {
     list-style-type: none;

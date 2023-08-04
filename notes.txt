@@ -1,3 +1,5 @@
-Still in progress - add correct dimensions
+Added, disabled and created in CSS
 
-Add correct sizes to the width and height of the hamburger menu
+Added a calc function to the sizing of the hamburger menu based on the sizing of figma
+Disable the hamburger-menu at min-width 640px
+Create the lines in css

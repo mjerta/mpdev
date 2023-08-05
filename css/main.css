@@ -122,32 +122,53 @@ header {
 ======================================================================
 */
 
-/* because of the font-size has been reduced to 8 px up to 300 the
-font size is devided by to 2 and multiply by 2: 16-8px. This way the sizing will be the same as in figma */
+/* the hamburger is based of the 500px design so the font-size is set on 11px.
+Based on that i could calculate te dimension. Weird enough for top and right
+it seems to behave different */
 .hamburger-menu {
+  position: relative;
   display: flex;
-  position: absolute;
-  top: calc(4.5rem / 2);
-  right: calc(3.94rem / 2);
-  width: calc(2.9375rem * 2);
-  height: calc(1.65138rem * 2);
+  /* position: absolute; */
+  /* top: calc(4.5rem); */
+  margin-right: calc(3.94rem);
+  width: calc(4.27rem);
+  height: calc(2.401rem);
   justify-content: space-between;
   flex-direction: column;
+  cursor: pointer;
 }
 .line {
-  height: 3.81082px;
-  border-radius: 50px;
+  height: 0.346rem;
+  border-radius: 3rem;
   width: 100%;
   background: black;
 }
 
 .line2 {
-  width: 33.31px;
+  width: calc(3.03rem);
   align-self: flex-end;
 }
 
-nav ul {
+.nav-image-moon {
+  position: absolute;
+  content: "";
+  top: -2rem;
+  right: -1rem;
+  width: calc(3.2505rem);
+  height: calc(3.2505rem);
+  /* background-color: rgb(84, 167, 84); */
+  background-image: url("../images/moon.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+nav {
   display: none;
+}
+
+nav ul {
+  /* display: none; */
   /* position: absolute;
   top: 0;
   left: 0;

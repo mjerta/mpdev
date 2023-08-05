@@ -1,5 +1,6 @@
-Added, disabled and created in CSS
+Adding and fixing hamburger menu - still in progress
 
-Added a calc function to the sizing of the hamburger menu based on the sizing of figma
-Disable the hamburger-menu at min-width 640px
-Create the lines in css
+
+Added pointer to hamburger menu
+Adding the moon behind the hamburger button in css and html
+Fix sizing for the lines and position as well for the moon and the lines

@@ -111,6 +111,7 @@ header {
 }
 
 .logo {
+  margin-left: 2rem;
   text-decoration: none;
   color: black;
   font-size: 1.6rem;

@@ -118,6 +118,10 @@ addHoverStateCards();
 
 function getDataAttribute(attribute) {
   const el = document.querySelectorAll(`[${attribute}]`);
+  const test = Array.from(el);
+  const element = test.map((element, index) => {
+    console.log(element.nodeName);
+  });
   return el;
 }
 

@@ -1,3 +1,4 @@
-Move the logo & Still in progress
+Added some js
 
-Move up the logo a a bit to the right
+Added some functions - for selecting
+Add some data attributes for the hamburger elements

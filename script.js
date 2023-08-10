@@ -116,21 +116,34 @@ const addHoverStateCards = () => {
 
 addHoverStateCards();
 
-function getDataAttribute(attribute) {
-  const el = document.querySelectorAll(`[${attribute}]`);
-  const test = Array.from(el);
-  const element = test.map((element, index) => {
-    console.log(element.nodeName);
-  });
-  return el;
+function getDataAttributes(attribute) {
+  const nodeList = document.querySelectorAll(`[${attribute}]`);
+  const arr = Array.from(nodeList);
+  return arr;
 }
 
 function toggleHamburgerMenu() {
   const placeHolder = "data-nav";
-  getData = getDataAttribute(placeHolder);
+  getData = getDataAttributes(placeHolder);
   getData.forEach((element) => {
     const dataValue = element.getAttribute(placeHolder);
   });
 }
 
-toggleHamburgerMenu();
+function enableAnimation(target) {
+  if(target == "data-nav") {
+    const setTarget = getDataAttributes(target);
+
+    const runTarget = setTarget.find(item => item.dataset.nav == "hamburger-menu")
+    console.log(runTarget)
+    runTarget.addEventListener("click", (e)=> {
+      console.log(e.target)
+      
+
+
+    });
+  }
+}
+enableAnimation("data-nav");
+
+

@@ -1,4 +1,5 @@
-Added some js
+Addes js & CSS
 
-Added some functions - for selecting
-Add some data attributes for the hamburger elements
+Added some logic to js
+Added animation function
+Add css classed with keyframes

@@ -130,20 +130,23 @@ function toggleHamburgerMenu() {
   });
 }
 
-function arrayContains(arr, str) {
-  return arr.some((item) => item.i);
-}
-
 function enableAnimation(target) {
-  if (target == "data-nav") {
-    const setTarget = String(getDataAttributes(target));
-    console.log(arrayContains(setTarget, "hamburger-menu"));
+  const setTarget = getDataAttributes(target);
+  if (setTarget) {
     const runTarget = setTarget.find(
       (item) => item.dataset.nav == "hamburger-menu"
     );
-    runTarget.addEventListener("click", (e) => {
-      console.log(e.target);
+    runTarget.addEventListener("click", () => {
+
+        setTarget.forEach((element) =>  {
+          if(runTarget != element) {
+            console.log(element)
+            element.classList.add("animation")
+          }
+        });
     });
   }
 }
+
+
 enableAnimation("data-nav");

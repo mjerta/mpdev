@@ -140,28 +140,23 @@ function enableAnimation(target) {
     runTarget.addEventListener("click", () => {
       isActivated = !isActivated;
 
-        setTarget.forEach((element) =>  {
-          if(runTarget != element) {
-
-            element.classList.add("animation");
-            if (isActivated) {
-              console.log("is activated");
-              element.style.animationDirection = "normal";
-              element.style.animationPlayState = "running";
-
-
-            } else {
-              element.style.animationDirection = "normal";
-              element.style.animationPlayState = "running";
-
-            }
-
-
+      setTarget.forEach((element) => {
+        if (runTarget != element) {
+          if (isActivated) {
+            element.classList.remove("animation-out");
+            element.classList.add("animation-in");
+          } else {
+            element.classList.remove("animation-in");
+            element.classList.add("animation-out");
           }
-        });
+
+          element.addEventListener("animationend", () => {
+            console.log("the aniimation has ended");
+          });
+        }
+      });
     });
   }
 }
-
 
 enableAnimation("data-nav");

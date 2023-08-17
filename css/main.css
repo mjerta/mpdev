@@ -150,6 +150,13 @@ it seems to behave different */
   align-self: flex-end;
 }
 
+.line2.animation-in {
+  animation: line2-in ease 1s forwards;
+}
+.line2.animation-out {
+  animation: line2-out ease 4s;
+}
+
 .nav-image-moon {
   position: absolute;
   content: "";
@@ -190,28 +197,29 @@ nav ul {
   font-size: 1.1rem;
 }
 
-
-/* animation starts here for hamburger menu */
-
-
-.line2.animation {
-
-  animation: line2 400ms ease forwards;
-}
-
-
-@keyframes line2 { 
-
-
-  0%  {
+@keyframes line2-in {
+  0% {
     transform: translateY(0);
   }
-  100% {
-    transform: translateX(-15rem);
+  25% {
+    transform: translateX(-5rem);
   }
-
+  50% {
+    transform: translateX(-10rem) rotate(45deg);
+  }
+  100% {
+    transform: translateX(-15rem) rotate(0deg);
+  }
 }
 
+@keyframes line2-out {
+  0% {
+    transform: translateX(-15rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 /*
 ======================================================================

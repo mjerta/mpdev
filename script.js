@@ -136,12 +136,27 @@ function enableAnimation(target) {
     const runTarget = setTarget.find(
       (item) => item.dataset.nav == "hamburger-menu"
     );
+    let isActivated = false;
     runTarget.addEventListener("click", () => {
+      isActivated = !isActivated;
 
         setTarget.forEach((element) =>  {
           if(runTarget != element) {
-            console.log(element)
-            element.classList.add("animation")
+
+            element.classList.add("animation");
+            if (isActivated) {
+              console.log("is activated");
+              element.style.animationDirection = "normal";
+              element.style.animationPlayState = "running";
+
+
+            } else {
+              element.style.animationDirection = "normal";
+              element.style.animationPlayState = "running";
+
+            }
+
+
           }
         });
     });

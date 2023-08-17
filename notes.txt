@@ -1,5 +1,4 @@
-Addes js & CSS
+In progress
 
-Added some logic to js
-Added animation function
-Add css classed with keyframes
+Add animation for middle line
+Add check to see if animation is running and if what direction

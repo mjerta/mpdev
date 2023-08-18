@@ -1,4 +1,2 @@
-In progress
+in progress
 
-Add animation for middle line
-Add check to see if animation is running and if what direction

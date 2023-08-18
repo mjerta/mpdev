@@ -145,10 +145,18 @@ it seems to behave different */
   background: black;
 }
 
+@keyframes line2-in {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateX(-15rem);
+  }
+}
 .line2 {
   width: calc(3.03rem);
   align-self: flex-end;
-  animation: line2-in ease 1s forwards paused;
+  animation: line2-in 1s paused both;
 }
 
 .nav-image-moon {
@@ -191,20 +199,6 @@ nav ul {
   font-size: 1.1rem;
 }
 
-@keyframes line2-in {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateX(-5rem);
-  }
-  50% {
-    transform: translateX(-10rem) rotate(45deg);
-  }
-  100% {
-    transform: translateX(-15rem) rotate(0deg);
-  }
-}
 /*
 ======================================================================
 1.2.1.1 - header - nav menu - transition

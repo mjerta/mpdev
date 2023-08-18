@@ -148,13 +148,7 @@ it seems to behave different */
 .line2 {
   width: calc(3.03rem);
   align-self: flex-end;
-}
-
-.line2.animation-in {
-  animation: line2-in ease 1s forwards;
-}
-.line2.animation-out {
-  animation: line2-out ease 4s;
+  animation: line2-in ease 1s forwards paused;
 }
 
 .nav-image-moon {
@@ -211,16 +205,6 @@ nav ul {
     transform: translateX(-15rem) rotate(0deg);
   }
 }
-
-@keyframes line2-out {
-  0% {
-    transform: translateX(-15rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
 /*
 ======================================================================
 1.2.1.1 - header - nav menu - transition

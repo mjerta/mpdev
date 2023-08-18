@@ -141,18 +141,30 @@ function enableAnimation(target) {
       isActivated = !isActivated;
 
       setTarget.forEach((element) => {
-        if (runTarget != element) {
-          if (isActivated) {
-            element.classList.remove("animation-out");
-            element.classList.add("animation-in");
-          } else {
-            element.classList.remove("animation-in");
-            element.classList.add("animation-out");
+        const computedStyles = window.getComputedStyle(element);
+        const animationValue = computedStyles.animation;
+        const animationNames = animationValue.split(" ");
+        const saveNameAnimation = () => {
+          if (animationNames[animationNames.length - 1] != "none") {
+            return animationNames[animationNames.length - 1];
           }
-
-          element.addEventListener("animationend", () => {
-            console.log("the aniimation has ended");
-          });
+        };
+        let constValue = saveNameAnimation();
+        if (constValue) {
+          console.log(constValue);
+          element.style.animation = "none";
+          setTimeout(() => {
+            element.style.animation = `${constValue} 400ms ease forwards paused`;
+            if (runTarget != element) {
+              if (isActivated) {
+                element.style.animationDirection = "normal";
+                element.style.animationPlayState = "running";
+              } else {
+                element.style.animationDirection = "reverse";
+                element.style.animationPlayState = "running";
+              }
+            }
+          }, 10);
         }
       });
     });

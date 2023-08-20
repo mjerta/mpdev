@@ -138,54 +138,15 @@ function enableAnimation(target) {
     );
     let reverse = false;
     runTarget.addEventListener("click", () => {
-      // isActivated = !isActivated;
-
+      reverse = !reverse;
       setTarget.forEach((element) => {
-        const computedStyles = window.getComputedStyle(element);
-        // const animationValue = computedStyles.animation;
-        // const animationName = animationValue.split(" ");
-        // const saveNameAnimation = () => {
-        //   if (animationName[animationName.length - 1] != "none") {
-        //     return animationName[animationName.length - 1];
-        //   }
-        // };
-        // let selectedAnimationName = saveNameAnimation();
-        let selectedAnimation = computedStyles.animation;
-
-        console.log(element.style);
-        console.log(selectedAnimation);
-        // if (selectedAnimationName) {
-
-        //clear the animation
-
-
-          element.style.animation = "none";
-
-          // You need to call this at next draw call to make the animation take effects
-          setTimeout(() => {
-            // Restore the animation
-            element.style.animation = selectedAnimation;
-            // Make the animation running
-            element.style.animationPlayState = 'running';
-            // Set the animation direction by current state
-            element.style.animationDirection = reverse ? 'reverse' : 'normal';
-            // Flip the state
-            reverse = !reverse;
-            // console.log(element.style.animation)
-            // element.style.animation = `${selectedAnimationName} 400ms ease forwards paused`;
-            // if (runTarget != element) {
-
-              
-              // if (isActivated) {
-              //   element.style.animationDirection = "normal";
-              //   element.style.animationPlayState = "running";
-              // } else {
-              //   element.style.animationDirection = "reverse";
-              //   element.style.animationPlayState = "running";
-              // }
-            // }
-          }, 0);
-        // }
+        if (reverse) {
+          element.classList.remove("animation-reverse");
+          element.classList.add("animation");
+        } else {
+          element.classList.remove("animation");
+          element.classList.add("animation-reverse");
+        }
       });
     });
   }

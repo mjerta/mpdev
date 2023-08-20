@@ -145,7 +145,7 @@ it seems to behave different */
   background: black;
 }
 
-@keyframes line2-in {
+@keyframes line2 {
   0% {
     transform: translateY(0);
   }
@@ -153,10 +153,23 @@ it seems to behave different */
     transform: translateX(-15rem);
   }
 }
+@keyframes line2-reverse {
+  0% {
+    transform: translateX(-15rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .line2 {
   width: calc(3.03rem);
   align-self: flex-end;
-  animation: line2-in 1s paused both;
+}
+.line2.animation {
+  animation: line2 1s forwards;
+}
+.line2.animation-reverse {
+  animation: line2-reverse 1s forwards;
 }
 
 .nav-image-moon {

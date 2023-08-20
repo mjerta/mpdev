@@ -63,6 +63,7 @@ body,
 html {
   height: auto;
   font-size: 8px;
+  overflow: hidden;
 }
 
 body {
@@ -137,39 +138,19 @@ it seems to behave different */
   justify-content: space-between;
   flex-direction: column;
   cursor: pointer;
+  z-index: 999;
 }
 .line {
   height: 0.346rem;
   border-radius: 3rem;
   width: 100%;
   background: black;
+  transform-origin: center;
 }
 
-@keyframes line2 {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateX(-15rem);
-  }
-}
-@keyframes line2-reverse {
-  0% {
-    transform: translateX(-15rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 .line2 {
   width: calc(3.03rem);
   align-self: flex-end;
-}
-.line2.animation {
-  animation: line2 1s forwards;
-}
-.line2.animation-reverse {
-  animation: line2-reverse 1s forwards;
 }
 
 .nav-image-moon {
@@ -180,7 +161,7 @@ it seems to behave different */
   width: calc(3.2505rem);
   height: calc(3.2505rem);
   /* background-color: rgb(84, 167, 84); */
-  background-image: url("../images/moon.svg");
+  background-image: url("../images/test.svg");
   background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
@@ -212,6 +193,19 @@ nav ul {
   font-size: 1.1rem;
 }
 
+.active {
+  position: relative;
+}
+
+.active::before {
+  /* display: none; */
+  position: absolute;
+  content: "";
+  width: 55%;
+  height: 1px;
+  border-bottom: 2px solid black;
+  bottom: -6px;
+}
 /*
 ======================================================================
 1.2.1.1 - header - nav menu - transition
@@ -240,6 +234,53 @@ nav ul {
   animation: grow 800ms forwards;
 }
 
+.nav-image-moon.animation {
+  animation: nav-image-moon 400ms forwards;
+}
+.nav-image-moon.animation-reverse {
+  animation: nav-image-moon-reverse 400ms forwards;
+}
+
+.line1.animation {
+  animation: line1 400ms forwards;
+}
+.line1.animation-reverse {
+  animation: line1-reverse 400ms forwards;
+}
+
+.line2.animation {
+  animation: line2 400ms forwards;
+}
+.line2.animation-reverse {
+  animation: line2-reverse 400ms forwards;
+  transform-origin: center;
+}
+
+.line3.animation {
+  animation: line3 400ms forwards;
+}
+.line3.animation-reverse {
+  animation: line3-reverse 400ms forwards;
+}
+
+@keyframes nav-image-moon {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(20);
+  }
+}
+@keyframes nav-image-moon-reverse {
+  0% {
+    transform: scale(20);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes grow {
   0% {
     width: 0%;
@@ -264,18 +305,67 @@ nav ul {
   }
 }
 
-.active {
-  position: relative;
+@keyframes line1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateY(1rem) rotate(45deg) scale(0.7);
+  }
+}
+@keyframes line1-reverse {
+  0% {
+    transform: translateY(1rem) rotate(45deg) scale(0.7);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes line3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translateY(-1rem) rotate(-45deg) scale(0.7);
+  }
+}
+@keyframes line3-reverse {
+  0% {
+    transform: translateY(-1rem) rotate(-45deg) scale(0.7);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.active::before {
-  /* display: none; */
-  position: absolute;
-  content: "";
-  width: 55%;
-  height: 1px;
-  border-bottom: 2px solid black;
-  bottom: -6px;
+@keyframes line2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateX(-15rem);
+    width: 0.346rem;
+  }
+  100% {
+    transform: translate(-15rem, 15rem);
+    width: 0.346rem;
+    height: 3.03rem;
+  }
+}
+@keyframes line2-reverse {
+  0% {
+    transform: translate(-15rem, 15rem);
+    width: 0.346rem;
+    height: 3.03rem;
+  }
+
+  50% {
+    transform: translateX(-15rem);
+    width: 0.346rem;
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* 

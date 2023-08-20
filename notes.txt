@@ -1,2 +1,5 @@
-in progress
+Adding all transition - still in progress
 
+Add prototype transition for line2
+Add prototype transition for the moon image
+Add prototype transition for line1 & line3

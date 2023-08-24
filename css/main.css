@@ -154,6 +154,7 @@ it seems to behave different */
 }
 
 .nav-image-moon {
+  display: none;
   position: absolute;
   content: "";
   top: -2rem;
@@ -235,7 +236,7 @@ nav ul {
 }
 
 .nav-image-moon.animation {
-  animation: nav-image-moon 400ms forwards;
+  animation: nav-image-moon 5s forwards;
 }
 .nav-image-moon.animation-reverse {
   animation: nav-image-moon-reverse 400ms forwards;
@@ -260,7 +261,30 @@ nav ul {
   animation: line3 400ms forwards;
 }
 .line3.animation-reverse {
-  animation: line3-reverse 400ms forwards;
+  animation: line3-reverse 400ms forward;
+}
+
+[data-nav="sun"].animation {
+  animation: sun 5s forwards linear;
+}
+
+@keyframes sun {
+  0% {
+  }
+
+  15% {
+    transform: scale(0.5) translate(-10rem, -10rem);
+  }
+
+  50% {
+    transform: scale(0.2) translate(80rem, -30rem);
+  }
+  75% {
+    transform: scale(0.2) translate(80rem, 150rem);
+  }
+  100% {
+    transform: scale(0.2) translate(0rem, 50rem);
+  }
 }
 
 @keyframes nav-image-moon {

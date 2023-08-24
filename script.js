@@ -114,22 +114,6 @@ const addHoverStateCards = () => {
   }); //end of foreach
 };
 
-addHoverStateCards();
-
-function getDataAttributes(attribute) {
-  const nodeList = document.querySelectorAll(`[${attribute}]`);
-  const arr = Array.from(nodeList);
-  return arr;
-}
-
-function toggleHamburgerMenu() {
-  const placeHolder = "data-nav";
-  getData = getDataAttributes(placeHolder);
-  getData.forEach((element) => {
-    const dataValue = element.getAttribute(placeHolder);
-  });
-}
-
 function enableAnimation(target) {
   const setTarget = getDataAttributes(target);
   if (setTarget) {
@@ -152,4 +136,54 @@ function enableAnimation(target) {
   }
 }
 
-enableAnimation("data-nav");
+// enableAnimation("data-nav");
+
+addHoverStateCards();
+
+function decidetoSelectElements() {
+  const firstPartDataClick = "data-";
+  const secondPartDataClick = "click";
+  const dataClick = firstPartDataClick + secondPartDataClick;
+  // console.log(dataClick);
+  return new Promise((resolve, reject) => {
+    resolve({ dataClick, secondPartDataClick });
+  });
+}
+function getDataAttributes(attribute) {
+  const nodeList = document.querySelectorAll(`[${attribute.dataClick}]`);
+  return new Promise((resolve, reject) => {
+    resolve({ nodeList, attribute });
+  });
+}
+
+function selectAllElementsFromArray(object) {
+  const checkAgainst = object.attribute.secondPartDataClick;
+  object.nodeList.forEach((element) => {
+    const otherDataAttribute = Object.keys(element.dataset);
+
+    // console.log(otherDataAttribute);
+    otherDataAttribute.forEach((element) => {
+      if (element != checkAgainst) {
+        console.log(element);
+      }
+    });
+  });
+
+  return new Promise((resolve, reject) => {
+    resolve("test");
+  });
+}
+
+function onSucces(data) {
+  console.log(data);
+  console.log(`this is the data: ${data}`);
+}
+
+function onFail(data) {
+  console.log(`something went wrong ${data}`);
+}
+decidetoSelectElements()
+  .then(getDataAttributes)
+  .then(selectAllElementsFromArray)
+  .then(onSucces)
+  .catch(onFail);

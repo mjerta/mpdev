@@ -157,51 +157,39 @@ function decidetoSelectElements() {
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-function getDataAttributes(attribute) {
-  const nodeList = document.querySelectorAll(`[${attribute.dataClick}]`);
-  return new Promise((resolve, reject) => {
-    resolve({ nodeList, attribute });
-  });
+function getDataAttributes() {
+  const attribute = "data-click";
+  const nodeList = document.querySelectorAll(`[${attribute}]`);
+  return nodeList;
 }
-function selectAllActionElements(object) {
-  const checkAgainst = object.attribute.secondPartDataClick;
-  let otherDataAttributes = [];
-  object.nodeList.forEach((element) => {
-    const checkOtherDataAttributes = Object.keys(element.dataset);
 
-    // console.log(otherDataAttribute);
-    checkOtherDataAttributes.forEach((element) => {
-      if (element != checkAgainst) {
-        otherDataAttributes.push(element);
-        // console.log(otherDataAttributes);
-      }
-    });
+
+function addAnimation(event) {
+
+  let  selectOtherElements = Object.keys(event.target.dataset);
+  const nodeList = document.querySelectorAll(`[data-${selectOtherElements[1]}]`);
+  nodeList.forEach((element) => {
+
+    console.log(element)
+    // add the specifik animation
+  })
+  
+}
+
+function enableAnimation(callback) {
+  const clickElements = callback();
+  clickElements.forEach(element => {
+    // console.log(element)
+    element.addEventListener('click', addAnimation)
+    console.log("breack")
+    element.click();
   });
-  return new Promise((resolve, reject) => {
-    resolve(otherDataAttributes);
-  });
+
+
 }
-function setupTheAnimation(otherDataAttribute) {
-  console.log(otherDataAttribute);
-  let arr = [];
-  otherDataAttribute.forEach((result) => {
-    console.log(result);
-    arr.push(document.querySelectorAll(`[data-${result}]`));
-  });
-}
-function onSucces(data) {
-  // console.log(data);
-  console.log(`this is the data: ${data}`);
-}
-function onFail(data) {
-  console.log(`something went wrong ${data}`);
-}
-decidetoSelectElements()
-  .then(getDataAttributes)
-  .then(selectAllActionElements)
-  .then(setupTheAnimation)
-  .then(onSucces)
-  .catch(onFail);
+
+enableAnimation(getDataAttributes);
+
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

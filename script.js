@@ -149,41 +149,61 @@ function decidetoSelectElements() {
     resolve({ dataClick, secondPartDataClick });
   });
 }
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 function getDataAttributes(attribute) {
   const nodeList = document.querySelectorAll(`[${attribute.dataClick}]`);
   return new Promise((resolve, reject) => {
     resolve({ nodeList, attribute });
   });
 }
-
-function selectAllElementsFromArray(object) {
+function selectAllActionElements(object) {
   const checkAgainst = object.attribute.secondPartDataClick;
+  let otherDataAttributes = [];
   object.nodeList.forEach((element) => {
-    const otherDataAttribute = Object.keys(element.dataset);
+    const checkOtherDataAttributes = Object.keys(element.dataset);
 
     // console.log(otherDataAttribute);
-    otherDataAttribute.forEach((element) => {
+    checkOtherDataAttributes.forEach((element) => {
       if (element != checkAgainst) {
-        console.log(element);
+        otherDataAttributes.push(element);
+        // console.log(otherDataAttributes);
       }
     });
   });
-
   return new Promise((resolve, reject) => {
-    resolve("test");
+    resolve(otherDataAttributes);
   });
 }
-
+function setupTheAnimation(otherDataAttribute) {
+  console.log(otherDataAttribute);
+  let arr = [];
+  otherDataAttribute.forEach((result) => {
+    console.log(result);
+    arr.push(document.querySelectorAll(`[data-${result}]`));
+  });
+}
 function onSucces(data) {
-  console.log(data);
+  // console.log(data);
   console.log(`this is the data: ${data}`);
 }
-
 function onFail(data) {
   console.log(`something went wrong ${data}`);
 }
 decidetoSelectElements()
   .then(getDataAttributes)
-  .then(selectAllElementsFromArray)
+  .then(selectAllActionElements)
+  .then(setupTheAnimation)
   .then(onSucces)
   .catch(onFail);
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////

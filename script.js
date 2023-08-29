@@ -140,54 +140,47 @@ function enableAnimation(target) {
 
 addHoverStateCards();
 
-function decidetoSelectElements() {
-  const firstPartDataClick = "data-";
-  const secondPartDataClick = "click";
-  const dataClick = firstPartDataClick + secondPartDataClick;
-  // console.log(dataClick);
-  return new Promise((resolve, reject) => {
-    resolve({ dataClick, secondPartDataClick });
-  });
-}
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
 function getDataAttributes() {
   const attribute = "data-click";
   const nodeList = document.querySelectorAll(`[${attribute}]`);
-  return nodeList;
+  return { nodeList, attribute };
 }
 
-
-function addAnimation(event) {
-
-  let  selectOtherElements = Object.keys(event.target.dataset);
-  const nodeList = document.querySelectorAll(`[data-${selectOtherElements[1]}]`);
+function addAnimation(attributeValue, event) {
+  let selectOtherElements = event.target.getAttribute(attributeValue);
+  const nodeList = document.querySelectorAll(`[data-${selectOtherElements}]`);
   nodeList.forEach((element) => {
+    const option = element.getAttribute(`data-${selectOtherElements}`);
 
-    console.log(element)
-    // add the specifik animation
-  })
-  
+    //this is where i can put all the animation and also set a default
+    switch (option) {
+      case "line1":
+        console.log(`this is ${option}`);
+        break;
+      case "ul":
+        console.log(`this is ${option}`);
+        break;
+    }
+  });
 }
 
 function enableAnimation(callback) {
   const clickElements = callback();
-  clickElements.forEach(element => {
-    // console.log(element)
-    element.addEventListener('click', addAnimation)
-    console.log("breack")
+  clickElements.nodeList.forEach((element) => {
+    element.addEventListener("click", (event) =>
+      addAnimation(clickElements.attribute, event)
+    );
     element.click();
   });
-
-
 }
-
 enableAnimation(getDataAttributes);
 
 //////////////////////////////////////////////////////////////////////

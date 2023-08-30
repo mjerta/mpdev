@@ -154,7 +154,7 @@ it seems to behave different */
 }
 
 .nav-image-moon {
-  display: none;
+  /* display: none; */
   position: absolute;
   content: "";
   top: -2rem;

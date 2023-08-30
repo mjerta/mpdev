@@ -148,18 +148,26 @@ addHoverStateCards();
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
-function getDataAttributes() {
-  const attribute = "data-click";
-  const nodeList = document.querySelectorAll(`[${attribute}]`);
-  return { nodeList, attribute };
+function getDataAttributes(actionAttribute) {
+  if (actionAttribute) {
+    const nodeList = document.querySelectorAll(`[${actionAttribute}]`);
+    if (nodeList.length != 0) {
+      return { nodeList, actionAttribute };
+    } else {
+      console.log("This attribute does not exist");
+    }
+  }
 }
 
 function addAnimation(attributeValue, event) {
+  // console.log(attributeValue, event);
   let selectOtherElements = event.target.getAttribute(attributeValue);
   const nodeList = document.querySelectorAll(`[data-${selectOtherElements}]`);
   nodeList.forEach((element) => {
     const option = element.getAttribute(`data-${selectOtherElements}`);
 
+    // to see all options
+    // console.log(option);
     //this is where i can put all the animation and also set a default
     switch (option) {
       case "line1":
@@ -173,13 +181,19 @@ function addAnimation(attributeValue, event) {
 }
 
 function enableAnimation(callback) {
-  const clickElements = callback();
-  clickElements.nodeList.forEach((element) => {
-    element.addEventListener("click", (event) =>
-      addAnimation(clickElements.attribute, event)
-    );
-    element.click();
-  });
+  //defining all the kind of attributes that would represent an action or default browser loadinbg
+  const clickElements = callback("data-click");
+
+  if (clickElements) {
+    // console.log(clickElements);
+    clickElements.nodeList.forEach((element) => {
+      // console.log(element);
+      element.addEventListener("click", (event) =>
+        addAnimation(clickElements.actionAttribute, event)
+      );
+      element.click();
+    });
+  }
 }
 enableAnimation(getDataAttributes);
 

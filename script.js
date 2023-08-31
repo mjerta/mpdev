@@ -171,7 +171,22 @@ function addAnimation(attributeValue, event) {
     //this is where i can put all the animation and also set a default
     switch (option) {
       case "line1":
+        console.log(element);
         console.log(`this is ${option}`);
+
+
+        const keyFrames = [
+          { transform: "translateX(0)", offset: 0 },
+          { transform: "translateX(-100px)", offset: 1 },
+        ]
+
+        const options = {
+          duration: 1000, // Animation duration in milliseconds
+          easing: "ease-in-out", // Easing function
+          fill: "forwards", // Maintain the end state of the animation
+        };
+
+        element.animate(keyFrames, options);
         break;
       case "ul":
         console.log(`this is ${option}`);
@@ -191,7 +206,7 @@ function enableAnimation(callback) {
       element.addEventListener("click", (event) =>
         addAnimation(clickElements.actionAttribute, event)
       );
-      element.click();
+      // element.click();
     });
   }
 }

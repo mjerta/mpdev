@@ -159,54 +159,69 @@ function getDataAttributes(actionAttribute) {
   }
 }
 
-function addAnimation(attributeValue, event) {
-  // console.log(attributeValue, event);
-  let selectOtherElements = event.target.getAttribute(attributeValue);
+function addAnimation(mainElement, attributeValue, checker) {
+  let selectOtherElements = mainElement.getAttribute(attributeValue);
   const nodeList = document.querySelectorAll(`[data-${selectOtherElements}]`);
   nodeList.forEach((element) => {
     const option = element.getAttribute(`data-${selectOtherElements}`);
 
     // to see all options
-    // console.log(option);
     //this is where i can put all the animation and also set a default
-    switch (option) {
-      case "line1":
-        console.log(element);
-        console.log(`this is ${option}`);
 
+    if (mainElement) {
+      const options = {};
 
-        const keyFrames = [
-          { transform: "translateX(0)", offset: 0 },
-          { transform: "translateX(-100px)", offset: 1 },
-        ]
-
-        const options = {
-          duration: 1000, // Animation duration in milliseconds
-          easing: "ease-in-out", // Easing function
-          fill: "forwards", // Maintain the end state of the animation
-        };
-
-        element.animate(keyFrames, options);
-        break;
-      case "ul":
-        console.log(`this is ${option}`);
-        break;
+      if (checker) {
+        options.direction = "normal";
+      } else {
+        options.direction = "reverse";
+      }
+      switch (option) {
+        case "line2":
+          const keyFrames = [
+            {
+              transform: "translateX(0)",
+              width: "33px",
+              height: "3.8px",
+              offset: 0,
+            },
+            {
+              transform: "translateX(-100px)",
+              width: "3.8px",
+              height: "3.8px",
+              offset: 0.5,
+            },
+            {
+              transform: "translateY(100px) translateX(-100px)",
+              width: "3.8px",
+              height: "33px",
+              offset: 1,
+            },
+          ];
+          options.duration = 400;
+          options.easing = "linear";
+          options.fill = "forwards";
+          element.animate(keyFrames, options);
+          break;
+        case "ul":
+          break;
+      }
     }
   });
 }
 
 function enableAnimation(callback) {
+  let checker = false;
   //defining all the kind of attributes that would represent an action or default browser loadinbg
   const clickElements = callback("data-click");
-
   if (clickElements) {
-    // console.log(clickElements);
-    clickElements.nodeList.forEach((element) => {
-      // console.log(element);
-      element.addEventListener("click", (event) =>
-        addAnimation(clickElements.actionAttribute, event)
-      );
+    clickElements.nodeList.forEach((mainElement) => {
+      mainElement.addEventListener("click", () => {
+        checker = !checker;
+        addAnimation(mainElement, clickElements.actionAttribute, checker);
+      });
       // element.click();
+      checker = !checker;
     });
   }
 }

@@ -166,10 +166,13 @@ function addAnimation(mainElement, attributeValue, checker) {
     const option = element.getAttribute(`data-${selectOtherElements}`);
 
     // to see all options
+    console.log(option);
+
     //this is where i can put all the animation and also set a default
 
     if (mainElement) {
       const options = {};
+      let keyFrames;
 
       if (checker) {
         options.direction = "normal";
@@ -178,7 +181,7 @@ function addAnimation(mainElement, attributeValue, checker) {
       }
       switch (option) {
         case "line2":
-          const keyFrames = [
+          keyFrames = [
             {
               transform: "translateX(0)",
               width: "33px",
@@ -199,11 +202,39 @@ function addAnimation(mainElement, attributeValue, checker) {
             },
           ];
           options.duration = 400;
-          options.easing = "linear";
           options.fill = "forwards";
+          options.easing = "linear";
           element.animate(keyFrames, options);
           break;
-        case "ul":
+
+        case "nav-image-moon":
+          console.log("test");
+
+          keyFrames = [
+            {
+              transform: "translate(-0px, 0)",
+              right: "2.5rem",
+              top: "1.5rem",
+              // left: 0,
+              width: "3.2505rem",
+              height: "3.2505rem",
+              offset: 0,
+            },
+            {
+              // transform: "translate(-50%,0)",
+              right: "calc(50% - 12rem)",
+              top: "9.7rem",
+              width: "24rem",
+              height: "24rem",
+              offset: 1,
+            },
+          ];
+
+          options.duration = 400;
+          option.easing - "linear";
+          options.fill = "forwards";
+
+          element.animate(keyFrames, options);
           break;
       }
     }

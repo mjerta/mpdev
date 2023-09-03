@@ -157,15 +157,15 @@ it seems to behave different */
   /* display: none; */
   position: absolute;
   content: "";
-  top: -2rem;
-  right: -1rem;
+  top: 1.5rem;
+  right: 2.5rem;
   width: calc(3.2505rem);
   height: calc(3.2505rem);
   /* background-color: rgb(84, 167, 84); */
   background-image: url("../images/test.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 1;
 }
 
 nav {

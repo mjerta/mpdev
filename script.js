@@ -189,13 +189,13 @@ function addAnimation(mainElement, attributeValue, checker) {
               offset: 0,
             },
             {
-              transform: "translateX(-100px)",
+              transform: "translateX(-200px)",
               width: "3.8px",
               height: "3.8px",
               offset: 0.5,
             },
             {
-              transform: "translateY(100px) translateX(-100px)",
+              transform: "translateY(100px) translateX(-200px)",
               width: "3.8px",
               height: "33px",
               offset: 1,
@@ -218,6 +218,7 @@ function addAnimation(mainElement, attributeValue, checker) {
               // left: 0,
               width: "3.2505rem",
               height: "3.2505rem",
+              fontSize: "2px",
               offset: 0,
             },
             {
@@ -226,6 +227,7 @@ function addAnimation(mainElement, attributeValue, checker) {
               top: "9.7rem",
               width: "24rem",
               height: "24rem",
+              fontSize: "10px",
               offset: 1,
             },
           ];
@@ -235,6 +237,27 @@ function addAnimation(mainElement, attributeValue, checker) {
           options.fill = "forwards";
 
           element.animate(keyFrames, options);
+          break;
+
+        case "sun":
+          keyFrames = [
+            {
+              offset: 0,
+              left: "-3em",
+              top: "-1em",
+            },
+            {
+              top: "0rem",
+              left: "0",
+              offset: 1,
+            },
+          ];
+
+          options.duration = 400;
+          option.easing - "linear";
+          options.fill = "forwards";
+          element.animate(keyFrames, options);
+
           break;
       }
     }

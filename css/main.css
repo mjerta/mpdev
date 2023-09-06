@@ -161,11 +161,37 @@ it seems to behave different */
   right: 2.5rem;
   width: calc(3.2505rem);
   height: calc(3.2505rem);
-  /* background-color: rgb(84, 167, 84); */
-  background-image: url("../images/test.svg");
+  border-radius: 50%;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  overflow: hidden;
+  font-size: 2px;
+  /* border: 3px solid black; */
+  /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px; */
+}
+.nav-image-moon::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  border-radius: 50%;
+  box-shadow: -1em -1em 2.5em 0.2em #000 inset;
+}
+
+.spin-moon {
+  width: 200%;
+  height: 100%;
+  background-image: url("../images/moon-texture.jpg");
+  animation: spin-moon 40s linear alternate infinite;
+}
+
+@keyframes spin-moon {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 nav {

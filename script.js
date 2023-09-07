@@ -197,11 +197,11 @@ function addAnimation(mainElement, attributeValue, checker) {
             {
               transform: "translateY(100px) translateX(-200px)",
               width: "3.8px",
-              height: "33px",
+              height: "170px",
               offset: 1,
             },
           ];
-          options.duration = 400;
+          options.duration = 3000;
           options.fill = "forwards";
           options.easing = "linear";
           element.animate(keyFrames, options);

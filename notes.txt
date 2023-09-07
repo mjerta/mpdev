@@ -1,4 +1,3 @@
-refactor the animation part - in progress
-
-
-
+Add the nav items in the mobile-nav menu
+Added class nav-mobile
+Change nav to nav-desktop class

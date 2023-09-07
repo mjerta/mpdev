@@ -188,11 +188,11 @@ it seems to behave different */
   animation: spin-moon 40s linear alternate infinite;
 }
 
-nav {
+.nav-desktop {
   display: none;
 }
 
-nav ul {
+.nav-desktop ul {
   /* display: none; */
   /* position: absolute;
   top: 0;
@@ -781,7 +781,7 @@ footer ul {
     display: none;
   }
 
-  nav ul {
+  .nav-desktop ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;

@@ -768,6 +768,31 @@ footer ul {
     padding-left: 9.56rem;
     padding-top: 6rem;
   }
+
+    /* Starting from here the normal nav menu comes in. */
+
+    .hamburger-menu {
+      display: none;
+    }
+
+    .nav-desktop {
+      display: block;
+      margin-right: 2rem;
+    }
+  
+    .nav-desktop ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      gap: 1.375rem;
+    }
+    .nav-item {
+      position: relative;
+      text-decoration: none;
+      color: black;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+    }
 }
 
 @media (min-width: 640px) {
@@ -775,25 +800,7 @@ footer ul {
     font-size: clamp(8px, 1.25vw, 11px);
   }
 
-  /* Starting from here the normal nav menu comes in. */
 
-  .hamburger-menu {
-    display: none;
-  }
-
-  .nav-desktop ul {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    gap: 1.375rem;
-  }
-  .nav-item {
-    position: relative;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-  }
 }
 @media (min-width: 1000px) {
   html {

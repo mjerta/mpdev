@@ -1,3 +1,5 @@
-Add the nav items in the mobile-nav menu
-Added class nav-mobile
-Change nav to nav-desktop class
+Disabled & activated nav and changed margin
+
+Disable mobile-nav @580px
+Activate nav-desktop @580px
+Change margin-right on nav-desktop to 2 rem

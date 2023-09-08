@@ -189,19 +189,25 @@ function addAnimation(mainElement, attributeValue, checker) {
               offset: 0,
             },
             {
-              transform: "translateX(-200px)",
-              width: "3.8px",
+              transform: "translateX(-100px)",
+              width: "0",
               height: "3.8px",
-              offset: 0.5,
-            },
-            {
-              transform: "translateY(100px) translateX(-200px)",
-              width: "3.8px",
-              height: "170px",
               offset: 1,
             },
+            // {
+            //   transform: "translateX(-200px) rotate(90deg)",
+            //   width: "3.8px",
+            //   height: "3.8px",
+            //   offset: 0.6,
+            // },
+            // {
+            //   transform: "translateY(100px) translateX(-200px) rotate(90deg)",
+            //   width: "33px",
+            //   height: "3.8px",
+            //   offset: 1,
+            // },
           ];
-          options.duration = 3000;
+          options.delay = 400;
           options.fill = "forwards";
           options.easing = "linear";
           element.animate(keyFrames, options);
@@ -215,14 +221,12 @@ function addAnimation(mainElement, attributeValue, checker) {
               transform: "translate(-0px, 0)",
               right: "2.5rem",
               top: "1.5rem",
-              // left: 0,
               width: "3.2505rem",
               height: "3.2505rem",
               fontSize: "2px",
               offset: 0,
             },
             {
-              // transform: "translate(-50%,0)",
               right: "calc(50% - 12rem)",
               top: "9.7rem",
               width: "24rem",
@@ -245,10 +249,12 @@ function addAnimation(mainElement, attributeValue, checker) {
               offset: 0,
               left: "-3em",
               top: "-1em",
+              opacity: 0,
             },
             {
               top: "0rem",
               left: "0",
+              opacity: 1,
               offset: 1,
             },
           ];
@@ -267,14 +273,13 @@ function addAnimation(mainElement, attributeValue, checker) {
             },
             {
               opacity: 1,
-              test: "t4et",
-              backgroundColor: "blue",
               offset: 1,
             },
           ];
 
-          options.duration = 400;
-          options.easing = "linear";
+          options.delay = 400;
+          options.duration = 800;
+          options.easing = "ease-in-out";
           options.fill = "forwards";
           element.animate(keyFrames, options);
           break;

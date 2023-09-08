@@ -188,16 +188,18 @@ it seems to behave different */
   height: 100%;
   justify-content: center;
   align-items: center;
+  animation: test ease linear forwards
 }
 
 .nav-mobile ul {
   /* border: 2px solid yellow; */
-  color: #fcc502;
+  color: white;
   font-size: 2.5rem;
   font-weight: 600;
   list-style-type: none;
   text-transform: uppercase;
   text-align: center;
+  opacity: 0;
   z-index: 999;
 }
 

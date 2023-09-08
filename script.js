@@ -233,7 +233,7 @@ function addAnimation(mainElement, attributeValue, checker) {
           ];
 
           options.duration = 400;
-          option.easing - "linear";
+          options.easing = "linear";
           options.fill = "forwards";
 
           element.animate(keyFrames, options);
@@ -254,10 +254,29 @@ function addAnimation(mainElement, attributeValue, checker) {
           ];
 
           options.duration = 400;
-          option.easing - "linear";
+          options.easing = "linear";
           options.fill = "forwards";
           element.animate(keyFrames, options);
 
+          break;
+        case "nav-mobile":
+          keyFrames = [
+            {
+              opacity: 0,
+              offset: 0,
+            },
+            {
+              opacity: 1,
+              test: "t4et",
+              backgroundColor: "blue",
+              offset: 1,
+            },
+          ];
+
+          options.duration = 400;
+          options.easing = "linear";
+          options.fill = "forwards";
+          element.animate(keyFrames, options);
           break;
       }
     }

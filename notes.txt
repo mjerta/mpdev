@@ -1,5 +1,1 @@
-Put nav items and styles them
-
-Put nav items inside the moon
-Adjust font size
-Change font colorOH
+Turn on font after hamburger click

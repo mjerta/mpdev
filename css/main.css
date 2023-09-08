@@ -181,7 +181,6 @@ it seems to behave different */
   box-shadow: -1em -1em 2.5em 0.2em #000 inset;
 }
 
-
 .nav-mobile {
   position: absolute;
   display: flex;
@@ -189,12 +188,13 @@ it seems to behave different */
   height: 100%;
   justify-content: center;
   align-items: center;
-  color: white;
-
 }
 
 .nav-mobile ul {
   /* border: 2px solid yellow; */
+  color: #fcc502;
+  font-size: 2.5rem;
+  font-weight: 600;
   list-style-type: none;
   text-transform: uppercase;
   text-align: center;
@@ -203,7 +203,6 @@ it seems to behave different */
 
 .nav-mobile li {
   padding: 1rem;
-
 }
 .spin-moon {
   width: 200%;
@@ -793,38 +792,36 @@ footer ul {
     padding-top: 6rem;
   }
 
-    /* Starting from here the normal nav menu comes in. */
+  /* Starting from here the normal nav menu comes in. */
 
-    .hamburger-menu {
-      display: none;
-    }
+  .hamburger-menu {
+    display: none;
+  }
 
-    .nav-desktop {
-      display: block;
-      margin-right: 2rem;
-    }
-  
-    .nav-desktop ul {
-      list-style-type: none;
-      display: flex;
-      flex-direction: row;
-      gap: 1.375rem;
-    }
-    .nav-item {
-      position: relative;
-      text-decoration: none;
-      color: black;
-      text-transform: uppercase;
-      font-size: 1.1rem;
-    }
+  .nav-desktop {
+    display: block;
+    margin-right: 2rem;
+  }
+
+  .nav-desktop ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.375rem;
+  }
+  .nav-item {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
 }
 
 @media (min-width: 640px) {
   html {
     font-size: clamp(8px, 1.25vw, 11px);
   }
-
-
 }
 @media (min-width: 1000px) {
   html {

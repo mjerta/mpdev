@@ -1,4 +1,5 @@
-Added some options for animation in js & styled nav items
+Add x to hamburger add animation in js & css
 
-Added a difference for the animation for the moon. The delay is different for when it is played in  reversed. Normally ththis is being handled in the switch cases.
-Added a text shadow for the mobile nav items
+Add the x to the hamburger menu
+Change the size of the hamburger menu
+Change the border line of the lines a bit

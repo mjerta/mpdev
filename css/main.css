@@ -133,8 +133,8 @@ it seems to behave different */
   /* position: absolute; */
   /* top: calc(4.5rem); */
   margin-right: calc(3.94rem);
-  width: calc(4.27rem);
-  height: calc(2.401rem);
+  height: calc(2rem);
+  width: calc(2.4rem);
   justify-content: space-between;
   flex-direction: column;
   cursor: pointer;
@@ -146,15 +146,24 @@ it seems to behave different */
   width: 100%;
   background: black;
   transform-origin: center;
+  box-shadow: 1px 1px 0 #fdd23a inset;
+  /* box-sizing: content-box; */
+}
+
+.line1 {
+  transform-origin: 0% 0%;
 }
 
 .line2 {
-  width: calc(3.03rem);
+  width: calc(1.5rem);
   align-self: flex-end;
 }
 
+.line3 {
+  transform-origin: 0% 100%;
+}
+
 .nav-image-moon {
-  /* display: none; */
   position: absolute;
   content: "";
   top: 1.5rem;
@@ -167,8 +176,6 @@ it seems to behave different */
   z-index: 1;
   overflow: hidden;
   font-size: 2px;
-  /* border: 3px solid black; */
-  /* box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px; */
 }
 .nav-image-moon::after {
   position: absolute;

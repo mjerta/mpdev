@@ -193,14 +193,12 @@ function addAnimation(mainElement, attributeValue, checker) {
           keyFrames = [
             {
               transform: "translateX(0)",
-              width: "33px",
-              height: "3.8px",
+              width: "1.5rem",
               offset: 0,
             },
             {
               transform: "translateX(-100px)",
               width: "0",
-              height: "3.8px",
               offset: 1,
             },
           ];
@@ -273,6 +271,41 @@ function addAnimation(mainElement, attributeValue, checker) {
           // options.delay = 400;
           options.duration = 800;
           options.easing = "ease-in-out";
+          options.fill = "forwards";
+          element.animate(keyFrames, options);
+          break;
+
+        case "line1":
+          keyFrames = [
+            {
+              transform: "rotate(0)",
+              offset: 0,
+            },
+            {
+              transform: "rotate(45deg)",
+              offset: 1,
+            },
+          ];
+
+          options.duration = 200;
+          options.easing = "linear";
+          options.fill = "forwards";
+          element.animate(keyFrames, options);
+          break;
+        case "line3":
+          keyFrames = [
+            {
+              transform: "rotate(0)",
+              offset: 0,
+            },
+            {
+              transform: "rotate(-45deg)",
+              offset: 1,
+            },
+          ];
+
+          options.duration = 200;
+          options.easing = "linear";
           options.fill = "forwards";
           element.animate(keyFrames, options);
           break;

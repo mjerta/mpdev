@@ -1,4 +1,4 @@
-still in progress
+Added some options for animation in js & styled nav items
 
-Turn on font after hamburger click
-Edit line effect
+Added a difference for the animation for the moon. The delay is different for when it is played in  reversed. Normally ththis is being handled in the switch cases.
+Added a text shadow for the mobile nav items

@@ -166,7 +166,7 @@ function addAnimation(mainElement, attributeValue, checker) {
     const option = element.getAttribute(`data-${selectOtherElements}`);
 
     // to see all options
-    console.log(option);
+    // console.log(option);
 
     //this is where i can put all the animation and also set a default
 
@@ -176,7 +176,16 @@ function addAnimation(mainElement, attributeValue, checker) {
 
       if (checker) {
         options.direction = "normal";
+
+        if (option == "nav-mobile") {
+          options.delay = 400;
+          console.log(options);
+        }
       } else {
+        if (option == "nav-mobile") {
+          options.delay = 0;
+          console.log(options);
+        }
         options.direction = "reverse";
       }
       switch (option) {
@@ -194,28 +203,14 @@ function addAnimation(mainElement, attributeValue, checker) {
               height: "3.8px",
               offset: 1,
             },
-            // {
-            //   transform: "translateX(-200px) rotate(90deg)",
-            //   width: "3.8px",
-            //   height: "3.8px",
-            //   offset: 0.6,
-            // },
-            // {
-            //   transform: "translateY(100px) translateX(-200px) rotate(90deg)",
-            //   width: "33px",
-            //   height: "3.8px",
-            //   offset: 1,
-            // },
           ];
-          options.delay = 400;
+          options.duration = 400;
           options.fill = "forwards";
           options.easing = "linear";
           element.animate(keyFrames, options);
           break;
 
         case "nav-image-moon":
-          console.log("test");
-
           keyFrames = [
             {
               transform: "translate(-0px, 0)",
@@ -249,12 +244,10 @@ function addAnimation(mainElement, attributeValue, checker) {
               offset: 0,
               left: "-3em",
               top: "-1em",
-              opacity: 0,
             },
             {
               top: "0rem",
               left: "0",
-              opacity: 1,
               offset: 1,
             },
           ];
@@ -277,7 +270,7 @@ function addAnimation(mainElement, attributeValue, checker) {
             },
           ];
 
-          options.delay = 400;
+          // options.delay = 400;
           options.duration = 800;
           options.easing = "ease-in-out";
           options.fill = "forwards";

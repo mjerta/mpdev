@@ -1,5 +1,5 @@
-Added links, active item and turn off at certain size
+Adding html, scollable  & positioning cards
 
-Added the links
-Added a active item
-Turn off hamburger menu after certain size
+Adding back the project secction in html
+Make the page scrollable again
+Make sure the cards are properly positioned

@@ -1,5 +1,5 @@
-Add x to hamburger add animation in js & css
+Added links, active item and turn off at certain size
 
-Add the x to the hamburger menu
-Change the size of the hamburger menu
-Change the border line of the lines a bit
+Added the links
+Added a active item
+Turn off hamburger menu after certain size

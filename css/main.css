@@ -213,6 +213,15 @@ it seems to behave different */
 
 .nav-mobile li {
   padding: 1rem;
+
+  & a {
+    text-decoration: none;
+    color: white;
+
+    &.active-mobile {
+      color: #90b498;
+    }
+  }
 }
 .spin-moon {
   width: 200%;
@@ -805,6 +814,10 @@ footer ul {
   /* Starting from here the normal nav menu comes in. */
 
   .hamburger-menu {
+    display: none;
+  }
+
+  .nav-image-moon {
     display: none;
   }
 

@@ -179,12 +179,10 @@ function addAnimation(mainElement, attributeValue, checker) {
 
         if (option == "nav-mobile") {
           options.delay = 400;
-          console.log(options);
         }
       } else {
         if (option == "nav-mobile") {
           options.delay = 0;
-          console.log(options);
         }
         options.direction = "reverse";
       }

@@ -1,1 +1,5 @@
-Change some css for showing the cta-left col to appear from 580px
+Added links, active item and turn off at certain size
+
+Added the links
+Added a active item
+Turn off hamburger menu after certain size

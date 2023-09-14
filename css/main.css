@@ -1,3 +1,56 @@
+/*
+======================================================================
+
+  Mobile first approach
+
+  Legenda
+
+  1 - LAYOUT & COMMON STYLING
+
+  You can recognize this with:
+  ======================================================================
+  1-1 example
+  ======================================================================
+
+  1.1 - standard and common
+  1.2 - header
+    1.2.1 - header - nav menu
+    1.2.1.1 - header - nav menu - transition
+  1.3 - hero
+  1.4 - cta
+  1.5 - projects
+
+  ----------------------------------------------------------------------
+
+  2 - SPECIFIK STYLING
+
+  You can recognize this with:
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  2.1 example
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    2.1 - darkmode
+
+
+  3 -  MEDIA QUERIES
+  
+  You can recognize this with:
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  3.1 example
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  3.1 media queries
+
+
+
+======================================================================
+*/
+
+/* 
+======================================================================
+1.1 - standard and common
+======================================================================
+*/
 *,
 *::before,
 *::after {
@@ -10,6 +63,7 @@ body,
 html {
   height: auto;
   font-size: 8px;
+  overflow: hidden;
 }
 
 body {
@@ -29,45 +83,170 @@ body {
   flex-direction: column;
   /* border: 3px solid black; */
 }
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2.1 standard and common - darkmode
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
 
-/* header section */
+.blackmode-fc {
+  color: white;
+  transition: color 0.5s ease;
+}
+
+/* 
+======================================================================
+1.2 - header
+======================================================================
+*/
 
 header {
+  position: relative;
   width: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 9.375rem;
   /* border: 4px solid red; */
+  /* font-size: 16px; */
 }
 
 .logo {
+  margin-left: 2rem;
   text-decoration: none;
   color: black;
   font-size: 1.6rem;
 }
 
-.active {
+/* 
+======================================================================
+1.2.1 - header - nav menu
+======================================================================
+*/
+
+/* the hamburger is based of the 500px design so the font-size is set on 11px.
+Based on that i could calculate te dimension. Weird enough for top and right
+it seems to behave different */
+.hamburger-menu {
   position: relative;
+  display: flex;
+  /* position: absolute; */
+  /* top: calc(4.5rem); */
+  margin-right: calc(3.94rem);
+  height: calc(2rem);
+  width: calc(2.4rem);
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 999;
+}
+.line {
+  height: 0.346rem;
+  border-radius: 3rem;
+  width: 100%;
+  background: black;
+  transform-origin: center;
+  box-shadow: 1px 1px 0 #fdd23a inset;
+  /* box-sizing: content-box; */
 }
 
-.active::before {
+.line1 {
+  transform-origin: 0% 0%;
+}
+
+.line2 {
+  width: calc(1.5rem);
+  align-self: flex-end;
+}
+
+.line3 {
+  transform-origin: 0% 100%;
+}
+
+.nav-image-moon {
   position: absolute;
   content: "";
-  width: 55%;
-  height: 1px;
-  border-bottom: 2px solid black;
-  bottom: -6px;
+  top: 1.5rem;
+  right: 2.5rem;
+  width: calc(3.2505rem);
+  height: calc(3.2505rem);
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden;
+  font-size: 2px;
+}
+.nav-image-moon::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: "";
+  border-radius: 50%;
+  box-shadow: -1em -1em 2.5em 0.2em #000 inset;
 }
 
-.active.blackmode::before {
-  border-color: white;
-}
-
-nav ul {
-  list-style-type: none;
+.nav-mobile {
+  position: absolute;
   display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  animation: test ease linear forwards;
+}
+
+.nav-mobile ul {
+  /* border: 2px solid yellow; */
+  color: white;
+  text-shadow: 2px 2px 0px #000;
+  font-size: 2.5rem;
+  font-weight: 600;
+  list-style-type: none;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0;
+  z-index: 999;
+}
+
+.nav-mobile li {
+  padding: 1rem;
+
+  & a {
+    text-decoration: none;
+    color: white;
+
+    &.active-mobile {
+      color: #90b498;
+    }
+  }
+}
+.spin-moon {
+  width: 200%;
+  height: 100%;
+  background-image: url("../images/moon-texture.jpg");
+  animation: spin-moon 40s linear alternate infinite;
+}
+
+.nav-desktop {
+  display: none;
+}
+
+.nav-desktop ul {
+  /* display: none; */
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
   gap: 1.375rem;
+  width: 100vw;
+  height: 100vh; */
+  list-style-type: none;
+  z-index: 999;
+  /* background: rgb(186, 196, 186); */
 }
 .nav-item {
   position: relative;
@@ -77,57 +256,44 @@ nav ul {
   font-size: 1.1rem;
 }
 
-.blackmode-fc {
-  color: white;
-  transition: color 0.5s ease;
+.active {
+  position: relative;
 }
 
-.animate::before {
+.active::before {
+  /* display: none; */
   position: absolute;
   content: "";
+  width: 55%;
   height: 1px;
   border-bottom: 2px solid black;
   bottom: -6px;
-  animation: shrink 800ms forwards;
 }
+/*
+======================================================================
+1.2.1.1 - header - nav menu - transition
+======================================================================
+*/
+@keyframes spin-moon {
+  to {
+    transform: translateX(-50%);
+  }
+}
+/* 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2.1 darkmode - header nav menu
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+*/
 
-.animate.blackmode::before {
+.active.blackmode::before {
   border-color: white;
 }
 
-.animate:hover::before {
-  position: absolute;
-  content: "";
-  height: 1px;
-  bottom: -6px;
-  animation: grow 800ms forwards;
-}
-
-@keyframes grow {
-  0% {
-    width: 0%;
-  }
-  50% {
-    width: 50%;
-  }
-  100% {
-    width: 30%;
-  }
-}
-
-@keyframes shrink {
-  0% {
-    width: 30%;
-  }
-  50% {
-    width: 50%;
-  }
-  100% {
-    width: 0%;
-  }
-}
-
-/* hero section  */
+/*
+======================================================================
+1.3 - hero
+======================================================================
+*/
 
 .hero {
   display: flex;
@@ -157,6 +323,15 @@ nav ul {
   animation: animate-leftcol ease 1200ms forwards;
 }
 
+.right-col {
+  /* flex: 1; */
+  font-family: "Open Sans", sans-serif;
+}
+
+.animate-right-col {
+  animation: animate-hero-text ease 1200ms;
+}
+
 @keyframes animate-leftcol {
   0% {
     opacity: 0;
@@ -166,15 +341,6 @@ nav ul {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.right-col {
-  /* flex: 1; */
-  font-family: "Open Sans", sans-serif;
-}
-
-.animate-right-col {
-  animation: animate-hero-text ease 1200ms;
 }
 
 @keyframes animate-hero-text {
@@ -282,7 +448,11 @@ nav ul {
   z-index: -2;
 }
 
-/* cta section */
+/*
+======================================================================
+1.4 - cta
+======================================================================
+*/
 .cta {
   min-height: 28.5rem;
   display: flex;
@@ -434,6 +604,12 @@ nav ul {
   }
 }
 
+/*
+======================================================================
+1.4 - projects
+======================================================================
+*/
+
 .btn-projects {
   align-self: center;
   /* bottom: 0; */
@@ -562,6 +738,12 @@ nav ul {
   margin-left: 1.62rem;
 }
 
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2.1 darkmode - projects
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+
 .blackmode-bg-opposite {
   background-color: white;
   transition: background-color 0.5s ease;
@@ -573,6 +755,12 @@ nav ul {
 .blackmode-border-opposite {
   border-color: white;
 }
+
+/*
+======================================================================
+1.5 - footer
+======================================================================
+*/
 
 footer {
   max-width: 1200px;
@@ -587,8 +775,11 @@ footer {
 footer ul {
   list-style: none;
 }
-
-/* Media queries  */
+/*
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+3.1 media queries
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*/
 
 @media (min-width: 300px) {
   html {
@@ -619,16 +810,44 @@ footer ul {
     padding-left: 9.56rem;
     padding-top: 6rem;
   }
+
+  /* Starting from here the normal nav menu comes in. */
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-image-moon {
+    display: none;
+  }
+
+  .nav-desktop {
+    display: block;
+    margin-right: 2rem;
+  }
+
+  .nav-desktop ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1.375rem;
+  }
+  .nav-item {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+  }
 }
 
 @media (min-width: 640px) {
   html {
     font-size: clamp(8px, 1.25vw, 11px);
   }
-
-  @media (min-width: 1000px) {
-    html {
-      font-size: clamp(11px, 1.1vw, 16px);
-    }
+}
+@media (min-width: 1000px) {
+  html {
+    font-size: clamp(11px, 1.1vw, 16px);
   }
 }

@@ -19,22 +19,52 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <!-- <a href="#" class="logo">MPDEV</a> -->
-
-        <!-- <nav>
-          <ul>
-            <li><a href="#" class="nav-item active">home</a></li>
-            <li><a href="#" class="nav-item not-active">contact</a></li>
-            <li><a href="#" class="nav-item not-active">hire me</a></li>
+      <div data-nav="nav-image-moon" class="nav-image-moon">
+        <nav class="nav-mobile">
+          <ul data-nav="nav-mobile">
+            <li>
+              <a class="active-mobile" href="#">home</a>
+            </li>
+            <li>
+              <a href="#">contact</a>
+            </li>
+            <li>
+              <a href="#">hire me</a>
+            </li>
           </ul>
-        </nav> -->
+        </nav>
+        <div class="spin-moon"></div>
+      </div>
+      <header>
+        <a href="#" class="logo">MPDEV</a>
+        <div data-click="nav" data-nav="hamburger-menu" class="hamburger-menu">
+          <span data-nav="line1" class="line line1"></span>
+          <span data-nav="line2" class="line line2"></span>
+          <span data-nav="line3" class="line line3"></span>
+        </div>
+
+        <nav class="nav-desktop" data-nav="nav">
+          <ul data-nav="ul">
+            <li class="nav-list-item" data-nav="nav-list-item">
+              <a href="#" data-nav="nav-item" class="nav-item active">home</a>
+            </li>
+            <li class="nav-list-item">
+              <a href="#" data-nav="nav-item" class="nav-item not-active"
+                >contact</a
+              >
+            </li>
+            <li class="nav-list-item">
+              <a href="#" data-nav="nav-item" class="nav-item not-active"
+                >hire me</a
+              >
+            </li>
+          </ul>
+        </nav>
       </header>
       <div class="hero">
         <div class="left-col col">
           <div class="hero-image"></div>
-          <div class="hero-image-sun"></div>
-          <div class="hero-image-moon"></div>
+          <div data-nav="sun" class="hero-image-sun"></div>
         </div>
         <div class="right-col col">
           <h1><span>MPDEV</span> stands for Maarten Postma’s development</h1>
@@ -49,8 +79,8 @@
         <div class="cta-left-col"></div>
         <div class="cta-right-col">
           <button class="cta-btn-tiger">
-            <div id="leaves"></div>
-            <div id="hide-element"></div>
+            <div data-click="leaves" id="leaves"></div>
+            <div data-leaves="hide-element" id="hide-element"></div>
             hire me
           </button>
           <p class="cta-text">and make your wildest code come true</p>

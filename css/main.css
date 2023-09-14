@@ -298,7 +298,6 @@ it seems to behave different */
 .hero {
   display: flex;
   /* min-height: 22.5rem; */
-  border: 4px solid blue;
   /* flex-wrap: wrap; */
   align-items: center;
   flex-direction: column;
@@ -457,7 +456,6 @@ it seems to behave different */
   min-height: 28.5rem;
   display: flex;
   justify-content: center;
-  border: solid 3px red;
 }
 
 .cta-left-col {

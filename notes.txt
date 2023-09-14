@@ -1,5 +1,1 @@
-Adding html, scollable  & positioning cards
-
-Adding back the project secction in html
-Make the page scrollable again
-Make sure the cards are properly positioned
+Removing color borderlines

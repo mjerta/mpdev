@@ -63,7 +63,7 @@ body,
 html {
   height: auto;
   font-size: 8px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body {
@@ -641,12 +641,6 @@ it seems to behave different */
   justify-content: center;
 }
 
-@media only screen and (min-width: 1100px) {
-  .projects-grid {
-    justify-content: space-between;
-  }
-}
-
 .card {
   position: relative;
   border-radius: 0.9345rem;
@@ -788,6 +782,9 @@ footer ul {
 }
 
 @media (min-width: 580px) {
+  .projects-grid {
+    justify-content: space-around;
+  }
   html {
     font-size: 8px;
   }
@@ -847,7 +844,9 @@ footer ul {
   }
 }
 @media (min-width: 1000px) {
-  html {
+  html {  
     font-size: clamp(11px, 1.1vw, 16px);
   }
+
+  
 }

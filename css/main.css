@@ -654,7 +654,7 @@ it seems to behave different */
   opacity: 50%;
 }
 
-.card article {
+.article-cards {
   margin-top: 2.74rem;
   margin-left: 12.52rem;
 }
@@ -685,7 +685,7 @@ it seems to behave different */
   transform: translateY(-0.625rem) translateX(0.625rem);
   fill: #193219;
 }
-.card p {
+.description {
   height: 8.0625rem;
   width: 15.38769rem;
   font-size: 0.99675rem;

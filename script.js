@@ -408,7 +408,7 @@ function processData(callback) {
         listItem.innerText = element.attributes.tag;
         tag.appendChild(listItem);
       });
-      card.appendChild(tag);
+      article.appendChild(tag);
     }
   });
 }

@@ -1,5 +1,5 @@
-Added element, headless api and test
+changed, putting same content+ put ul list correct
 
-add all elements with the appropiate propertys
-add the headless cms function to the script file
-added the first test
+change name card to new class name
+make sure both of the cards has the same content as the layout version
+put the ul languages list inside the article with js

@@ -67,9 +67,10 @@ heroImageSun.addEventListener("click", function () {
   }
 });
 
-const addHoverStateCards = () => {
+async function addHoverStateCards() {
   const cardElements = document.querySelectorAll(".card");
-
+  console.log(cardElements);
+  
   // The loop below will add an eventlistener for each
   // of the card available in the projects
   cardElements.forEach((cardElement) => {

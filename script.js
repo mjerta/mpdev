@@ -67,9 +67,11 @@ heroImageSun.addEventListener("click", function () {
   }
 });
 
-async function addHoverStateCards() {
+function addHoverStateCards() {
+
   const cardElements = document.querySelectorAll(".card");
-  console.log(cardElements);
+  console.log(cardElements)
+  // console.log(cardElements);
   
   // The loop below will add an eventlistener for each
   // of the card available in the projects
@@ -139,7 +141,6 @@ function enableAnimation(target) {
 
 // enableAnimation("data-nav");
 
-addHoverStateCards();
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -416,6 +417,7 @@ function processData(callback) {
 
 fetchData()
   .then(processData)
+  .then(addHoverStateCards)
   .catch((error) => {
     console.log(error);
   });

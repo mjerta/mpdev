@@ -70,11 +70,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-.blackmode-bg {
-  background-color: black;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .wrapper {
@@ -91,12 +87,14 @@ body {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 */
 
+.blackmode-bg {
+  background-color: black;
+  /* transition: background-color 0.5s ease; */
+}
 .blackmode-fc {
   color: white;
-  transition: color 0.5s ease;
+  /* transition: color 0.5s ease; */
 }
-
-
 
 /* 
 ======================================================================
@@ -844,9 +842,7 @@ footer ul {
   }
 }
 @media (min-width: 1000px) {
-  html {  
+  html {
     font-size: clamp(11px, 1.1vw, 16px);
   }
-
-  
 }

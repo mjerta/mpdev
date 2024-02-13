@@ -57,8 +57,9 @@ const heroImageMoon = document.querySelector(".hero-image-moon");
 const logo = document.querySelector(".logo");
 
 heroImageSun.addEventListener("click", function () {
-  body.classList.add("blackmode-bg", "blackmode-fc");
-  btnCta.classList.add("blackmode-fc");
+  body.classList.toggle("blackmode-bg");
+  body.classList.toggle("blackmode-fc");
+  btnCta.classList.toggle("blackmode-fc");
   btnProjects.classList.add("blackmode-bg-opposite", "blackmode-fc-opposite");
   projects.classList.add("blackmode-border-opposite");
   projects.classList.add("blackmode-border");
@@ -71,11 +72,10 @@ heroImageSun.addEventListener("click", function () {
 });
 
 function addHoverStateCards() {
-
   const cardElements = document.querySelectorAll(".card");
-  console.log(cardElements)
+  console.log(cardElements);
   // console.log(cardElements);
-  
+
   // The loop below will add an eventlistener for each
   // of the card available in the projects
   cardElements.forEach((cardElement) => {
@@ -118,7 +118,7 @@ function addHoverStateCards() {
       }
     });
   }); //end of foreach
-};
+}
 
 function enableAnimation(target) {
   const setTarget = getDataAttributes(target);
@@ -143,7 +143,6 @@ function enableAnimation(target) {
 }
 
 // enableAnimation("data-nav");
-
 
 ///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
@@ -370,24 +369,26 @@ function processData(callback) {
       const path = element.attributes.image.data.attributes.url;
       const imageUrl = `${baseUrl}${path}`;
       img.setAttribute(`src`, imageUrl);
-      img.setAttribute('alt', 'screenshot-website')
+      img.setAttribute("alt", "screenshot-website");
       card.appendChild(img);
     }
 
-    const article = document.createElement('article');
-    article.classList.add('article-cards')
+    const article = document.createElement("article");
+    article.classList.add("article-cards");
     card.appendChild(article);
-    
-    
+
     const title = document.createElement("h2");
     title.innerText = element.attributes.title;
-    const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("width", "14");
     svg.setAttribute("height", "13");
     svg.setAttribute("viewBox", "0 0 14 13");
-    const path = document.createElementNS("http://www.w3.org/2000/svg","path");
-    path.setAttribute("d", "M13.0651 0.868461C13.0651 0.455027 12.7287 0.119873 12.3137 0.119874L5.55101 0.119874C5.13602 0.119874 4.7996 0.455028 4.7996 0.868461C4.7996 1.28189 5.13602 1.61705 5.55101 1.61705L11.5623 1.61705L11.5623 7.60574C11.5623 8.01918 11.8987 8.35433 12.3137 8.35433C12.7287 8.35433 13.0651 8.01918 13.0651 7.60574L13.0651 0.868461ZM1.53133 12.669L12.845 1.39779L11.7824 0.33913L0.468672 11.6103L1.53133 12.669Z")
-    svg.appendChild(path)
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute(
+      "d",
+      "M13.0651 0.868461C13.0651 0.455027 12.7287 0.119873 12.3137 0.119874L5.55101 0.119874C5.13602 0.119874 4.7996 0.455028 4.7996 0.868461C4.7996 1.28189 5.13602 1.61705 5.55101 1.61705L11.5623 1.61705L11.5623 7.60574C11.5623 8.01918 11.8987 8.35433 12.3137 8.35433C12.7287 8.35433 13.0651 8.01918 13.0651 7.60574L13.0651 0.868461ZM1.53133 12.669L12.845 1.39779L11.7824 0.33913L0.468672 11.6103L1.53133 12.669Z"
+    );
+    svg.appendChild(path);
     title.appendChild(svg);
     article.appendChild(title);
     const description = document.createElement("p");

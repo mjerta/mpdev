@@ -1,1 +1,5 @@
-Add color black property for .card
+Edit CSS
+
+Put .blackmode-bg in correct place in css
+Remove the transition, not needed. Put them seperately on the specifik element
+Remove some unneeded comment

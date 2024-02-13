@@ -254,7 +254,6 @@ it seems to behave different */
 .nav-item {
   position: relative;
   text-decoration: none;
-  color: black;
   text-transform: uppercase;
   font-size: 1.1rem;
 }
@@ -833,7 +832,6 @@ footer ul {
   .nav-item {
     position: relative;
     text-decoration: none;
-    color: black;
     text-transform: uppercase;
     font-size: 1.1rem;
   }

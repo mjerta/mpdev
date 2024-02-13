@@ -53,21 +53,20 @@ const projects = document.querySelector(".projects-grid");
 const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
-const heroImageMoon = document.querySelector(".hero-image-moon");
-const logo = document.querySelector(".logo");
 
 heroImageSun.addEventListener("click", function () {
   body.classList.toggle("blackmode-bg");
   body.classList.toggle("blackmode-fc");
   btnCta.classList.toggle("blackmode-fc");
-  btnProjects.classList.add("blackmode-bg-opposite", "blackmode-fc-opposite");
-  projects.classList.add("blackmode-border-opposite");
-  projects.classList.add("blackmode-border");
-  focusHighlight.classList.add("blackmode");
-  activeNavItem.classList.add("blackmode");
+  btnProjects.classList.toggle("blackmode-bg-opposite");
+  btnProjects.classList.toggle("blackmode-fc-opposite");
+  projects.classList.toggle("blackmode-border-opposite");
+  focusHighlight.classList.toggle("blackmode");
+  activeNavItem.classList.toggle("blackmode");
 
   for (let i = 0; i < navItem.length; i++) {
-    navItem[i].classList.add("blackmode-fc", "blackmode");
+    console.log(navItem[i]);
+    navItem[i].classList.toggle("blackmode");
   }
 });
 

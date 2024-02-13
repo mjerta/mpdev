@@ -1,5 +1,2 @@
-Edit CSS
-
-Put .blackmode-bg in correct place in css
-Remove the transition, not needed. Put them seperately on the specifik element
-Remove some unneeded comment
+Move some styling and put them on the correct place in cs
+Add footer to the correct spot and leganda

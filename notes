@@ -1,4 +1,6 @@
-Add HTML and CSS
+Add & remove styling & add JS
 
-Add the a element
-Add style for text-underline and color
+Change color for title in black-mode
+Add selector for title in js
+Add this element to the click event
+Remove the specific styling property color black for title element 

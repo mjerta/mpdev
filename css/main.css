@@ -96,6 +96,8 @@ body {
   transition: color 0.5s ease;
 }
 
+
+
 /* 
 ======================================================================
 1.2 - header
@@ -116,7 +118,6 @@ header {
 .logo {
   margin-left: 2rem;
   text-decoration: none;
-  color: black;
   font-size: 1.6rem;
 }
 

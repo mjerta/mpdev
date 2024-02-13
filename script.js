@@ -44,6 +44,8 @@ btnCta.addEventListener("mouseout", function () {
   }
 });
 
+//dark-mode//
+
 const heroImageSun = document.querySelector(".hero-image-sun");
 const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
@@ -52,6 +54,7 @@ const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
 const heroImageMoon = document.querySelector(".hero-image-moon");
+const logo = document.querySelector(".logo");
 
 heroImageSun.addEventListener("click", function () {
   body.classList.add("blackmode-bg", "blackmode-fc");
@@ -61,6 +64,7 @@ heroImageSun.addEventListener("click", function () {
   projects.classList.add("blackmode-border");
   focusHighlight.classList.add("blackmode");
   activeNavItem.classList.add("blackmode");
+  logo.classList.add("blackmode-fc");
 
   for (let i = 0; i < navItem.length; i++) {
     navItem[i].classList.add("blackmode-fc", "blackmode");

@@ -50,7 +50,6 @@ const heroImageSun = document.querySelector(".hero-image-sun");
 const body = document.querySelector("body");
 const btnProjects = document.querySelector(".btn-projects");
 const projects = document.querySelector(".projects-grid");
-const navItem = document.querySelectorAll(".nav-item");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
 
@@ -63,16 +62,11 @@ heroImageSun.addEventListener("click", function () {
   projects.classList.toggle("blackmode-border-opposite");
   focusHighlight.classList.toggle("blackmode");
   activeNavItem.classList.toggle("blackmode");
-
-  for (let i = 0; i < navItem.length; i++) {
-    console.log(navItem[i]);
-    navItem[i].classList.toggle("blackmode");
-  }
 });
 
 function addHoverStateCards() {
   const cardElements = document.querySelectorAll(".card");
-  console.log(cardElements);
+  // console.log(cardElements);
   // console.log(cardElements);
 
   // The loop below will add an eventlistener for each
@@ -344,7 +338,7 @@ const url = "https://cms.mpdev.nl/api/project-cards?populate=*";
 async function fetchData() {
   const response = await fetch(url);
   if (!response.ok) {
-    console.log(response);
+    // console.log(response);
     throw {
       status: response.status,
       message: "Server responded with an error status",

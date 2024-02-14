@@ -247,7 +247,7 @@ it seems to behave different */
   position: relative;
 }
 
-.active::before {
+.nav-item.active::before {
   /* display: none; */
   position: absolute;
   content: "";
@@ -255,6 +255,13 @@ it seems to behave different */
   height: 1px;
   border-bottom: 2px solid black;
   bottom: -6px;
+  transition: border-color .5s ease;
+}
+
+.nav-item.active.blackmode::before {
+  border-bottom: 2px solid white;
+
+  /* transition: border-color 0.5s ease; */
 }
 /*
 ======================================================================
@@ -265,16 +272,6 @@ it seems to behave different */
   to {
     transform: translateX(-50%);
   }
-}
-/* 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.1 darkmode - header nav menu
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-*/
-
-.blackmode::before {
-  border-color: white;
-  transition: border-color 0.5s ease;
 }
 
 /*
@@ -407,11 +404,16 @@ it seems to behave different */
   height: 100%;
   z-index: -1;
   animation: showHide ease-in-out 400ms forwards 1200ms;
+
+}
+
+.focus-highlight:after {
   transition: background-color 0.5s ease;
+
 }
 
 .focus-highlight.blackmode::after {
-  background-color: black;
+  background-color: rgb(21, 1, 1);
 }
 
 @keyframes showHide {
@@ -765,6 +767,11 @@ footer ul {
 .blackmode-border-opposite {
   border-color: white;
 }
+
+svg path:first-child {
+  fill: #ff0000; /* Set fill color to red */
+}
+
 
 /*
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

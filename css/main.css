@@ -768,9 +768,13 @@ footer ul {
   border-color: white;
 }
 
-svg path:first-child {
-  fill: #ff0000; /* Set fill color to red */
+.github-logo path:first-child {
+  fill: #000; /* Set fill color to red */
 }
+.github-logo.blackmode path:first-child {
+  fill: #fff;
+}
+
 
 
 /*

@@ -52,6 +52,7 @@ const btnProjects = document.querySelector(".btn-projects");
 const projects = document.querySelector(".projects-grid");
 const focusHighlight = document.querySelector(".focus-highlight");
 const activeNavItem = document.querySelector(".active");
+const githubLogo = document.querySelector(".github-logo");
 
 heroImageSun.addEventListener("click", function () {
   body.classList.toggle("blackmode-bg");
@@ -62,6 +63,7 @@ heroImageSun.addEventListener("click", function () {
   projects.classList.toggle("blackmode-border-opposite");
   focusHighlight.classList.toggle("blackmode");
   activeNavItem.classList.toggle("blackmode");
+  githubLogo.classList.toggle("blackmode");
 });
 
 function addHoverStateCards() {

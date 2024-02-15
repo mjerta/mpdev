@@ -1,2 +1,5 @@
-Move some styling and put them on the correct place in cs
-Add footer to the correct spot and leganda
+Fix light mode
+
+Edit all the styles neccesary for the change.
+Remove and add some toggles in js
+Remove the img svg for the github and put the full SVG instead

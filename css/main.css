@@ -19,6 +19,7 @@
   1.3 - hero
   1.4 - cta
   1.5 - projects
+  1.6 - footer
 
   ----------------------------------------------------------------------
 
@@ -70,11 +71,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-}
-
-.blackmode-bg {
-  background-color: black;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .wrapper {
@@ -84,16 +81,6 @@ body {
   display: flex;
   flex-direction: column;
   /* border: 3px solid black; */
-}
-/*
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.1 standard and common - darkmode
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
-
-.blackmode-fc {
-  color: white;
-  transition: color 0.5s ease;
 }
 
 /* 
@@ -116,7 +103,6 @@ header {
 .logo {
   margin-left: 2rem;
   text-decoration: none;
-  color: black;
   font-size: 1.6rem;
 }
 
@@ -253,7 +239,6 @@ it seems to behave different */
 .nav-item {
   position: relative;
   text-decoration: none;
-  color: black;
   text-transform: uppercase;
   font-size: 1.1rem;
 }
@@ -262,7 +247,7 @@ it seems to behave different */
   position: relative;
 }
 
-.active::before {
+.nav-item.active::before {
   /* display: none; */
   position: absolute;
   content: "";
@@ -270,6 +255,13 @@ it seems to behave different */
   height: 1px;
   border-bottom: 2px solid black;
   bottom: -6px;
+  transition: border-color .5s ease;
+}
+
+.nav-item.active.blackmode::before {
+  border-bottom: 2px solid white;
+
+  /* transition: border-color 0.5s ease; */
 }
 /*
 ======================================================================
@@ -280,15 +272,6 @@ it seems to behave different */
   to {
     transform: translateX(-50%);
   }
-}
-/* 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.1 darkmode - header nav menu
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-*/
-
-.active.blackmode::before {
-  border-color: white;
 }
 
 /*
@@ -421,10 +404,16 @@ it seems to behave different */
   height: 100%;
   z-index: -1;
   animation: showHide ease-in-out 400ms forwards 1200ms;
+
+}
+
+.focus-highlight:after {
+  transition: background-color 0.5s ease;
+
 }
 
 .focus-highlight.blackmode::after {
-  background-color: black;
+  background-color: rgb(21, 1, 1);
 }
 
 @keyframes showHide {
@@ -478,8 +467,7 @@ it seems to behave different */
   font-weight: bold;
   border: none;
   z-index: 10;
-  /* transition: transform 400ms ease, font-size 400ms ease; */
-  /* filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5)); */
+  transition: background-color 0.5s ease;
 }
 
 .cta-btn-tiger:hover {
@@ -627,6 +615,7 @@ it seems to behave different */
   font-size: 1.75rem;
   font-weight: bold;
   text-transform: uppercase;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .projects-grid {
@@ -639,6 +628,7 @@ it seems to behave different */
   grid-template-rows: repeat(auto-fill, 19.375rem);
   row-gap: 3rem;
   justify-content: center;
+  transition: background-color 0.5 ease, color 0.5 ease;
 }
 
 .card {
@@ -647,6 +637,7 @@ it seems to behave different */
   background: #dcdde3;
   padding-bottom: 3rem;
   transition: background-color 0.5s ease, opacity 0.7s ease;
+  color: black;
 }
 
 .card-hover {
@@ -733,26 +724,8 @@ it seems to behave different */
 }
 
 /*
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-2.1 darkmode - projects
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-*/
-
-.blackmode-bg-opposite {
-  background-color: white;
-  transition: background-color 0.5s ease;
-}
-.blackmode-fc-opposite {
-  color: black;
-  transition: color 0.5s ease;
-}
-.blackmode-border-opposite {
-  border-color: white;
-}
-
-/*
 ======================================================================
-1.5 - footer
+1.6 - footer
 ======================================================================
 */
 
@@ -769,6 +742,41 @@ footer {
 footer ul {
   list-style: none;
 }
+
+/*
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+2.1 darkmode - projects
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+*/
+.blackmode-bg {
+  background-color: black;
+  /* transition: background-color 0.5s ease; */
+}
+.blackmode-fc {
+  color: white;
+  /* transition: color 0.5s ease; */
+}
+.blackmode-bg-opposite {
+  background-color: white;
+  /* transition: background-color 0.5s ease; */
+}
+.blackmode-fc-opposite {
+  color: black;
+  /* transition: color 0.5s ease; */
+}
+.blackmode-border-opposite {
+  border-color: white;
+}
+
+.github-logo path:first-child {
+  fill: #000; /* Set fill color to red */
+}
+.github-logo.blackmode path:first-child {
+  fill: #fff;
+}
+
+
+
 /*
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 3.1 media queries
@@ -832,7 +840,6 @@ footer ul {
   .nav-item {
     position: relative;
     text-decoration: none;
-    color: black;
     text-transform: uppercase;
     font-size: 1.1rem;
   }
@@ -844,9 +851,7 @@ footer ul {
   }
 }
 @media (min-width: 1000px) {
-  html {  
+  html {
     font-size: clamp(11px, 1.1vw, 16px);
   }
-
-  
 }

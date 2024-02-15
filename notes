@@ -1,4 +1,5 @@
-Add HTML and CSS
+Fix light mode
 
-Add the a element
-Add style for text-underline and color
+Edit all the styles neccesary for the change.
+Remove and add some toggles in js
+Remove the img svg for the github and put the full SVG instead

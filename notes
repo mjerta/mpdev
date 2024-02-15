@@ -1,1 +1,5 @@
-this is a test
+Fix light mode
+
+Edit all the styles neccesary for the change.
+Remove and add some toggles in js
+Remove the img svg for the github and put the full SVG instead

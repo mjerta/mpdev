@@ -390,15 +390,17 @@ function processData(callback) {
     description.classList.add("description");
     description.innerHTML = element.attributes.description;
     article.appendChild(description);
-    const activity = document.createElement("span");
-    activity.classList.add("activity");
-    article.appendChild(activity);
+    const status = document.createElement("span");
+    status.classList.add("status");
+    article.appendChild(status);
     if (element.attributes.activity) {
-      activity.classList.remove("activity-inactive");
-      activity.classList.add("activity-active");
+      status.innerText = "completed";
+      status.classList.remove("activity-inactive");
+      status.classList.add("activity-active");
     } else {
-      activity.classList.remove("activity-active");
-      activity.classList.add("activity-inactive");
+      status.innerText = "in progress";
+      status.classList.remove("activity-active");
+      status.classList.add("activity-inactive");
     }
     const categories = element.attributes.project_categories.data;
     const tag = document.createElement("ul");

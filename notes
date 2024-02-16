@@ -1,5 +1,5 @@
-Fix light mode
+Added styles and js 
 
-Edit all the styles neccesary for the change.
-Remove and add some toggles in js
-Remove the img svg for the github and put the full SVG instead
+Add style for class activitiy
+Add text to span element in JS
+Change the variable name

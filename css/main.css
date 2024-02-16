@@ -724,10 +724,11 @@ it seems to behave different */
 }
 
 .status {
-  top:0;
+  top: 33px;
+  right: 34px;
+  width: 44px;
   position: absolute;
-  height: 10px;
-  width: 10px;
+  font-size: 8px;
 }
 
 

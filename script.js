@@ -115,27 +115,27 @@ function addHoverStateCards() {
   }); //end of foreach
 }
 
-function enableAnimation(target) {
-  const setTarget = getDataAttributes(target);
-  if (setTarget) {
-    const runTarget = setTarget.find(
-      (item) => item.dataset.nav == "hamburger-menu"
-    );
-    let reverse = false;
-    runTarget.addEventListener("click", () => {
-      reverse = !reverse;
-      setTarget.forEach((element) => {
-        if (reverse) {
-          element.classList.remove("animation-reverse");
-          element.classList.add("animation");
-        } else {
-          element.classList.remove("animation");
-          element.classList.add("animation-reverse");
-        }
-      });
-    });
-  }
-}
+// function enableAnimation(target) {
+//   const setTarget = getDataAttributes(target);
+//   if (setTarget) {
+//     const runTarget = setTarget.find(
+//       (item) => item.dataset.nav == "hamburger-menu"
+//     );
+//     let reverse = false;
+//     runTarget.addEventListener("click", () => {
+//       reverse = !reverse;
+//       setTarget.forEach((element) => {
+//         if (reverse) {
+//           element.classList.remove("animation-reverse");
+//           element.classList.add("animation");
+//         } else {
+//           element.classList.remove("animation");
+//           element.classList.add("animation-reverse");
+//         }
+//       });
+//     });
+//   }
+// }
 
 // enableAnimation("data-nav");
 
@@ -165,7 +165,7 @@ function addAnimation(mainElement, attributeValue, checker) {
     const option = element.getAttribute(`data-${selectOtherElements}`);
 
     // to see all options
-    // console.log(option);
+    console.log(option);
 
     //this is where i can put all the animation and also set a default
 
@@ -313,7 +313,7 @@ function addAnimation(mainElement, attributeValue, checker) {
 
 function enableAnimation(callback) {
   let checker = false;
-  //defining all the kind of attributes that would represent an action or default browser loadinbg
+  //defining all the kind of attributes that would represent an action or default browser loading
   const clickElements = callback("data-click");
   if (clickElements) {
     clickElements.nodeList.forEach((mainElement) => {
@@ -394,13 +394,11 @@ function processData(callback) {
     status.classList.add("status");
     article.appendChild(status);
     if (element.attributes.activity) {
-      status.innerText = "completed";
-      status.classList.remove("activity-inactive");
-      status.classList.add("activity-active");
+      status.classList.remove("in-progress");
+      status.classList.add("completed");
     } else {
-      status.innerText = "in progress";
-      status.classList.remove("activity-active");
-      status.classList.add("activity-inactive");
+      status.classList.remove("completed");
+      status.classList.add("in-progress");
     }
     const categories = element.attributes.project_categories.data;
     const tag = document.createElement("ul");

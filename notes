@@ -1,5 +1,5 @@
-Fix light mode
+Change and edit CSS + API value in JS
 
-Edit all the styles neccesary for the change.
-Remove and add some toggles in js
-Remove the img svg for the github and put the full SVG instead
+Remove the unnecessary right in in-progress:before
+Instead use the width: max-content
+Change the name for api value for cms api

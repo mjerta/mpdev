@@ -1,5 +1,5 @@
-Added styles and js 
+Change and edit CSS + API value in JS
 
-Add style for class activitiy
-Add text to span element in JS
-Change the variable name
+Remove the unnecessary right in in-progress:before
+Instead use the width: max-content
+Change the name for api value for cms api

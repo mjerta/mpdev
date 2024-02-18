@@ -393,7 +393,8 @@ function processData(callback) {
     const status = document.createElement("span");
     status.classList.add("status");
     article.appendChild(status);
-    if (element.attributes.activity) {
+    if (element.attributes.status) {
+      // console.log(element.attributes.status);
       status.classList.remove("in-progress");
       status.classList.add("completed");
     } else {

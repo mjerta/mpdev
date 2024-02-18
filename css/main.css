@@ -738,13 +738,13 @@ it seems to behave different */
   position: absolute;
   right: 0;
   margin-right: 1.5rem;
+  width: max-content;
 }
 
 .completed::before {
   content: "completed";
 }
 .in-progress::before {
-  right: 4rem;
   content: "in progress";
 }
 

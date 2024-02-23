@@ -1,5 +1,3 @@
-Change and edit CSS + API value in JS
+Change js value for generated animation
 
-Remove the unnecessary right in in-progress:before
-Instead use the width: max-content
-Change the name for api value for cms api
+Change the property top to 9.4rem

@@ -218,7 +218,7 @@ function addAnimation(mainElement, attributeValue, checker) {
             },
             {
               right: "calc(50% - 12rem)",
-              top: "9.7rem",
+              top: "9.4rem",
               width: "24rem",
               height: "24rem",
               fontSize: "10px",

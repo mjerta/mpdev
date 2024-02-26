@@ -1,3 +1,4 @@
-Change js value for generated animation
+Make seperate JS file + refactoring
 
-Change the property top to 9.4rem
+Add a seperate file for every part that should be seperate
+Change some comments and structure partially

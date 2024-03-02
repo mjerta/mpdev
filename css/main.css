@@ -788,6 +788,31 @@ footer ul {
   list-style: none;
 }
 
+.github {
+  display: flex;
+  align-items: center;
+  font-style: italic;
+
+  ul {
+
+    margin-right: 1.6rem;
+  }
+  
+  li {
+    color: black;
+    margin-bottom: .5rem;
+    
+    span {
+      color: #193219;
+      font-weight: 800;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+}
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 2.1 darkmode - projects

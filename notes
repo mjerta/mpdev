@@ -1,5 +1,5 @@
-Replaced some HTML tags adn add some new content
+Add some css the github-section
 
-First put the github and the text section seperate in a seperate section
-Create an ul for the list with a classname of git-commits
-Put an example text in for now
+Add font-color for span and font-weight
+Add margin to the right of the UL
+Add some space below the list items

@@ -1,4 +1,5 @@
-Make seperate JS file + refactoring
+Replaced some HTML tags adn add some new content
 
-Add a seperate file for every part that should be seperate
-Change some comments and structure partially
+First put the github and the text section seperate in a seperate section
+Create an ul for the list with a classname of git-commits
+Put an example text in for now

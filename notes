@@ -1,4 +1,3 @@
-Make seperate JS file + refactoring
+Edit the proccesData function
 
-Add a seperate file for every part that should be seperate
-Change some comments and structure partially
+Edit the function like its only showing the latest message of the repo that send the last commit.

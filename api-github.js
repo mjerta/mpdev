@@ -2,7 +2,7 @@ async function fetchGetGithubRepos() {
   const owner = "mjerta";
   const apiUrl = `https://api.github.com/users/mjerta/repos`;
   const token =
-    "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";
+    "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";
   const customHeaders = {
     Accept: "application/json",
     Authorization: `Bearer ${token}`,
@@ -59,34 +59,52 @@ async function fetchGetGithubCommits(callback) {
 }
 
 function processData(callback) {
-  // For each loop of every commit with its corresponded repo name
+  // From the callback will be using the first item of the sorted array
+  const mostRecentItem = callback[0];
+
+  // Putting all the data into variables
+  const commitMessageAPI =
+    mostRecentItem.commitResponse[0].commit.message.replace(/\n/g, " ");
+  const repoNameAPI = mostRecentItem.repoName;
+  const dateCommitAPI = mostRecentItem.commitResponse[0].commit.committer.date;
+
+  /*
+    Using the getDataAttributes to get all the data-attributes elements.
+    This are being to insert the proper text.
+  */
+
+  // Defining the variable to get get the object filled with all data-github attributes
+  const dataGithub = getDataAttributes("data-github");
+
+  const commitMessage = document.querySelector(
+    `[${dataGithub.actionAttribute}=commit-message]`
+  );
+  const repoName = document.querySelector(
+    `[${dataGithub.actionAttribute}=repo-name]`
+  );
+  const dateCommit = document.querySelector(
+    `[${dataGithub.actionAttribute}=date-created]`
+  );
+
+  // Inserting the text into the HTML elements
+  commitMessage.innerText = commitMessageAPI;
+  repoName.innerText = repoNameAPI;
+  dateCommit.innertText = dateCommitAPI;
+  /*
+    For each loop of every commit with its corresponded repo name
+    This for loop could be use when I want to show other latest commits from other repos
+  */
   callback.forEach((element) => {
     /*
       The commit message is being slected. Afterwards the lines from  the format of the data from github is being 
       formatted again.
     */
-    const message = element.commitResponse[0].commit.message;
-    const trimmedMessage = message.replace(/\n/g, " ");
+    const message = element.commitResponse[0].commit.message.replace(
+      /\n/g,
+      " "
+    );
     const dateCommit = element.commitResponse[0].commit.committer.date;
     const repo = element.repoName;
-
-    const githubData = getDataAttributes("data-github");
-    const commitMessage = document.querySelector(
-      `[${githubData.actionAttribute}=commit-message]`
-    );
-    const repoName = document.querySelector(
-      `[${githubData.actionAttribute}=repo-name]`
-    );
-    const dateCreated = document.querySelector(
-      `[${githubData.actionAttribute}=date-created]`
-    );
-    console.log(commitMessage);
-    console.log(repoName);
-    console.log(dateCreated);
-
-    // console.log(`Latest commit ${trimmedMessage}: `);
-    // console.log(`Repo name ${repo}`);
-    // console.log(dateCommit);
   });
 }
 

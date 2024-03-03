@@ -1,5 +1,3 @@
-Add & edit css, Add function to api-github.js
+Edit the proccesData function
 
-Add class for the repo name span
-Adjust  the CSS accordinly
-Find a  way to use the attribute collector again
+Edit the function like its only showing the latest message of the repo that send the last commit.

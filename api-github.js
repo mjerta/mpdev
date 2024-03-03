@@ -2,7 +2,7 @@ async function fetchGetGithubRepos() {
   const owner = "mjerta";
   const apiUrl = `https://api.github.com/users/mjerta/repos`;
   const token =
-    "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";
+    "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";
   const customHeaders = {
     Accept: "application/json",
     Authorization: `Bearer ${token}`,

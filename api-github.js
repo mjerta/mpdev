@@ -1,8 +1,20 @@
 async function fetchGetGithubRepos() {
   const owner = "mjerta";
   const apiUrl = `https://api.github.com/users/mjerta/repos`;
-  const token =
-    "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";
+  const tokenStrapiGithub = `https://cms.mpdev.nl/api/tests/1`;
+
+  //Fetch API strapi
+
+  const responseStrapi = await fetch(tokenStrapiGithub);
+  if (!responseStrapi.ok) {
+    throw {
+      status: response.status,
+      message: "Server responded with an error status",
+    };
+  }
+  const dataStrapi = await responseStrapi.json();
+  const token = dataStrapi.data.attributes.Token;
+
   const customHeaders = {
     Accept: "application/json",
     Authorization: `Bearer ${token}`,

@@ -1,5 +1,5 @@
-Add some css the github-section
+Add JS file & edit HTML accordingly
 
-Add font-color for span and font-weight
-Add margin to the right of the UL
-Add some space below the list items
+Add the api-github.js fil
+Put the script in the index.html file
+Add custom data-attributes for all the span

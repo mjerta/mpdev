@@ -1,10 +1,11 @@
 async function fetchGetGithubRepos() {
   const owner = "mjerta";
   const apiUrl = `https://api.github.com/users/mjerta/repos`;
+  const token =
+    "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";
   const customHeaders = {
     Accept: "application/json",
-    Authorization:
-      "Bearer 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",
+    Authorization: `Bearer ${token}`,
   };
   // Fetch API
   const response = await fetch(apiUrl, { headers: customHeaders });
@@ -69,9 +70,23 @@ function processData(callback) {
     const dateCommit = element.commitResponse[0].commit.committer.date;
     const repo = element.repoName;
 
-    console.log(`Latest commit ${trimmedMessage}: `);
-    console.log(`Repo name ${repo}`);
-    console.log(dateCommit);
+    const githubData = getDataAttributes("data-github");
+    const commitMessage = document.querySelector(
+      `[${githubData.actionAttribute}=commit-message]`
+    );
+    const repoName = document.querySelector(
+      `[${githubData.actionAttribute}=repo-name]`
+    );
+    const dateCreated = document.querySelector(
+      `[${githubData.actionAttribute}=date-created]`
+    );
+    console.log(commitMessage);
+    console.log(repoName);
+    console.log(dateCreated);
+
+    // console.log(`Latest commit ${trimmedMessage}: `);
+    // console.log(`Repo name ${repo}`);
+    // console.log(dateCommit);
   });
 }
 

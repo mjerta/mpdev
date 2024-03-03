@@ -1,5 +1,5 @@
-Add JS file & edit HTML accordingly
+Add & edit css, Add function to api-github.js
 
-Add the api-github.js fil
-Put the script in the index.html file
-Add custom data-attributes for all the span
+Add class for the repo name span
+Adjust  the CSS accordinly
+Find a  way to use the attribute collector again

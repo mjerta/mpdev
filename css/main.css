@@ -794,25 +794,25 @@ footer ul {
   font-style: italic;
 
   ul {
-
     margin-right: 1.6rem;
   }
-  
+
   li {
     color: black;
-    margin-bottom: .5rem;
-    
-    span {
-      color: #193219;
-      font-weight: 800;
-    }
-    
+    margin-bottom: 0.5rem;
+
     &:last-child {
       margin-bottom: 0;
     }
-
   }
 }
+
+/* class for the span in the github section */
+.github-repo {
+  color: #193219;
+  font-weight: 800;
+}
+
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 2.1 darkmode - projects

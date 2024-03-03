@@ -2,7 +2,7 @@ async function fetchGetGithubRepos() {
   const owner = "mjerta";
   const apiUrl = `https://api.github.com/users/mjerta/repos`;
   const token =
-    "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";
+    "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";
   const customHeaders = {
     Accept: "application/json",
     Authorization: `Bearer ${token}`,
@@ -68,6 +68,8 @@ function processData(callback) {
   const repoNameAPI = mostRecentItem.repoName;
   const dateCommitAPI = mostRecentItem.commitResponse[0].commit.committer.date;
 
+  console.log(dateCommitAPI);
+
   /*
     Using the getDataAttributes to get all the data-attributes elements.
     This are being to insert the proper text.
@@ -86,10 +88,12 @@ function processData(callback) {
     `[${dataGithub.actionAttribute}=date-created]`
   );
 
+  console.log(dateCommit);
+
   // Inserting the text into the HTML elements
   commitMessage.innerText = commitMessageAPI;
   repoName.innerText = repoNameAPI;
-  dateCommit.innertText = dateCommitAPI;
+  dateCommit.innerText = dateCommitAPI;
   /*
     For each loop of every commit with its corresponded repo name
     This for loop could be use when I want to show other latest commits from other repos

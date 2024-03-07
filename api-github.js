@@ -1,11 +1,10 @@
 async function fetchGetGithubRepos() {
   const owner = "mjerta";
-  const apiUrl = `https://api.github.com/users/mjerta/repos`;
-  const tokenStrapiGithub = `https://cms.mpdev.nl/api/tests/1`;
+  const apiUrlGithub = `https://api.github.com/users/mjerta/repos`;
+  const apiUrlStrapi = `https://cms.mpdev.nl/api/tests/1`;
 
   //Fetch API strapi
-
-  const responseStrapi = await fetch(tokenStrapiGithub);
+  const responseStrapi = await fetch(apiUrlStrapi);
   if (!responseStrapi.ok) {
     throw {
       status: response.status,
@@ -20,7 +19,7 @@ async function fetchGetGithubRepos() {
     Authorization: `Bearer ${token}`,
   };
   // Fetch API
-  const response = await fetch(apiUrl, { headers: customHeaders });
+  const response = await fetch(apiUrlGithub, { headers: customHeaders });
   if (!response.ok) {
     throw {
       status: response.status,
@@ -32,28 +31,55 @@ async function fetchGetGithubRepos() {
   return { data, owner, customHeaders };
 }
 
-async function fetchGetGithubCommits(callback) {
-  // Defining array to be storing the repo name with the object that belongs with it.
+async function fetchGithubBranches(callback) {
   let arr = [];
-
-  // For loop to loop trough the callback that is an object.
+  const customHeaders = callback.customHeaders;
   for (const el of callback.data) {
     let dataFromApi = {};
-    const apiUrl = `https://api.github.com/repos/${callback.owner}/${el.name}/commits?per_page=1`;
-    const response = await fetch(apiUrl, { headers: callback.customHeaders });
+    const apiUrlGithub = `https://api.github.com/repos/${callback.owner}/${el.name}/branches`;
+    const response = await fetch(apiUrlGithub, {
+      headers: callback.customHeaders,
+    });
     if (!response.ok) {
       throw {
         status: response.status,
         message: "Server responded with an error status",
       };
     }
-
-    // Object is being filled with an commitResponse and RepoName.
     dataFromApi.commitResponse = await response.json();
     dataFromApi.repoName = el.name;
-
-    // Eventually every iteration the object is being bush inside the array.
     arr.push(dataFromApi);
+  }
+  return { arr, customHeaders };
+}
+
+async function fetchGetGithubCommits(callback) {
+  // Defining array to be storing the repo name with the object that belongs with it.
+  let arr = [];
+
+  const customHeaders = callback.customHeaders;
+  // For loop to loop trough the callback that is an object.
+  for (const el of callback.arr) {
+    const repoName = el.repoName;
+    for (const elInside of el.commitResponse) {
+      let dataFromApi = {};
+      const response = await fetch(elInside.commit.url, {
+        headers: callback.customHeaders,
+      });
+
+      if (!response.ok) {
+        throw {
+          status: response.status,
+          message: "Server responded with an error status",
+        };
+      }
+      // Object is being filled with an commit, branch & reponame.
+      dataFromApi.repoName = repoName;
+      dataFromApi.branchName = elInside.name;
+      dataFromApi.commitData = await response.json();
+      // Eventually every iteration the object is being bush inside the array.
+      arr.push(dataFromApi);
+    }
   }
 
   /*  
@@ -63,24 +89,23 @@ async function fetchGetGithubCommits(callback) {
   */
   const sortedArray = arr.sort(function (a, b) {
     return (
-      new Date(b.commitResponse[0].commit.committer.date) -
-      new Date(a.commitResponse[0].commit.committer.date)
+      new Date(b.commitData.commit.committer.date) -
+      new Date(a.commitData.commit.committer.date)
     );
   });
+  console.log(arr);
   return arr;
 }
 
 function processData(callback) {
-  // From the callback will be using the first item of the sorted array
-  const mostRecentItem = callback[0];
-
   // Putting all the data into variables
-  const commitMessageAPI =
-    mostRecentItem.commitResponse[0].commit.message.replace(/\n/g, " ");
-  const repoNameAPI = mostRecentItem.repoName;
-  const dateCommitAPI = mostRecentItem.commitResponse[0].commit.committer.date;
-
-  console.log(dateCommitAPI);
+  const repoNameMostRecent = callback[0].repoName;
+  const branchNameMostRecent = callback[0].branchName;
+  const commitMostRecent = callback[0].commitData.commit.message.replace(
+    /\n/g,
+    " "
+  );
+  const dateCommitAPI = callback[0].commitData.commit.committer.date;
 
   /*
     Using the getDataAttributes to get all the data-attributes elements.
@@ -103,7 +128,7 @@ function processData(callback) {
   console.log(dateCommit);
 
   // Inserting the text into the HTML elements
-  commitMessage.innerText = commitMessageAPI;
+  commitMessage.innerText = commitMostRecent;
   repoName.innerText = repoNameAPI;
   dateCommit.innerText = dateCommitAPI;
   /*
@@ -120,7 +145,7 @@ function processData(callback) {
       " "
     );
     const dateCommit = element.commitResponse[0].commit.committer.date;
-    const repo = element.repoName;
+    const repo = callback[0].repoName;
   });
 }
 
@@ -129,6 +154,7 @@ function processData(callback) {
   Eventually all error are being catched to make sure it is not hindering the performance and look of the website
 */
 fetchGetGithubRepos()
+  .then(fetchGithubBranches)
   .then(fetchGetGithubCommits)
   .then(processData)
   .catch((error) => {

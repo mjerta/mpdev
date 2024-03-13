@@ -93,14 +93,18 @@ async function fetchGetGithubCommits(callback) {
       new Date(a.commitData.commit.committer.date)
     );
   });
-  console.log(arr);
   return arr;
 }
 
 function processData(callback) {
-  // Putting all the data into variables
+  // Putting all the data into variables, the first entry of the array will be used to get the most recent commit
+
   const repoNameMostRecent = callback[0].repoName;
   const branchNameMostRecent = callback[0].branchName;
+  /*
+    The commit message is being slected. Afterwards the lines from  the format of the data from github is being 
+    formatted again.
+  */
   const commitMostRecent = callback[0].commitData.commit.message.replace(
     /\n/g,
     " "
@@ -121,31 +125,38 @@ function processData(callback) {
   const repoName = document.querySelector(
     `[${dataGithub.actionAttribute}=repo-name]`
   );
+  const branchName = document.querySelector(
+    `[${dataGithub.actionAttribute}=branch-name]`
+  );
   const dateCommit = document.querySelector(
     `[${dataGithub.actionAttribute}=date-created]`
   );
 
-  console.log(dateCommit);
-
   // Inserting the text into the HTML elements
   commitMessage.innerText = commitMostRecent;
-  repoName.innerText = repoNameAPI;
+  repoName.innerText = repoNameMostRecent;
+  branchName.innerText = branchNameMostRecent;
   dateCommit.innerText = dateCommitAPI;
   /*
     For each loop of every commit with its corresponded repo name
     This for loop could be use when I want to show other latest commits from other repos
   */
   callback.forEach((element) => {
+    const repo = element.repoName;
+    const branchName = element.branchName;
+
     /*
       The commit message is being slected. Afterwards the lines from  the format of the data from github is being 
       formatted again.
     */
-    const message = element.commitResponse[0].commit.message.replace(
-      /\n/g,
-      " "
-    );
-    const dateCommit = element.commitResponse[0].commit.committer.date;
-    const repo = callback[0].repoName;
+    const message = element.commitData.commit.message.replace(/\n/g, " ");
+    const dateCommit = element.commitData.commit.committer.date;
+    /*
+      console.log(message);
+      console.log(repo);
+      console.log(branchName);
+      console.log(dateCommit);
+    */
   });
 }
 

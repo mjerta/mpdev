@@ -1,6 +1,5 @@
-Remove HTML and JS and replace parts
+Add JS + read out data and fill in elements
 
-Remove HTML elements
-Remove JS to select these HTML elements
-Instead add selector for the ul class
-Change class name ul
+Add selector in js
+Add for loop to create 4 List items
+Per item there is a specific entry

@@ -98,11 +98,12 @@ async function fetchGetGithubCommits(callback) {
 
 function processData(callback) {
   // Putting all the data into variables, the first entry of the array will be used to get the most recent commit
-
   const repoNameMostRecent = callback[0].repoName;
   const branchNameMostRecent = callback[0].branchName;
+
   /*
-    The commit message is being slected. Afterwards the lines from  the format of the data from github is being 
+    The commit message is being slected. Afterwards the lines from  
+    the format of the data from github is being 
     formatted again.
   */
   const commitMostRecent = callback[0].commitData.commit.message.replace(
@@ -111,26 +112,53 @@ function processData(callback) {
   );
   const dateCommitAPI = callback[0].commitData.commit.committer.date;
 
-  /*
-    Using the getDataAttributes to get all the data-attributes elements.
-    This are being to insert the proper text.
-  */
+  // Defining the variable to get get the object filled with all elements
+  const githubCommits = document.querySelector(".github-commits");
 
-  // Defining the variable to get get the object filled with all data-github attributes
-  const dataGithub = getDataAttributes("data-github");
+  for (let i = 0; i <= 3; i++) {
+    const listItem = document.createElement("li");
+    console.log(listItem);
+    githubCommits.appendChild(listItem);
+    let span = document.createElement("span");
 
-  const commitMessage = document.querySelector(
-    `[${dataGithub.actionAttribute}=commit-message]`
-  );
-  const repoName = document.querySelector(
-    `[${dataGithub.actionAttribute}=repo-name]`
-  );
-  const branchName = document.querySelector(
-    `[${dataGithub.actionAttribute}=branch-name]`
-  );
-  const dateCommit = document.querySelector(
-    `[${dataGithub.actionAttribute}=date-created]`
-  );
+    if (i == 0) {
+      const textBeforeCommitMessage =
+        document.createTextNode("Latest commit: ");
+      listItem.appendChild(textBeforeCommitMessage);
+      listItem.appendChild(span);
+      span.innerText = commitMostRecent;
+    } else if (i == 1) {
+      const textBeforeCommitMessage = document.createTextNode("Repo name: ");
+      listItem.appendChild(textBeforeCommitMessage);
+      listItem.appendChild(span);
+      span.innerText = repoNameMostRecent;
+    } else if (i == 2) {
+      const textBeforeCommitMessage = document.createTextNode("branch name: ");
+      listItem.appendChild(textBeforeCommitMessage);
+      listItem.appendChild(span);
+      span.innerText = branchNameMostRecent;
+    } else if (i == 3) {
+      const textBeforeCommitMessage = document.createTextNode("Date: ");
+      listItem.appendChild(textBeforeCommitMessage);
+      listItem.appendChild(span);
+      span.innerText = dateCommitAPI;
+    }
+  }
+
+  // const dataGithub = getDataAttributes("data-github");
+
+  // const commitMessage = document.querySelector(
+  //   `[${dataGithub.actionAttribute}=commit-message]`
+  // );
+  // const repoName = document.querySelector(
+  //   `[${dataGithub.actionAttribute}=repo-name]`
+  // );
+  // const branchName = document.querySelector(
+  //   `[${dataGithub.actionAttribute}=branch-name]`
+  // );
+  // const dateCommit = document.querySelector(
+  //   `[${dataGithub.actionAttribute}=date-created]`
+  // );
 
   // Inserting the text into the HTML elements
   commitMessage.innerText = commitMostRecent;

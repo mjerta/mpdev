@@ -1,4 +1,6 @@
-Refactor api-github.js & add element in HTML
+Remove HTML and JS and replace parts
 
-Refactor js
-Add element with branch
+Remove HTML elements
+Remove JS to select these HTML elements
+Instead add selector for the ul class
+Change class name ul

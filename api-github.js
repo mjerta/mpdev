@@ -115,12 +115,16 @@ function processData(callback) {
   // Defining the variable to get get the object filled with all elements
   const githubCommits = document.querySelector(".github-commits");
 
+  // The github-commits-loaded will be added to make sure the transition will be done
+  // after api data has been loaded
+  githubCommits.classList.add("github-commits-loaded");
   for (let i = 0; i <= 3; i++) {
     const listItem = document.createElement("li");
     console.log(listItem);
     githubCommits.appendChild(listItem);
     let span = document.createElement("span");
 
+    // Inserting the text into the HTML elements
     if (i == 0) {
       const textBeforeCommitMessage =
         document.createTextNode("Latest commit: ");
@@ -145,26 +149,6 @@ function processData(callback) {
     }
   }
 
-  // const dataGithub = getDataAttributes("data-github");
-
-  // const commitMessage = document.querySelector(
-  //   `[${dataGithub.actionAttribute}=commit-message]`
-  // );
-  // const repoName = document.querySelector(
-  //   `[${dataGithub.actionAttribute}=repo-name]`
-  // );
-  // const branchName = document.querySelector(
-  //   `[${dataGithub.actionAttribute}=branch-name]`
-  // );
-  // const dateCommit = document.querySelector(
-  //   `[${dataGithub.actionAttribute}=date-created]`
-  // );
-
-  // Inserting the text into the HTML elements
-  commitMessage.innerText = commitMostRecent;
-  repoName.innerText = repoNameMostRecent;
-  branchName.innerText = branchNameMostRecent;
-  dateCommit.innerText = dateCommitAPI;
   /*
     For each loop of every commit with its corresponded repo name
     This for loop could be use when I want to show other latest commits from other repos

@@ -1,5 +1,5 @@
-Add JS + read out data and fill in elements
+Remove comments, add css & add js
 
-Add selector in js
-Add for loop to create 4 List items
-Per item there is a specific entry
+Remove some comments
+Add css class for the transition
+Add class to classlist in JS

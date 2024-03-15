@@ -813,6 +813,15 @@ footer ul {
   font-weight: 800;
 }
 
+.github-commits {
+  opacity: 0;
+  transition: opacity ease 800ms;
+}
+
+.github-commits-loaded {
+  opacity: 1;
+}
+
 /*
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 2.1 darkmode - projects

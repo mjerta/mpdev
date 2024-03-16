@@ -58,9 +58,19 @@ async function fetchGetGithubCommits(callback) {
   let arr = [];
 
   const customHeaders = callback.customHeaders;
+
+  let countArr = callback.arr.length;
+  let countRepoWaitTime = 0;
+
   // For loop to loop trough the callback that is an object.
   for (const el of callback.arr) {
+    countRepoWaitTime++;
+    console.log("which repo of the array " + countRepoWaitTime);
+    let countCommitMessagEWaitTime = 0;
+    let totalBranches = el.commitResponse.length;
+    console.log("total of branches" + totalBranches);
     const repoName = el.repoName;
+
     for (const elInside of el.commitResponse) {
       let dataFromApi = {};
       const response = await fetch(elInside.commit.url, {
@@ -77,6 +87,12 @@ async function fetchGetGithubCommits(callback) {
       dataFromApi.repoName = repoName;
       dataFromApi.branchName = elInside.name;
       dataFromApi.commitData = await response.json();
+
+      countCommitMessagEWaitTime++;
+
+      const calculate = countCommitMessagEWaitTime / (totalBranches / 100);
+      // console.log(countCommitMessagEWaitTime);
+      console.log(calculate);
       // Eventually every iteration the object is being bush inside the array.
       arr.push(dataFromApi);
     }

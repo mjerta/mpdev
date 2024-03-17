@@ -54,24 +54,27 @@ async function fetchGithubBranches(callback) {
 }
 
 async function fetchGetGithubCommits(callback) {
+  const githubCommits = document.querySelector(".github a");
+  const listItem = document.createElement("p");
+  githubCommits.appendChild(listItem);
+
   // Defining array to be storing the repo name with the object that belongs with it.
   let arr = [];
-
-  const customHeaders = callback.customHeaders;
-
   let countArr = callback.arr.length;
   let countRepoWaitTime = 0;
+  const countBetween = 1 / (countArr / 100);
 
   // For loop to loop trough the callback that is an object.
   for (const el of callback.arr) {
+    let outerIterations = countRepoWaitTime / (countArr / 100);
+    // console.log(outerIterations);
     countRepoWaitTime++;
-    console.log("which repo of the array " + countRepoWaitTime);
-    let countCommitMessagEWaitTime = 0;
     let totalBranches = el.commitResponse.length;
-    console.log("total of branches" + totalBranches);
     const repoName = el.repoName;
 
     for (const elInside of el.commitResponse) {
+      let innerIterations = countBetween / totalBranches;
+      // console.log(innerIterations);
       let dataFromApi = {};
       const response = await fetch(elInside.commit.url, {
         headers: callback.customHeaders,
@@ -88,12 +91,12 @@ async function fetchGetGithubCommits(callback) {
       dataFromApi.branchName = elInside.name;
       dataFromApi.commitData = await response.json();
 
-      countCommitMessagEWaitTime++;
-
-      const calculate = countCommitMessagEWaitTime / (totalBranches / 100);
-      // console.log(countCommitMessagEWaitTime);
-      console.log(calculate);
-      // Eventually every iteration the object is being bush inside the array.
+      outerIterations += innerIterations;
+      console.log(outerIterations);
+      listItem.textContent = Math.round(outerIterations);
+      if (outerIterations == 100) {
+        githubCommits.removeChild(listItem);
+      }
       arr.push(dataFromApi);
     }
   }

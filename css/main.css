@@ -789,9 +789,15 @@ footer ul {
 }
 
 .github {
+  position: relative;
   display: flex;
   align-items: center;
   font-style: italic;
+
+  p {
+    color: red;
+    position: absolute;
+  }
 
   ul {
     margin-right: 1.6rem;
@@ -804,6 +810,12 @@ footer ul {
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

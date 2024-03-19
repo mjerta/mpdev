@@ -819,6 +819,16 @@ footer ul {
   }
 }
 
+.github::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: -calc(3.4375em * 2);
+  height: calc(3.4375em * 2);
+  width: 100%;
+  background-color: red;
+}
+
 /* class for the span in the github section */
 .github-repo {
   color: #193219;

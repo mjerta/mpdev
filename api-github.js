@@ -141,15 +141,18 @@ function processData(callback) {
     const listItem = document.createElement("li");
     console.log(listItem);
     githubCommits.appendChild(listItem);
+    
     let span = document.createElement("span");
-
     // Inserting the text into the HTML elements
     if (i == 0) {
       const textBeforeCommitMessage =
-        document.createTextNode("Latest commit: ");
+      document.createTextNode("Latest commit: ");
       listItem.appendChild(textBeforeCommitMessage);
       listItem.appendChild(span);
-      span.innerText = commitMostRecent;
+      //create excert for the text preventing it too be too long
+      const excertedCommitMessage = createExcert(commitMostRecent, 10);
+      console.log(excertedCommitMessage);
+      span.innerText = excertedCommitMessage;
     } else if (i == 1) {
       const textBeforeCommitMessage = document.createTextNode("Repo name: ");
       listItem.appendChild(textBeforeCommitMessage);

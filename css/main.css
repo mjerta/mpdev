@@ -621,7 +621,7 @@ it seems to behave different */
   display: grid;
   max-width: 1200px;
   border-top: 3px solid black;
-  padding: 3.81rem 0;
+  padding: 3.81rem 0 calc(3.81rem * 2);
   grid-template-columns: repeat(auto-fit, minmax(33.26731rem, 33.26731rem));
   grid-template-rows: repeat(auto-fill, 19.375rem);
   row-gap: 3rem;
@@ -789,7 +789,6 @@ footer ul {
 }
 
 .github {
-  position: relative;
   display: flex;
   align-items: center;
   font-style: italic;
@@ -819,16 +818,6 @@ footer ul {
   }
 }
 
-.github::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: -calc(3.4375em * 2);
-  height: calc(3.4375em * 2);
-  width: 100%;
-  background-color: red;
-}
-
 /* class for the span in the github section */
 .github-repo {
   color: #193219;
@@ -836,10 +825,59 @@ footer ul {
 }
 
 .github-commits {
+  position: relative;
   opacity: 0;
   transition: opacity ease 800ms;
 }
+.full-commit-message {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: calc(-3.4375em * 2 - 0.7em);
+  height: calc(3.4375em * 2);
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 0.3em;
+}
 
+.shape-inside-commit-message {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  /* content: ""; */
+  bottom: -10px;
+  height: 10px;
+  left: 0;
+  width: 55%;
+  z-index: -1;
+  /* border: 1px solid black; */
+}
+.shape-left {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: 0;
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 85%;
+  background-color: white;
+  /* border: 1px solid; */
+}
+.shape-right {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 0;
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 85%;
+  background-color: white;
+  /* border: 1px black solid; */
+}
+
+.shape-inside {
+  width: 30px;
+  width: 30px;
+  background-color: #d9d9d9;
+}
 .github-commits-loaded {
   opacity: 1;
 }

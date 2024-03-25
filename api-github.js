@@ -141,12 +141,13 @@ function processData(callback) {
     const listItem = document.createElement("li");
     console.log(listItem);
     githubCommits.appendChild(listItem);
-    
+
     let span = document.createElement("span");
     // Inserting the text into the HTML elements
     if (i == 0) {
+      listItem.classList.add("latest-commit-excerpt");
       const textBeforeCommitMessage =
-      document.createTextNode("Latest commit: ");
+        document.createTextNode("Latest commit: ");
       listItem.appendChild(textBeforeCommitMessage);
       listItem.appendChild(span);
       //create excert for the text preventing it too be too long
@@ -191,6 +192,17 @@ function processData(callback) {
       console.log(branchName);
       console.log(dateCommit);
     */
+  });
+
+  const githubTextBalloon = document.querySelector(".full-commit-message");
+  const latestCommitExcerpt = document.querySelector(".latest-commit-excerpt");
+  console.log(latestCommitExcerpt);
+
+  latestCommitExcerpt.addEventListener("mouseover", () => {
+    githubTextBalloon.classList.remove("hidden");
+  });
+  latestCommitExcerpt.addEventListener("mouseout", () => {
+    githubTextBalloon.classList.add("hidden");
   });
 }
 

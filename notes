@@ -1,5 +1,5 @@
-Edit css and make space for text-balloon
+Add js for showing the pop-up
 
-Edit text box to make balloon shape
-Add a little shape to point to the excert
-Add more space between footer and projects-grid
+Add display none to full-commit-message
+Create event handler to make the text balloon visisble
+In JS select the first li to use for the event handler

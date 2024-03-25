@@ -83,6 +83,10 @@ body {
   /* border: 3px solid black; */
 }
 
+.hidden {
+  display: none;
+}
+
 /* 
 ======================================================================
 1.2 - header
@@ -830,6 +834,7 @@ footer ul {
   transition: opacity ease 800ms;
 }
 .full-commit-message {
+  /* display: none; */
   position: absolute;
   content: "";
   left: 0;
@@ -873,7 +878,7 @@ footer ul {
   /* border: 1px black solid; */
 }
 
-.shape-inside {
+.shape-in-between {
   width: 30px;
   width: 30px;
   background-color: #d9d9d9;

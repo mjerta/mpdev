@@ -116,13 +116,16 @@ async function fetchGetGithubCommits(callback) {
 }
 
 function processData(callback) {
-  const githubTextBalloon = document.querySelector(".full-commit-message");
+  const textInsideFullCommitMessage = document.querySelector(
+    ".text-inside-full-commmit-message"
+  );
+  console.log(textInsideFullCommitMessage);
   // Putting all the data into variables, the first entry of the array will be used to get the most recent commit
   const repoNameMostRecent = callback[0].repoName;
   const branchNameMostRecent = callback[0].branchName;
 
   /*
-    The commit message is being slected. Afterwards the lines from  
+  The commit message is being slected. Afterwards the lines from  
     the format of the data from github is being 
     formatted again.
     */
@@ -151,10 +154,10 @@ function processData(callback) {
         document.createTextNode("Latest commit: ");
       listItem.appendChild(textBeforeCommitMessageExcerpt);
       listItem.appendChild(span);
-      githubTextBalloon.innerText = commitMostRecent;
+      textInsideFullCommitMessage.textContent = commitMostRecent;
 
       //create excert for the text preventing it too be too long
-      const excertedCommitMessage = createExcert(commitMostRecent, 50);
+      const excertedCommitMessage = createExcert(commitMostRecent, 30);
       console.log(excertedCommitMessage);
       span.innerText = excertedCommitMessage;
     } else if (i == 1) {
@@ -178,7 +181,7 @@ function processData(callback) {
   /*
     For each loop of every commit with its corresponded repo name
     This for loop could be use when I want to show other latest commits from other repos
-  */
+    */
   callback.forEach((element) => {
     const repo = element.repoName;
     const branchName = element.branchName;
@@ -190,13 +193,14 @@ function processData(callback) {
     const message = element.commitData.commit.message.replace(/\n/g, " ");
     const dateCommit = element.commitData.commit.committer.date;
     /*
-      console.log(message);
-      console.log(repo);
-      console.log(branchName);
-      console.log(dateCommit);
-    */
+   console.log(message);
+   console.log(repo);
+   console.log(branchName);
+   console.log(dateCommit);
+   */
   });
 
+  const githubTextBalloon = document.querySelector(".full-commit-message");
   const latestCommitExcerpt = document.querySelector(".latest-commit-excerpt");
   console.log(latestCommitExcerpt);
 

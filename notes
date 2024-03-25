@@ -1,5 +1,4 @@
-Add transition & put text in balloon
+Add styling & change limit excerpt
 
-Add transition for the pop-up
-Instead use opacity then display none
-Put the text in text-balloon
+Add some styling to the text-ballon
+Change limit for excerpt

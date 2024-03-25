@@ -116,6 +116,7 @@ async function fetchGetGithubCommits(callback) {
 }
 
 function processData(callback) {
+  const githubTextBalloon = document.querySelector(".full-commit-message");
   // Putting all the data into variables, the first entry of the array will be used to get the most recent commit
   const repoNameMostRecent = callback[0].repoName;
   const branchNameMostRecent = callback[0].branchName;
@@ -124,7 +125,7 @@ function processData(callback) {
     The commit message is being slected. Afterwards the lines from  
     the format of the data from github is being 
     formatted again.
-  */
+    */
   const commitMostRecent = callback[0].commitData.commit.message.replace(
     /\n/g,
     " "
@@ -146,12 +147,14 @@ function processData(callback) {
     // Inserting the text into the HTML elements
     if (i == 0) {
       listItem.classList.add("latest-commit-excerpt");
-      const textBeforeCommitMessage =
+      const textBeforeCommitMessageExcerpt =
         document.createTextNode("Latest commit: ");
-      listItem.appendChild(textBeforeCommitMessage);
+      listItem.appendChild(textBeforeCommitMessageExcerpt);
       listItem.appendChild(span);
+      githubTextBalloon.innerText = commitMostRecent;
+
       //create excert for the text preventing it too be too long
-      const excertedCommitMessage = createExcert(commitMostRecent, 10);
+      const excertedCommitMessage = createExcert(commitMostRecent, 50);
       console.log(excertedCommitMessage);
       span.innerText = excertedCommitMessage;
     } else if (i == 1) {
@@ -194,15 +197,14 @@ function processData(callback) {
     */
   });
 
-  const githubTextBalloon = document.querySelector(".full-commit-message");
   const latestCommitExcerpt = document.querySelector(".latest-commit-excerpt");
   console.log(latestCommitExcerpt);
 
   latestCommitExcerpt.addEventListener("mouseover", () => {
-    githubTextBalloon.classList.remove("hidden");
+    githubTextBalloon.classList.add("show");
   });
   latestCommitExcerpt.addEventListener("mouseout", () => {
-    githubTextBalloon.classList.add("hidden");
+    githubTextBalloon.classList.remove("show");
   });
 }
 

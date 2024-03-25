@@ -1,5 +1,5 @@
-Add js for showing the pop-up
+Add transition & put text in balloon
 
-Add display none to full-commit-message
-Create event handler to make the text balloon visisble
-In JS select the first li to use for the event handler
+Add transition for the pop-up
+Instead use opacity then display none
+Put the text in text-balloon

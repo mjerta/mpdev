@@ -92,7 +92,6 @@ async function fetchGetGithubCommits(callback) {
       dataFromApi.commitData = await response.json();
 
       outerIterations += innerIterations;
-      console.log(outerIterations);
       listItem.textContent = Math.round(outerIterations);
       if (outerIterations == 100) {
         githubCommits.removeChild(listItem);
@@ -119,7 +118,6 @@ function processData(callback) {
   const textInsideFullCommitMessage = document.querySelector(
     ".text-inside-full-commmit-message"
   );
-  console.log(textInsideFullCommitMessage);
   // Putting all the data into variables, the first entry of the array will be used to get the most recent commit
   const repoNameMostRecent = callback[0].repoName;
   const branchNameMostRecent = callback[0].branchName;
@@ -129,10 +127,9 @@ function processData(callback) {
     the format of the data from github is being 
     formatted again.
     */
-  const commitMostRecent = callback[0].commitData.commit.message.replace(
-    /\n/g,
-    " "
-  );
+  const textData = callback[0].commitData.commit.message;
+  const lines = textData.split("\n");
+  const commitMostRecent = lines[0];
   const dateCommitAPI = callback[0].commitData.commit.committer.date;
 
   // Defining the variable to get get the object filled with all elements
@@ -143,7 +140,6 @@ function processData(callback) {
   githubCommits.classList.add("github-commits-loaded");
   for (let i = 0; i <= 3; i++) {
     const listItem = document.createElement("li");
-    console.log(listItem);
     githubCommits.appendChild(listItem);
 
     let span = document.createElement("span");
@@ -154,12 +150,22 @@ function processData(callback) {
         document.createTextNode("Latest commit: ");
       listItem.appendChild(textBeforeCommitMessageExcerpt);
       listItem.appendChild(span);
-      textInsideFullCommitMessage.textContent = commitMostRecent;
 
       //create excert for the text preventing it too be too long
       const excertedCommitMessage = createExcert(commitMostRecent, 30);
-      console.log(excertedCommitMessage);
       span.innerText = excertedCommitMessage;
+
+      //below the message the full message will be inserted in a list
+
+      for (let i = 0; i < lines.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.innerText = lines[i];
+        console.log(lines[i]);
+        if (lines[i] === "") {
+          listItem.innerText = "\n";
+        }
+        textInsideFullCommitMessage.appendChild(listItem);
+      }
     } else if (i == 1) {
       const textBeforeCommitMessage = document.createTextNode("Repo name: ");
       listItem.appendChild(textBeforeCommitMessage);
@@ -202,7 +208,6 @@ function processData(callback) {
 
   const githubTextBalloon = document.querySelector(".full-commit-message");
   const latestCommitExcerpt = document.querySelector(".latest-commit-excerpt");
-  console.log(latestCommitExcerpt);
 
   latestCommitExcerpt.addEventListener("mouseover", () => {
     githubTextBalloon.classList.add("show");

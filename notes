@@ -1,4 +1,5 @@
-Add styling & change limit excerpt
+Split up array, create list and condition
 
-Add some styling to the text-ballon
-Change limit for excerpt
+Split up the full commit message into an array
+Instead of the p element a ul list element will be used
+Put the empty string also in a empty line

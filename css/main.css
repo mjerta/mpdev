@@ -60,7 +60,6 @@
   margin: 0;
   text-decoration: none;
   color: inherit;
-  border: 1px solid;
 }
 
 body,
@@ -82,6 +81,7 @@ body {
   display: flex;
   flex-direction: column;
   /* border: 3px solid black; */
+  overflow-x: hidden;
 }
 
 /* 
@@ -532,6 +532,7 @@ it seems to behave different */
 }
 
 .leaves-animation {
+  /* 400ms */
   animation: move-leaves 400ms ease-out forwards;
 }
 @keyframes move-leaves {
@@ -542,14 +543,13 @@ it seems to behave different */
 
   100% {
     opacity: 0;
-    transform: translateX(20px);
+    transform: translateX(2.5rem);
   }
 }
 
 .hide-element-animation {
+  /* 1200ms */
   animation: run-tiger 1200ms ease-out forwards;
-  /* animation-iteration-count: 1; */
-  /* opacity: 1; */
 }
 
 @keyframes run-tiger {
@@ -558,7 +558,7 @@ it seems to behave different */
     transform: translateX(0);
   }
   100% {
-    transform: translateX(120px);
+    transform: translateX(15rem);
     opacity: 0;
   }
 }

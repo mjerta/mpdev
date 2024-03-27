@@ -1,5 +1,5 @@
-Change css for full-commitmessage
+Add class in css & change textcontent in js
 
-put min property to class full-commit-message
-add z-index to class card
-add font-weight & color for the first line
+Add class  github-repo for the repo name in js
+Change color for the percentages in the github logo
+Add percentage symbol to github logo in js

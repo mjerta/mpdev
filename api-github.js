@@ -92,7 +92,7 @@ async function fetchGetGithubCommits(callback) {
       dataFromApi.commitData = await response.json();
 
       outerIterations += innerIterations;
-      listItem.textContent = Math.round(outerIterations);
+      listItem.textContent = `${Math.round(outerIterations)} %`;
       if (outerIterations == 100) {
         githubCommits.removeChild(listItem);
       }
@@ -171,6 +171,7 @@ function processData(callback) {
       const textBeforeCommitMessage = document.createTextNode("Repo name: ");
       listItem.appendChild(textBeforeCommitMessage);
       listItem.appendChild(span);
+      span.classList.add("github-repo");
       span.innerText = repoNameMostRecent;
     } else if (i == 2) {
       const textBeforeCommitMessage = document.createTextNode("branch name: ");

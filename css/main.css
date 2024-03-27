@@ -799,14 +799,13 @@ footer ul {
 }
 
 .github {
+  p {
+    color: #193219;
+    position: absolute;
+  }
   display: flex;
   align-items: center;
   font-style: italic;
-
-  p {
-    color: red;
-    position: absolute;
-  }
 
   ul {
     margin-right: 1.6rem;

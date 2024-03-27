@@ -1,3 +1,5 @@
-Edit the proccesData function
+Change positions & transform and overflow in css
 
-Edit the function like its only showing the latest message of the repo that send the last commit.
+Change posistion for focus highlight after element
+Change property for transform animation to rem
+Change overflow for wrapper cta to hidden

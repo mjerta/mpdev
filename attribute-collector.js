@@ -16,3 +16,19 @@ function createExcert(text, maxLength) {
     return text.substring(0, maxLength) + "...";
   }
 }
+
+function calculateFullHeight(element) {
+  const elementToCalculate = document.querySelector(element);
+  const getComputedStyle = window.getComputedStyle(elementToCalculate);
+  const height = parseFloat(getComputedStyle.height);
+  return height;
+}
+
+function changeTopElement(element, direction, amount) {
+  const elementToChange = document.querySelector(element);
+  if (direction == true) {
+    elementToChange.style.top = `${amount}px`;
+  } else if (direction == false) {
+    elementToChange.style.top = `-${amount}px`;
+  }
+}

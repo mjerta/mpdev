@@ -1,5 +1,5 @@
-Split up array, create list and condition
+Created functions and using them 
 
-Split up the full commit message into an array
-Instead of the p element a ul list element will be used
-Put the empty string also in a empty line
+Create function to calculate height of an element
+Creat function to change top value
+Using the functions in api-github to change the top property

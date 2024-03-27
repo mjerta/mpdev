@@ -184,6 +184,26 @@ function processData(callback) {
     }
   }
 
+  // const example = document.querySelector(".full-commit-message");
+  // const example2 = document.querySelector(".shape-inside-commit-message");
+  // const getComputedStyle = window.getComputedStyle(example);
+  // const getComputedStyle2 = window.getComputedStyle(example2);
+  // const fullHeight = parseFloat(getComputedStyle.height);
+  // const fullHeight2 = parseFloat(getComputedStyle2.height);
+  // const total = fullHeight + fullHeight2;
+  // example.style.top = `-${total}px`;
+  // console.log(`${fullHeight} and ${fullHeight2}`);
+
+  const elementToSelect = ".full-commit-message";
+  const heightFullCommitMessage = calculateFullHeight(elementToSelect);
+  const heightShapeInsideCommitMessage = calculateFullHeight(
+    ".shape-inside-commit-message"
+  );
+  const totalHeightFullCommitMessage =
+    heightFullCommitMessage + heightShapeInsideCommitMessage;
+
+  changeTopElement(elementToSelect, false, totalHeightFullCommitMessage);
+
   /*
     For each loop of every commit with its corresponded repo name
     This for loop could be use when I want to show other latest commits from other repos

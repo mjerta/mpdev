@@ -164,6 +164,7 @@ function processData(callback) {
         if (lines[i] === "") {
           listItem.innerText = "\n";
         }
+
         textInsideFullCommitMessage.appendChild(listItem);
       }
     } else if (i == 1) {
@@ -184,16 +185,6 @@ function processData(callback) {
     }
   }
 
-  // const example = document.querySelector(".full-commit-message");
-  // const example2 = document.querySelector(".shape-inside-commit-message");
-  // const getComputedStyle = window.getComputedStyle(example);
-  // const getComputedStyle2 = window.getComputedStyle(example2);
-  // const fullHeight = parseFloat(getComputedStyle.height);
-  // const fullHeight2 = parseFloat(getComputedStyle2.height);
-  // const total = fullHeight + fullHeight2;
-  // example.style.top = `-${total}px`;
-  // console.log(`${fullHeight} and ${fullHeight2}`);
-
   const elementToSelect = ".full-commit-message";
   const heightFullCommitMessage = calculateFullHeight(elementToSelect);
   const heightShapeInsideCommitMessage = calculateFullHeight(
@@ -201,6 +192,7 @@ function processData(callback) {
   );
   const totalHeightFullCommitMessage =
     heightFullCommitMessage + heightShapeInsideCommitMessage;
+  console.log(totalHeightFullCommitMessage);
 
   changeTopElement(elementToSelect, false, totalHeightFullCommitMessage);
 

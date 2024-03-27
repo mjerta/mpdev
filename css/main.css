@@ -645,6 +645,7 @@ it seems to behave different */
   padding-bottom: 3rem;
   transition: background-color 0.5s ease, opacity 0.7s ease;
   color: black;
+  z-index: -2;
 }
 
 .card-hover {
@@ -846,12 +847,16 @@ footer ul {
   content: "";
   left: 0;
   top: calc(-3.4375em * 2 - 0.7em);
-  height: calc(3.4375em * 2);
+  min-height: calc(3.4375em * 2);
   width: 100%;
   background-color: #d9d9d9;
   border-radius: 0.3em;
   z-index: -1;
   padding: 1em;
+  ul li:first-child {
+    font-weight: bold;
+    color: #193219;
+  }
 }
 
 .shape-inside-commit-message {

@@ -1,5 +1,5 @@
-Created functions and using them 
+Change css for full-commitmessage
 
-Create function to calculate height of an element
-Creat function to change top value
-Using the functions in api-github to change the top property
+put min property to class full-commit-message
+add z-index to class card
+add font-weight & color for the first line
